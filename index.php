@@ -21,80 +21,88 @@ $all_barangays = [
 
 try {
     require 'db_connect.php';
-    $db_connected = true;
+    if ($pdo) {
+        $db_connected = true;
 
-    $latest_highlight = $pdo->query("SELECT * FROM highlights ORDER BY created_at DESC LIMIT 1")->fetch(PDO::FETCH_ASSOC);
+        $latest_highlight = $pdo->query("SELECT * FROM highlights ORDER BY created_at DESC LIMIT 1")->fetch(PDO::FETCH_ASSOC);
 
-    // Fetch Dynamic Featured Highlights
-    $highlight1 = $pdo->query("SELECT * FROM featured_highlight WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
-    $highlight2 = $pdo->query("SELECT * FROM featured_highlight WHERE id = 2")->fetch(PDO::FETCH_ASSOC);
-    
-    $stmt = $pdo->query("SELECT * FROM bento_items ORDER BY id DESC");
-    $bento_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // Fetch Active Pop-up Notification
-    $popup = $pdo->query("SELECT * FROM popup_notification WHERE is_active = 1 ORDER BY updated_at DESC LIMIT 1")->fetch(PDO::FETCH_ASSOC);
-   
-    // 2. Fetch Updates & Events
-    $announcements = $pdo->query("SELECT * FROM announcements ORDER BY created_at DESC LIMIT 3")->fetchAll(PDO::FETCH_ASSOC);
-    $events_preview = $pdo->query("SELECT *, (SELECT COUNT(*) FROM event_registrations er WHERE er.event_id = e.id) as current_count FROM events e WHERE event_date >= CURDATE() ORDER BY event_date ASC LIMIT 3")->fetchAll(PDO::FETCH_ASSOC);
-    
-    // 1. Fetch Stats: Real-time youth registry telemetry
-    $total_youth = (int)$pdo->query("SELECT COUNT(*) FROM youth_registry")->fetchColumn();
-    if ($total_youth === 0) {
-        $total_youth = (int)$pdo->query("SELECT COUNT(*) FROM youth_profiles")->fetchColumn();
-    }
-    $sk_barangays_count = $pdo->query("SELECT COUNT(DISTINCT barangay_assigned) FROM admins WHERE role = 'sub-admin' AND status = 'approved'")->fetchColumn();
-
-    // 3. Fetch Leaders (LYDO & SK Chairpersons Only)
-    $lydo_officials = $pdo->query("SELECT full_name, profile_picture FROM admins WHERE role = 'admin' AND status = 'approved' ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
-    
-    $sk_raw = $pdo->query("SELECT full_name, barangay_assigned, sk_position, profile_picture FROM admins WHERE role = 'sub-admin' AND status = 'approved' AND sk_position = 'SK Chairperson' ORDER BY barangay_assigned ASC")->fetchAll(PDO::FETCH_ASSOC);
-    foreach ($sk_raw as $sk) {
-        $sk_officials[$sk['barangay_assigned']][] = $sk;
-    }
-
-    // Fetch Active Scholarships
-    $scholarships = $pdo->query("SELECT * FROM scholarships WHERE deadline >= CURDATE() ORDER BY deadline ASC LIMIT 3")->fetchAll(PDO::FETCH_ASSOC);
-
-    // --- COMMUNITY VOICE SUBMISSION LOGIC ---
-    $suggestion_success = false;
-    $generated_ticket_id = '';
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_suggestion'])) {
-        $name = !empty(trim($_POST['name'])) ? trim($_POST['name']) : 'Anonymous';
-        $contact = !empty(trim($_POST['contact'])) ? trim($_POST['contact']) : 'None provided';
-        $category = $_POST['category'];
-        $barangay = $_POST['barangay'] ?? 'Unspecified';
-        $message = trim($_POST['message']);
+        // Fetch Dynamic Featured Highlights
+        $highlight1 = $pdo->query("SELECT * FROM featured_highlight WHERE id = 1")->fetch(PDO::FETCH_ASSOC);
+        $highlight2 = $pdo->query("SELECT * FROM featured_highlight WHERE id = 2")->fetch(PDO::FETCH_ASSOC);
         
-        // Generate a unique tracking ID
-        $ticket_id = 'TALA-' . date('ym') . '-' . strtoupper(substr(md5(uniqid()), 0, 5));
+        $stmt = $pdo->query("SELECT * FROM bento_items ORDER BY id DESC");
+        $bento_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // Auto-add columns if they don't exist yet
-        try {
-            $cols = $pdo->query("SHOW COLUMNS FROM suggestions")->fetchAll(PDO::FETCH_COLUMN);
-            if (!in_array('ticket_id', $cols)) {
-                $pdo->exec("ALTER TABLE suggestions ADD COLUMN ticket_id VARCHAR(50) NULL AFTER id");
-                $pdo->exec("ALTER TABLE suggestions ADD COLUMN barangay VARCHAR(100) NULL AFTER contact_info");
-            }
-        } catch (Exception $e) {}
-
-        $stmt = $pdo->prepare("INSERT INTO suggestions (ticket_id, sender_name, contact_info, barangay, category, message) VALUES (?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$ticket_id, $name, $contact, $barangay, $category, $message]);
+        // Fetch Active Pop-up Notification
+        $popup = $pdo->query("SELECT * FROM popup_notification WHERE is_active = 1 ORDER BY updated_at DESC LIMIT 1")->fetch(PDO::FETCH_ASSOC);
+       
+        // 2. Fetch Updates & Events
+        $announcements = $pdo->query("SELECT * FROM announcements ORDER BY created_at DESC LIMIT 3")->fetchAll(PDO::FETCH_ASSOC);
+        $events_preview = $pdo->query("SELECT *, (SELECT COUNT(*) FROM event_registrations er WHERE er.event_id = e.id) as current_count FROM events e WHERE event_date >= CURDATE() ORDER BY event_date ASC LIMIT 3")->fetchAll(PDO::FETCH_ASSOC);
         
-        $suggestion_success = true;
-        $generated_ticket_id = $ticket_id;
+        // 1. Fetch Stats: Real-time youth registry telemetry
+        $total_youth = (int)$pdo->query("SELECT COUNT(*) FROM youth_registry")->fetchColumn();
+        if ($total_youth === 0) {
+            $total_youth = (int)$pdo->query("SELECT COUNT(*) FROM youth_profiles")->fetchColumn();
+        }
+        $sk_barangays_count = $pdo->query("SELECT COUNT(DISTINCT barangay_assigned) FROM admins WHERE role = 'sub-admin' AND status = 'approved'")->fetchColumn();
+
+        // 3. Fetch Leaders (LYDO & SK Chairpersons Only)
+        $lydo_officials = $pdo->query("SELECT full_name, profile_picture FROM admins WHERE role = 'admin' AND status = 'approved' ORDER BY full_name ASC")->fetchAll(PDO::FETCH_ASSOC);
+        
+        $sk_raw = $pdo->query("SELECT full_name, barangay_assigned, sk_position, profile_picture FROM admins WHERE role = 'sub-admin' AND status = 'approved' AND sk_position = 'SK Chairperson' ORDER BY barangay_assigned ASC")->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($sk_raw as $sk) {
+            $sk_officials[$sk['barangay_assigned']][] = $sk;
+        }
+
+        // Fetch Active Scholarships
+        $scholarships = $pdo->query("SELECT * FROM scholarships WHERE deadline >= CURDATE() ORDER BY deadline ASC LIMIT 3")->fetchAll(PDO::FETCH_ASSOC);
+
+        // --- COMMUNITY VOICE SUBMISSION LOGIC ---
+        $suggestion_success = false;
+        $generated_ticket_id = '';
+        
+        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_suggestion'])) {
+            $name = !empty(trim($_POST['name'])) ? trim($_POST['name']) : 'Anonymous';
+            $contact = !empty(trim($_POST['contact'])) ? trim($_POST['contact']) : 'None provided';
+            $category = $_POST['category'];
+            $barangay = $_POST['barangay'] ?? 'Unspecified';
+            $message = trim($_POST['message']);
+            
+            // Generate a unique tracking ID
+            $ticket_id = 'TALA-' . date('ym') . '-' . strtoupper(substr(md5(uniqid()), 0, 5));
+
+            // Auto-add columns if they don't exist yet
+            try {
+                $cols = $pdo->query("SHOW COLUMNS FROM suggestions")->fetchAll(PDO::FETCH_COLUMN);
+                if (!in_array('ticket_id', $cols)) {
+                    $pdo->exec("ALTER TABLE suggestions ADD COLUMN ticket_id VARCHAR(50) NULL AFTER id");
+                    $pdo->exec("ALTER TABLE suggestions ADD COLUMN barangay VARCHAR(100) NULL AFTER contact_info");
+                }
+            } catch (Exception $e) {}
+
+            $stmt = $pdo->prepare("INSERT INTO suggestions (ticket_id, sender_name, contact_info, barangay, category, message) VALUES (?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$ticket_id, $name, $contact, $barangay, $category, $message]);
+            
+            $suggestion_success = true;
+            $generated_ticket_id = $ticket_id;
+        }
+    } else {
+        $db_connected = false;
     }
 
 } catch (Exception $e) { $db_connected = false; }
 
 // --- CALENDAR DATA FETCH ---
 try {
-    $cal_query = "SELECT id, title, event_date, location, status, image_path FROM events ORDER BY event_date ASC";
-    $cal_stmt = $pdo->query($cal_query);
-    $tala_calendar_events = $cal_stmt->fetchAll(PDO::FETCH_ASSOC);
-    $tala_events_json = json_encode($tala_calendar_events);
+    if (!empty($pdo)) {
+        $cal_query = "SELECT id, title, event_date, location, status, image_path FROM events ORDER BY event_date ASC";
+        $cal_stmt = $pdo->query($cal_query);
+        $tala_calendar_events = $cal_stmt ? $cal_stmt->fetchAll(PDO::FETCH_ASSOC) : [];
+        $tala_events_json = json_encode($tala_calendar_events);
+    } else {
+        $tala_events_json = '[]';
+    }
 } catch (Exception $e) {
     $tala_events_json = '[]';
 }

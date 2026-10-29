@@ -1,9 +1,14 @@
 <?php
+if (file_exists(__DIR__ . '/config_secrets.php')) {
+    require_once __DIR__ . '/config_secrets.php';
+}
+
 $is_local = (!isset($_SERVER['SERVER_NAME']) || in_array($_SERVER['SERVER_NAME'], ['localhost', '127.0.0.1']) || php_sapi_name() === 'cli');
-$host = $is_local ? '127.0.0.1' : 'sql104.infinityfree.com';
-$dbname = 'if0_42252073_tala';
-$username = $is_local ? 'root' : 'if0_42252073';
-$password = $is_local ? '' : 'talatums3325';
+$host = getenv('DB_HOST') ?: ($DB_HOST ?? ($is_local ? '127.0.0.1' : 'sql104.infinityfree.com'));
+$dbname = getenv('DB_NAME') ?: ($DB_NAME ?? 'if0_42252073_tala');
+$username = getenv('DB_USER') ?: ($DB_USER ?? ($is_local ? 'root' : 'if0_42252073'));
+$password = getenv('DB_PASS') ?: ($DB_PASS ?? ($is_local ? '' : 'talatums3325'));
+$port = getenv('DB_PORT') ?: ($DB_PORT ?? '3306');
 
 // Inside db_connect.php or a central config file
 if (isset($_SESSION['user_id'])) {
@@ -27,12 +32,33 @@ if (isset($_SESSION['user_id'])) {
 }
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
-    // Set PDO error mode to exception
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    // echo "Connected successfully"; 
+    $pdo = new PDO("mysql:host=$host;port=$port;dbname=$dbname;charset=utf8mb4", $username, $password, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_TIMEOUT => 4
+    ]);
 } catch(PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+    $pdo = null;
+    $db_connection_error = $e->getMessage();
+    
+    $script = basename($_SERVER['PHP_SELF'] ?? '');
+    if ($script !== 'index.php' && !isset($allow_offline_mode)) {
+        if (isset($_ENV['VERCEL']) || isset($_SERVER['VERCEL'])) {
+            die("<div style='font-family:system-ui,-apple-system,sans-serif;max-width:640px;margin:50px auto;padding:32px;border-radius:24px;background:#ffffff;box-shadow:0 20px 40px -15px rgba(0,0,0,0.1);border:1px solid #e2e8f0;text-align:left;'>
+                <div style='display:inline-block;padding:6px 12px;border-radius:999px;background:#dcfce7;color:#16a34a;font-weight:700;font-size:12px;margin-bottom:14px;'>Vercel PHP Connected</div>
+                <h2 style='margin:0 0 10px;color:#0f172a;font-size:20px;font-weight:800;'>Database Configuration Needed</h2>
+                <p style='color:#64748b;font-size:14px;line-height:1.6;margin:0 0 16px;'>To connect your MySQL database on Vercel, set your database credentials in your <strong>Vercel Dashboard &rarr; Project Settings &rarr; Environment Variables</strong>:</p>
+                <div style='background:#f8fafc;padding:14px;border-radius:12px;font-family:monospace;font-size:12px;color:#334155;margin-bottom:16px;line-height:1.8;'>
+                    DB_HOST = your-database-host<br>
+                    DB_NAME = your-database-name<br>
+                    DB_USER = your-database-user<br>
+                    DB_PASS = your-database-password<br>
+                    DB_PORT = 3306
+                </div>
+                <p style='color:#94a3b8;font-size:12px;margin:0;'>InfinityFree's free database does not accept external connections from Vercel. Connect a cloud database from TiDB Cloud, Supabase, PlanetScale, or Aiven.</p>
+            </div>");
+        }
+        die("Connection failed: " . $e->getMessage());
+    }
 }
 
 // --- SECURITY HELPER FUNCTIONS ---
