@@ -1,7 +1,11 @@
 <?php
 // Vercel Serverless PHP Dispatcher / Front Controller for TALA OS
 
-// Enable detailed error output to diagnose issues
+// Ensure proper content type so browsers NEVER prompt to download
+header('Content-Type: text/html; charset=UTF-8');
+header('X-Content-Type-Options: nosniff');
+
+// Enable error reporting and display to catch any issues
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
@@ -28,25 +32,28 @@ if (!empty($path) && $path !== 'index.php') {
     $path = str_replace(['..', "\0"], '', $path);
     
     if (file_exists($baseDir . '/' . $path) && is_file($baseDir . '/' . $path)) {
-        // If it's a non-PHP file that somehow reached here, serve it directly
+        // If it's a non-PHP file that reached here, stream it directly with appropriate Content-Type
         if (!str_ends_with($path, '.php')) {
             $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
             $mimes = [
-                'css' => 'text/css',
-                'js' => 'application/javascript',
-                'png' => 'image/png',
-                'jpg' => 'image/jpeg',
-                'jpeg' => 'image/jpeg',
-                'gif' => 'image/gif',
-                'ico' => 'image/x-icon',
-                'svg' => 'image/svg+xml',
-                'mp4' => 'video/mp4',
-                'mp3' => 'audio/mpeg',
-                'webp' => 'image/webp',
-                'pdf' => 'application/pdf',
+                'css'   => 'text/css',
+                'js'    => 'application/javascript',
+                'png'   => 'image/png',
+                'jpg'   => 'image/jpeg',
+                'jpeg'  => 'image/jpeg',
+                'gif'   => 'image/gif',
+                'ico'   => 'image/x-icon',
+                'svg'   => 'image/svg+xml',
+                'mp4'   => 'video/mp4',
+                'mp3'   => 'audio/mpeg',
+                'webp'  => 'image/webp',
+                'pdf'   => 'application/pdf',
+                'woff'  => 'font/woff',
+                'woff2' => 'font/woff2',
+                'ttf'   => 'font/ttf',
             ];
             if (isset($mimes[$ext])) {
-                header('Content-Type: ' . $mimes[$ext]);
+                header('Content-Type: ' . $mimes[$ext], true);
             }
             readfile($baseDir . '/' . $path);
             exit;
