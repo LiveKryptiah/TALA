@@ -25,36 +25,88 @@ $pdo = null;
 $db_connection_error = null;
 
 // 1. Check for PostgreSQL / Supabase configuration
+$pg_url = getenv('POSTGRES_URL_NON_POOLING') 
+       ?: getenv('POSTGRES_URL') 
+       ?: getenv('POSTGRES_PRISMA_URL') 
+       ?: getenv('DATABASE_URL') 
+       ?: ($POSTGRES_URL ?? null);
+
 $pg_host = getenv('POSTGRES_HOST') ?: ($POSTGRES_HOST ?? null);
-$pg_url  = getenv('POSTGRES_URL') ?: ($POSTGRES_URL ?? null);
+$pg_port = getenv('POSTGRES_PORT') ?: ($POSTGRES_PORT ?? null);
+$pg_db   = getenv('POSTGRES_DATABASE') ?: ($POSTGRES_DATABASE ?? null);
+$pg_user = getenv('POSTGRES_USER') ?: ($POSTGRES_USER ?? null);
+$pg_pass = getenv('POSTGRES_PASSWORD') ?: ($POSTGRES_PASSWORD ?? null);
+
+// If URL is provided, parse it to extract credentials
+if ($pg_url) {
+    $dbparts = parse_url($pg_url);
+    if (!empty($dbparts['host'])) $pg_host = $dbparts['host'];
+    if (!empty($dbparts['port'])) $pg_port = $dbparts['port'];
+    if (!empty($dbparts['user'])) $pg_user = urldecode($dbparts['user']);
+    if (!empty($dbparts['pass'])) $pg_pass = urldecode($dbparts['pass']);
+    if (!empty($dbparts['path'])) $pg_db   = ltrim($dbparts['path'], '/');
+}
 
 if ($pg_host || $pg_url) {
-    try {
-        if ($pg_url && !$pg_host) {
-            $dbparts = parse_url($pg_url);
-            $pg_host = $dbparts['host'] ?? 'aws-0-us-east-1.pooler.supabase.com';
-            $pg_port = $dbparts['port'] ?? 5432;
-            $pg_user = $dbparts['user'] ?? 'postgres';
-            $pg_pass = $dbparts['pass'] ?? '';
-            $pg_db   = ltrim($dbparts['path'] ?? 'postgres', '/');
-        } else {
-            $pg_port = getenv('POSTGRES_PORT') ?: ($POSTGRES_PORT ?? '5432');
-            $pg_db   = getenv('POSTGRES_DATABASE') ?: ($POSTGRES_DATABASE ?? 'postgres');
-            $pg_user = getenv('POSTGRES_USER') ?: ($POSTGRES_USER ?? 'postgres');
-            $pg_pass = getenv('POSTGRES_PASSWORD') ?: ($POSTGRES_PASSWORD ?? '');
-        }
+    // Detect project reference from SUPABASE_URL or host
+    $project_ref = null;
+    $sb_url = getenv('SUPABASE_URL') ?: ($SUPABASE_URL ?? null);
+    if ($sb_url && preg_match('/https?:\/\/([a-z0-9\-]+)\.supabase\.co/i', $sb_url, $sm)) {
+        $project_ref = $sm[1];
+    }
+    if (!$project_ref && $pg_host && preg_match('/db\.([a-z0-9\-]+)\.supabase\.co/i', $pg_host, $pm)) {
+        $project_ref = $pm[1];
+    }
 
-        $dsn = "pgsql:host=$pg_host;port=$pg_port;dbname=$pg_db;sslmode=require";
-        $pdo = new PDO($dsn, $pg_user, $pg_pass, [
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_TIMEOUT => 6
-        ]);
-        
-        // Ensure compatibility aliases
-        @$pdo->exec("CREATE OR REPLACE FUNCTION curdate() RETURNS date AS $$ SELECT CURRENT_DATE; $$ LANGUAGE SQL;");
-        @$pdo->exec("CREATE OR REPLACE FUNCTION curtime() RETURNS time AS $$ SELECT CURRENT_TIME; $$ LANGUAGE SQL;");
-    } catch (\Throwable $e) {
-        $db_connection_error = "Supabase Connection Notice: " . $e->getMessage();
+    // CRITICAL: Supabase direct hosts (db.<ref>.supabase.co) are IPv6-only.
+    // AWS Lambda / Vercel Serverless runtimes cannot route IPv6, throwing:
+    // "SQLSTATE[08006] [7] connection to server at ... Cannot assign requested address"
+    // We automatically route through Supabase's IPv4 connection pooler.
+    if ($pg_host && preg_match('/db\.([a-z0-9\-]+)\.supabase\.co/i', $pg_host, $hm)) {
+        $project_ref = $hm[1];
+        $pg_host = 'aws-0-us-east-1.pooler.supabase.com';
+    }
+
+    // Pooler requires user to be "postgres.<project_ref>"
+    if ($pg_host && str_contains($pg_host, 'pooler.supabase.com')) {
+        if ($project_ref && ($pg_user === 'postgres' || !str_contains($pg_user ?? '', '.'))) {
+            $pg_user = 'postgres.' . $project_ref;
+        }
+    }
+
+    $pg_port = $pg_port ?: '5432';
+    $pg_db   = $pg_db ?: 'postgres';
+    $pg_user = $pg_user ?: 'postgres';
+
+    $targets_to_try = [
+        ['host' => $pg_host, 'port' => $pg_port, 'user' => $pg_user]
+    ];
+
+    // If initial host is not the pooler, add pooler as fallback
+    if (!str_contains($pg_host, 'pooler.supabase.com') && $project_ref) {
+        $targets_to_try[] = [
+            'host' => 'aws-0-us-east-1.pooler.supabase.com',
+            'port' => 5432,
+            'user' => 'postgres.' . $project_ref
+        ];
+    }
+
+    foreach ($targets_to_try as $target_conn) {
+        try {
+            $dsn = "pgsql:host={$target_conn['host']};port={$target_conn['port']};dbname=$pg_db;sslmode=require";
+            $pdo = new PDO($dsn, $target_conn['user'], $pg_pass, [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_TIMEOUT => 6
+            ]);
+            
+            // Ensure compatibility aliases for MySQL queries
+            @$pdo->exec("CREATE OR REPLACE FUNCTION curdate() RETURNS date AS $$ SELECT CURRENT_DATE; $$ LANGUAGE SQL;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION curtime() RETURNS time AS $$ SELECT CURRENT_TIME; $$ LANGUAGE SQL;");
+            $db_connection_error = null;
+            break;
+        } catch (\Throwable $e) {
+            $db_connection_error = "Supabase Connection Notice: " . $e->getMessage();
+        }
     }
 }
 
