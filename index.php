@@ -3,6 +3,14 @@ $announcements = [];
 $events_preview = [];
 $lydo_officials = [];
 $sk_officials = [];
+$scholarships = [];
+$highlight1 = null;
+$highlight2 = null;
+$popup = null;
+$bento_items = [];
+$latest_highlight = null;
+$tala_calendar_events = [];
+$tala_events_json = '[]';
 $total_youth = 0;
 $sk_barangays_count = 0;
 $db_connected = false;
@@ -62,7 +70,7 @@ try {
         $suggestion_success = false;
         $generated_ticket_id = '';
         
-        if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_suggestion'])) {
+        if (($_SERVER["REQUEST_METHOD"] ?? '') === "POST" && isset($_POST['submit_suggestion'])) {
             $name = !empty(trim($_POST['name'])) ? trim($_POST['name']) : 'Anonymous';
             $contact = !empty(trim($_POST['contact'])) ? trim($_POST['contact']) : 'None provided';
             $category = $_POST['category'];

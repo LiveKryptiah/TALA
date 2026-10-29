@@ -36,7 +36,7 @@ try {
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_TIMEOUT => 4
     ]);
-} catch(PDOException $e) {
+} catch(\Throwable $e) {
     $pdo = null;
     $db_connection_error = $e->getMessage();
     
