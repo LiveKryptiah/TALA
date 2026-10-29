@@ -100,8 +100,24 @@ if ($pg_host || $pg_url) {
             ]);
             
             // Ensure compatibility aliases for MySQL queries
-            @$pdo->exec("CREATE OR REPLACE FUNCTION curdate() RETURNS date AS $$ SELECT CURRENT_DATE; $$ LANGUAGE SQL;");
-            @$pdo->exec("CREATE OR REPLACE FUNCTION curtime() RETURNS time AS $$ SELECT CURRENT_TIME; $$ LANGUAGE SQL;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION curdate() RETURNS date AS $$ SELECT CURRENT_DATE; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION curtime() RETURNS time AS $$ SELECT CURRENT_TIME; $$ LANGUAGE SQL IMMUTABLE;");
+            
+            // Compatibility for MONTH(), YEAR(), DAY() on dates, timestamps, and varchar/text
+            @$pdo->exec("CREATE OR REPLACE FUNCTION month(d date) RETURNS integer AS $$ SELECT EXTRACT(MONTH FROM d)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION month(ts timestamp without time zone) RETURNS integer AS $$ SELECT EXTRACT(MONTH FROM ts)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION month(tstz timestamp with time zone) RETURNS integer AS $$ SELECT EXTRACT(MONTH FROM tstz)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION month(s text) RETURNS integer AS $$ BEGIN IF s IS NULL OR s = '' THEN RETURN NULL; END IF; RETURN EXTRACT(MONTH FROM s::date)::integer; EXCEPTION WHEN OTHERS THEN RETURN NULL; END; $$ LANGUAGE plpgsql IMMUTABLE;");
+
+            @$pdo->exec("CREATE OR REPLACE FUNCTION year(d date) RETURNS integer AS $$ SELECT EXTRACT(YEAR FROM d)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION year(ts timestamp without time zone) RETURNS integer AS $$ SELECT EXTRACT(YEAR FROM ts)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION year(tstz timestamp with time zone) RETURNS integer AS $$ SELECT EXTRACT(YEAR FROM tstz)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION year(s text) RETURNS integer AS $$ BEGIN IF s IS NULL OR s = '' THEN RETURN NULL; END IF; RETURN EXTRACT(YEAR FROM s::date)::integer; EXCEPTION WHEN OTHERS THEN RETURN NULL; END; $$ LANGUAGE plpgsql IMMUTABLE;");
+
+            @$pdo->exec("CREATE OR REPLACE FUNCTION day(d date) RETURNS integer AS $$ SELECT EXTRACT(DAY FROM d)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION day(ts timestamp without time zone) RETURNS integer AS $$ SELECT EXTRACT(DAY FROM ts)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION day(tstz timestamp with time zone) RETURNS integer AS $$ SELECT EXTRACT(DAY FROM tstz)::integer; $$ LANGUAGE SQL IMMUTABLE;");
+            @$pdo->exec("CREATE OR REPLACE FUNCTION day(s text) RETURNS integer AS $$ BEGIN IF s IS NULL OR s = '' THEN RETURN NULL; END IF; RETURN EXTRACT(DAY FROM s::date)::integer; EXCEPTION WHEN OTHERS THEN RETURN NULL; END; $$ LANGUAGE plpgsql IMMUTABLE;");
             $db_connection_error = null;
             break;
         } catch (\Throwable $e) {

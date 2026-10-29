@@ -55,7 +55,7 @@ try {
         $new_registrations = $total_registered;
         $new_reg_label = "In Selected Period";
     } else {
-        $new_registrations = getCount($pdo, "SELECT COUNT(*) FROM youth_registry WHERE MONTH(created_at) = MONTH(CURRENT_DATE()) AND YEAR(created_at) = YEAR(CURRENT_DATE())");
+        $new_registrations = getCount($pdo, "SELECT COUNT(*) FROM youth_registry WHERE MONTH(created_at) = MONTH(CURRENT_DATE) AND YEAR(created_at) = YEAR(CURRENT_DATE)");
         $new_reg_label = "Registered this month";
     }
 

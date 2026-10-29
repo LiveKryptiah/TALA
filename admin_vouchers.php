@@ -142,9 +142,9 @@ if ($filter_barangay !== 'All' && !empty($filter_barangay)) {
 }
 
 if ($period_filter === 'month') {
-    $query .= "AND MONTH(v.withdrawal_date) = MONTH(CURRENT_DATE()) AND YEAR(v.withdrawal_date) = YEAR(CURRENT_DATE()) ";
+    $query .= "AND MONTH(v.withdrawal_date) = MONTH(CURRENT_DATE) AND YEAR(v.withdrawal_date) = YEAR(CURRENT_DATE) ";
 } elseif ($period_filter === 'year') {
-    $query .= "AND YEAR(v.withdrawal_date) = YEAR(CURRENT_DATE()) ";
+    $query .= "AND YEAR(v.withdrawal_date) = YEAR(CURRENT_DATE) ";
 }
 
 if (!empty($search)) {
@@ -182,8 +182,8 @@ foreach ($vouchers as $v) {
 // Metrics & Counts
 $total_withdrawn_all = (float)$pdo->query("SELECT COALESCE(SUM(amount), 0) FROM budget_vouchers")->fetchColumn();
 $total_vouchers_count = (int)$pdo->query("SELECT COUNT(*) FROM budget_vouchers")->fetchColumn();
-$this_month_count = (int)$pdo->query("SELECT COUNT(*) FROM budget_vouchers WHERE MONTH(withdrawal_date) = MONTH(CURRENT_DATE()) AND YEAR(withdrawal_date) = YEAR(CURRENT_DATE())")->fetchColumn();
-$this_year_count = (int)$pdo->query("SELECT COUNT(*) FROM budget_vouchers WHERE YEAR(withdrawal_date) = YEAR(CURRENT_DATE())")->fetchColumn();
+$this_month_count = (int)$pdo->query("SELECT COUNT(*) FROM budget_vouchers WHERE MONTH(withdrawal_date) = MONTH(CURRENT_DATE) AND YEAR(withdrawal_date) = YEAR(CURRENT_DATE)")->fetchColumn();
+$this_year_count = (int)$pdo->query("SELECT COUNT(*) FROM budget_vouchers WHERE YEAR(withdrawal_date) = YEAR(CURRENT_DATE)")->fetchColumn();
 $unique_barangays_count = (int)$pdo->query("SELECT COUNT(DISTINCT barangay) FROM budget_vouchers")->fetchColumn();
 $current_filtered_count = count($vouchers);
 
