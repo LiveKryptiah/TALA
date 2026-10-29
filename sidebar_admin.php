@@ -589,12 +589,3 @@ try {
         }
     }
 </script>
-
-<!-- Inject Chat & Activity Tracker Widget -->
-<?php 
-if (file_exists(__DIR__ . '/chat_widget.php')) {
-    include __DIR__ . '/chat_widget.php';
-} elseif (file_exists(__DIR__ . '/kryptiah_widget.php')) {
-    include __DIR__ . '/kryptiah_widget.php';
-}
-?>
