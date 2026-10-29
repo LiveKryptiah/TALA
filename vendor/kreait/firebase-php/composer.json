@@ -1,0 +1,47 @@
+{
+  "name": "kreait/firebase-php",
+  "description": "Firebase REST API client",
+  "keywords": ["firebase", "rest", "api", "http"],
+  "homepage": "https://github.com/kreait/firebase-php",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jérôme Gamez",
+      "homepage": "https://github.com/jeromegamez"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/kreait/firebase-php/issues",
+    "source": "https://github.com/kreait/firebase-php"
+  },
+  "require": {
+    "php": ">=5.4",
+    "ext-mbstring": "*",
+    "psr/log": "~1.0",
+    "egeloen/http-adapter": "~0.7.0",
+    "mtdowling/jmespath.php": "~2.1"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.5",
+    "monolog/monolog": "~1.12",
+    "symfony/event-dispatcher": "~2.6",
+    "vlucas/phpdotenv": "~1.1",
+    "fabpot/php-cs-fixer": "~1.6",
+    "kreait/tape-recorder-subscriber": "~2.0",
+    "firebase/token-generator": "~2.0"
+  },
+  "suggest": {
+    "firebase/token-generator": "If you want to authenticate requests to a Firebase application"
+  },
+  "autoload": {
+    "psr-4": { "Kreait\\Firebase\\": "src/" }
+  },
+  "autoload-dev": {
+    "psr-4": { "Kreait\\Firebase\\": "tests/" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
+    }
+  }
+}

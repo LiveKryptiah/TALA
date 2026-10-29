@@ -1,0 +1,17 @@
+# Large files exceeding GitHub's 100MB limit
+TALA
+
+# Secrets and Sensitive Credentials
+firebase-credentials.json
+config_secrets.php
+.env
+
+# Operating System Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary files
+*.tmp
+*.log
