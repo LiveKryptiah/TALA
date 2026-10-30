@@ -101,22 +101,25 @@ if ($total_budget <= 0) $total_budget = 46000000;
             background-attachment: fixed !important;
         }
 
-        /* Modern Glass Card: Lessen Opacity, Frosted Blur, Modern Backdrop */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.65) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
+        /* Modern Glass Card: Lessen Opacity, Subtle Gradient Wash, Frosted Blur */
+        .glass-card,
+        .below-section-card {
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.68) 0%, rgba(240, 253, 244, 0.40) 60%, rgba(254, 252, 232, 0.30) 100%) !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
             border: none !important;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05) !important;
+            border-radius: 1.25rem !important;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05), inset 0 1px 0 0 rgba(255, 255, 255, 0.5) !important;
             -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05) !important;
             transition: all 0.25s ease;
         }
-        .dark .glass-card {
-            background: rgba(24, 24, 27, 0.65) !important;
-            backdrop-filter: blur(20px) !important;
-            -webkit-backdrop-filter: blur(20px) !important;
+        .dark .glass-card,
+        .dark .below-section-card {
+            background: linear-gradient(145deg, rgba(24, 24, 27, 0.68) 0%, rgba(20, 83, 45, 0.16) 60%, rgba(113, 63, 18, 0.12) 100%) !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
             border: none !important;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35) !important;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 0 0 rgba(255, 255, 255, 0.05) !important;
             -webkit-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35) !important;
         }
 
@@ -171,40 +174,74 @@ if ($total_budget <= 0) $total_budget = 46000000;
 
         /* Modern Section Cards: Top UI Asset & Dot Grid Pattern */
         .card-asset-grid {
-            background-color: #fafbfc;
+            background-color: rgba(250, 251, 252, 0.65);
             background-image: radial-gradient(rgba(21, 128, 61, 0.18) 1.2px, transparent 1.2px);
             background-size: 14px 14px;
+            border: none !important;
         }
         .dark .card-asset-grid {
-            background-color: rgba(24, 24, 27, 0.7);
+            background-color: rgba(24, 24, 27, 0.50);
             background-image: radial-gradient(rgba(34, 197, 94, 0.2) 1.2px, transparent 1.2px);
             background-size: 14px 14px;
+            border: none !important;
         }
 
+        /* Modern Section Cards: Subtle Visible Gradient Wash, Frosted Blur Effect */
         .saas-card {
-            background: #ffffff;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.72) 0%, rgba(240, 253, 244, 0.45) 50%, rgba(254, 252, 232, 0.35) 100%) !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
             border: none !important;
             border-radius: 1.25rem;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04), inset 0 1px 0 0 rgba(255, 255, 255, 0.6) !important;
         }
         .dark .saas-card {
-            background: rgba(24, 24, 27, 0.85);
+            background: linear-gradient(145deg, rgba(24, 24, 27, 0.72) 0%, rgba(20, 83, 45, 0.18) 50%, rgba(113, 63, 18, 0.14) 100%) !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
             border: none !important;
-            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.30), inset 0 1px 0 0 rgba(255, 255, 255, 0.05) !important;
         }
         .saas-card:hover {
             transform: translateY(-3px);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.85) 0%, rgba(240, 253, 244, 0.60) 50%, rgba(254, 252, 232, 0.50) 100%) !important;
             border: none !important;
-            box-shadow: 0 16px 32px -8px rgba(21, 128, 61, 0.12);
+            box-shadow: 0 16px 36px -8px rgba(21, 128, 61, 0.16) !important;
         }
         .dark .saas-card:hover {
+            background: linear-gradient(145deg, rgba(24, 24, 27, 0.82) 0%, rgba(20, 83, 45, 0.28) 50%, rgba(113, 63, 18, 0.20) 100%) !important;
             border: none !important;
-            box-shadow: 0 16px 32px -8px rgba(34, 197, 94, 0.16);
+            box-shadow: 0 16px 36px -8px rgba(34, 197, 94, 0.22) !important;
         }
 
-        .card-asset-grid {
+        /* Modern Frosted Blur Effect & Lessened Opacity for Below of Section Cards (Bottom Capsules) */
+        .saas-card .saas-card-bottom,
+        .saas-card > div:last-child:not(:first-child) {
+            background: linear-gradient(135deg, rgba(241, 245, 249, 0.55) 0%, rgba(236, 253, 245, 0.35) 100%) !important;
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+            border-radius: 0.875rem !important;
+            padding: 0.45rem 0.75rem !important;
             border: none !important;
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.4) !important;
+            transition: background 0.25s ease;
+        }
+        .dark .saas-card .saas-card-bottom,
+        .dark .saas-card > div:last-child:not(:first-child) {
+            background: linear-gradient(135deg, rgba(39, 39, 42, 0.45) 0%, rgba(20, 83, 45, 0.22) 100%) !important;
+            backdrop-filter: blur(14px) !important;
+            -webkit-backdrop-filter: blur(14px) !important;
+            border: none !important;
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.06) !important;
+        }
+        .saas-card:hover .saas-card-bottom,
+        .saas-card:hover > div:last-child:not(:first-child) {
+            background: linear-gradient(135deg, rgba(241, 245, 249, 0.75) 0%, rgba(236, 253, 245, 0.55) 100%) !important;
+        }
+        .dark .saas-card:hover .saas-card-bottom,
+        .dark .saas-card:hover > div:last-child:not(:first-child) {
+            background: linear-gradient(135deg, rgba(39, 39, 42, 0.65) 0%, rgba(20, 83, 45, 0.35) 100%) !important;
         }
 
         /* Complete Zero Stroke Lines on All Presentation Section Cards */
@@ -375,13 +412,94 @@ if ($total_budget <= 0) $total_budget = 46000000;
         .live-pulse {
             animation: pulseGlow 2s infinite ease-in-out;
         }
+
+        /* Modern Animated Top Gradient Waves (Ocean Aurora Wave Motion) */
+        @keyframes waveSlideForward {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
+        }
+
+        @keyframes waveSlideReverse {
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0, 0, 0); }
+        }
+
+        @keyframes waveBobbing {
+            0%, 100% { transform: translate3d(0, 0, 0) scaleY(1); }
+            50% { transform: translate3d(-25%, -8px, 0) scaleY(1.12); }
+        }
+
+        .animate-wave-1 {
+            animation: waveSlideForward 16s linear infinite;
+            will-change: transform;
+        }
+
+        .animate-wave-2 {
+            animation: waveSlideReverse 20s linear infinite;
+            will-change: transform;
+        }
+
+        .animate-wave-3 {
+            animation: waveBobbing 10s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .animate-wave-1,
+            .animate-wave-2,
+            .animate-wave-3 {
+                animation: none !important;
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 antialiased min-h-screen selection:bg-[#15803d] selection:text-white relative">
 
-    <!-- Top Ambient Modern Gradient (Lessened Green & Yellow Aura) -->
-    <div class="fixed top-0 left-0 right-0 h-96 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[950px] h-[360px] bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-amber-400/20 dark:from-emerald-600/25 dark:via-green-600/25 dark:to-yellow-500/25 blur-3xl rounded-full"></div>
+    <!-- Top Ambient Modern Animated Gradient Waves (Centered, Soft Lessened Fluid Green & Yellow Ocean Wave) -->
+    <div class="fixed top-0 left-0 right-0 h-72 sm:h-96 pointer-events-none z-0 overflow-hidden flex items-start justify-center" aria-hidden="true" style="mask-image: radial-gradient(ellipse 60% 80% at 50% 15%, black 30%, transparent 80%); -webkit-mask-image: radial-gradient(ellipse 60% 80% at 50% 15%, black 30%, transparent 80%);">
+        <!-- Diffuse Backing Aura -->
+        <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-[850px] h-[240px] bg-gradient-to-r from-emerald-500/10 via-green-500/8 to-amber-400/10 dark:from-emerald-500/14 dark:via-green-600/12 dark:to-yellow-500/12 blur-3xl rounded-full"></div>
+
+        <!-- Wave Canvas with Organic Soft Blur -->
+        <div class="relative w-full h-full filter blur-[16px] opacity-70 dark:opacity-65">
+            <!-- Wave 1: Flowing Emerald Green Wave (Soft Lessened Tint) -->
+            <svg class="absolute top-0 left-0 w-[200%] h-full animate-wave-1" viewBox="0 0 2880 240" preserveAspectRatio="none" fill="none">
+                <defs>
+                    <linearGradient id="waveGradGreen" x1="0%" y1="0%" x2="100%" y2="80%">
+                        <stop offset="0%" stop-color="#15803d" stop-opacity="0.18" />
+                        <stop offset="30%" stop-color="#22c55e" stop-opacity="0.14" />
+                        <stop offset="65%" stop-color="#4ade80" stop-opacity="0.08" />
+                        <stop offset="100%" stop-color="#16a34a" stop-opacity="0.16" />
+                    </linearGradient>
+                </defs>
+                <path d="M 0 0 L 0 95 C 180 145, 360 45, 540 85 C 720 125, 900 170, 1080 115 C 1260 60, 1350 145, 1440 95 C 1620 145, 1800 45, 1980 85 C 2160 125, 2340 170, 2520 115 C 2700 60, 2790 145, 2880 95 L 2880 0 Z" fill="url(#waveGradGreen)" />
+            </svg>
+
+            <!-- Wave 2: Flowing Warm Golden Yellow / Amber Wave (Soft Lessened Tint) -->
+            <svg class="absolute top-0 left-0 w-[200%] h-full animate-wave-2" viewBox="0 0 2880 240" preserveAspectRatio="none" fill="none">
+                <defs>
+                    <linearGradient id="waveGradYellow" x1="100%" y1="0%" x2="0%" y2="90%">
+                        <stop offset="0%" stop-color="#facc15" stop-opacity="0.16" />
+                        <stop offset="40%" stop-color="#eab308" stop-opacity="0.12" />
+                        <stop offset="75%" stop-color="#ca8a04" stop-opacity="0.07" />
+                        <stop offset="100%" stop-color="#fde047" stop-opacity="0.14" />
+                    </linearGradient>
+                </defs>
+                <path d="M 0 0 L 0 70 C 220 20, 440 145, 720 85 C 1000 25, 1220 135, 1440 70 C 1660 20, 1880 145, 2160 85 C 2440 25, 2660 135, 2880 70 L 2880 0 Z" fill="url(#waveGradYellow)" />
+            </svg>
+
+            <!-- Wave 3: Undulating Mixed Crest Ripple (Soft Lessened Tint) -->
+            <svg class="absolute top-0 left-0 w-[200%] h-full animate-wave-3" viewBox="0 0 2880 240" preserveAspectRatio="none" fill="none">
+                <defs>
+                    <linearGradient id="waveGradMix" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#22c55e" stop-opacity="0.11" />
+                        <stop offset="50%" stop-color="#eab308" stop-opacity="0.09" />
+                        <stop offset="100%" stop-color="#15803d" stop-opacity="0.11" />
+                    </linearGradient>
+                </defs>
+                <path d="M 0 0 L 0 50 C 360 110, 720 15, 1080 75 C 1260 110, 1380 30, 1440 50 C 1800 110, 2160 15, 2520 75 C 2700 110, 2820 30, 2880 50 L 2880 0 Z" fill="url(#waveGradMix)" />
+            </svg>
+        </div>
     </div>
 
     <!-- TOP HOVER DETECTOR ZONE (Hover near the top of the screen to reveal controls) -->
@@ -493,13 +611,13 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 
                 <!-- Centered Logo -->
                 <div class="flex items-center justify-center">
-                    <img src="tala_logo_transparent.png" alt="TALA Logo" class="w-40 h-40 sm:w-52 sm:h-52 md:w-60 md:h-60 lg:w-64 lg:h-64 max-w-[70vw] max-h-[40vh] object-contain rounded-full hover:scale-105 transition-transform duration-300">
+                    <img src="tala_logo_transparent.png" alt="TALA Logo" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 max-w-[50vw] max-h-[25vh] object-contain rounded-full hover:scale-105 transition-transform duration-300">
                 </div>
 
-                <!-- Modern Frosted Glass Below Section Card (Lessened Opacity, Modern Blur) -->
-                <div class="mt-4 sm:mt-5 w-full max-w-3xl mx-auto rounded-3xl bg-white/55 dark:bg-zinc-900/55 backdrop-blur-2xl border border-white/60 dark:border-zinc-800/60 p-4 sm:p-5 shadow-xl shadow-green-950/5 transition-all duration-300 hover:bg-white/70 dark:hover:bg-zinc-900/70">
+                <!-- Modern Frosted Glass Below Section Card (Lessened Opacity, Modern Blur, Zero Stroke) -->
+                <div class="mt-3 sm:mt-4 w-full max-w-3xl mx-auto rounded-3xl below-section-card glass-card p-3.5 sm:p-5 shadow-xl shadow-green-950/5 transition-all duration-300">
                     <!-- Subtle Top Metadata Bar -->
-                    <div class="flex items-center justify-between pb-2.5 mb-2.5 border-b border-slate-200/50 dark:border-zinc-800/50 text-[11px] font-semibold text-slate-500 dark:text-zinc-400">
+                    <div class="flex items-center justify-between pb-2 mb-2 text-[11px] font-semibold text-slate-500 dark:text-zinc-400">
                         <div class="flex items-center gap-2">
                             <span class="w-2 h-2 rounded-full bg-[#15803d] animate-ping"></span>
                             <span class="font-bold text-slate-800 dark:text-zinc-200 uppercase tracking-wider font-mono text-[10px]">Official Web Platform</span>
@@ -762,6 +880,10 @@ if ($total_budget <= 0) $total_budget = 46000000;
                                 </div>
                             </div>
                         </div>
+                        <div class="pt-2 mt-2 flex items-center justify-between text-xs">
+                            <span class="text-[9px] font-mono font-bold text-rose-600 dark:text-rose-400">HIGH FRICTION</span>
+                            <span class="text-[10px] font-bold text-slate-500 dark:text-zinc-400">Manual Paper Workflow</span>
+                        </div>
                     </div>
 
                     <!-- Right: The TALA Solution -->
@@ -821,8 +943,23 @@ if ($total_budget <= 0) $total_budget = 46000000;
                                 </div>
                             </div>
                         </div>
+                        <div class="pt-2 mt-2 flex items-center justify-between text-xs">
+                            <span class="text-[9px] font-mono font-bold text-[#15803d] dark:text-[#16a34a]">100% AUTOMATED</span>
+                            <span class="text-[10px] font-bold text-[#15803d] dark:text-[#16a34a]">Live Digital Governance</span>
+                        </div>
                     </div>
 
+                </div>
+
+                <!-- Footer Transformation Highlight -->
+                <div class="glass-card px-4 py-2 rounded-xl flex items-center justify-between text-[11px] sm:text-xs font-semibold text-slate-600 dark:text-zinc-300 mt-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 rounded-md bg-[#15803d]/10 text-[#15803d] dark:text-[#16a34a] font-mono font-bold text-[10px]">PARADIGM</span>
+                        <span>Eliminating 21-day reporting delays with real-time digital transparency across 46 barangays.</span>
+                    </div>
+                    <button type="button" onclick="nextSlide()" class="text-[#15803d] dark:text-[#16a34a] font-bold hover:underline flex-shrink-0 ml-2 flex items-center gap-1">
+                        <span>End-to-End Workflow &rarr;</span>
+                    </button>
                 </div>
             </div>
         </section>
@@ -1430,11 +1567,14 @@ if ($total_budget <= 0) $total_budget = 46000000;
 
                 </div>
 
-                <!-- Footer Step -->
-                <div class="flex items-center justify-between text-xs text-slate-500 dark:text-zinc-400 mt-3 px-1">
-                    <span class="text-[11px] truncate">Unified command center and citizen-facing services across 46 barangays.</span>
-                    <button type="button" onclick="nextSlide()" class="text-[#15803d] dark:text-[#16a34a] font-bold hover:underline flex-shrink-0 ml-2">
-                        Technical Stack &rarr;
+                <!-- Footer Civic Core Highlight (Below Section Card: Frosted Glass) -->
+                <div class="glass-card px-4 py-2 rounded-xl flex items-center justify-between text-[11px] sm:text-xs font-semibold text-slate-600 dark:text-zinc-300 mt-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 rounded-md bg-[#15803d]/10 text-[#15803d] dark:text-[#16a34a] font-mono font-bold text-[10px]">CIVIC CORE</span>
+                        <span class="text-slate-600 dark:text-zinc-300 text-[11px] sm:text-xs">Unified command center, youth assembly records, and helpdesk SLA ticketing across 46 barangays.</span>
+                    </div>
+                    <button type="button" onclick="nextSlide()" class="text-[#15803d] dark:text-[#16a34a] font-bold hover:underline flex-shrink-0 ml-2 flex items-center gap-1">
+                        <span>Technical Stack &rarr;</span>
                     </button>
                 </div>
             </div>
