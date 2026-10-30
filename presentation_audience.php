@@ -135,11 +135,11 @@ session_start();
             opacity: 0;
             transform: scale(0.985);
             transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow-y: auto;
-            overflow-x: hidden;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+            overflow: hidden;
             margin: auto;
+        }
+        .slide-view > :first-child {
+            flex-shrink: 0;
         }
         .slide-view::-webkit-scrollbar {
             display: none;
@@ -1689,7 +1689,30 @@ session_start();
             // Scroll container to top in case of small height
             const activeEl = document.querySelector('.slide-view.active-slide');
             if (activeEl) activeEl.scrollTop = 0;
+            fitActiveSlide();
         }
+
+        // Auto-fit: scale the active slide's content down so nothing is ever cut off on any screen
+        function fitActiveSlide() {
+            const slide = document.querySelector('.slide-view.active-slide');
+            if (!slide) return;
+            const wrap = slide.firstElementChild;
+            if (!wrap) return;
+            wrap.style.transform = 'none';
+            wrap.style.height = '';
+            wrap.style.flexShrink = '0';
+            const availH = slide.clientHeight;
+            const availW = slide.clientWidth;
+            const needH = wrap.scrollHeight;
+            const needW = wrap.scrollWidth;
+            if (!availH || !needH) return;
+            const scale = Math.min(1, availH / needH, availW / needW);
+            wrap.style.transformOrigin = 'center center';
+            wrap.style.transform = scale < 1 ? `scale(${scale.toFixed(4)})` : 'none';
+        }
+        window.addEventListener('resize', fitActiveSlide);
+        window.addEventListener('load', () => { fitActiveSlide(); setTimeout(fitActiveSlide, 400); });
+        document.fonts && document.fonts.ready.then(fitActiveSlide);
 
         function broadcastSlideChange(slideNum) {
             try {
