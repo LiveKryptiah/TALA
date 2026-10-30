@@ -590,11 +590,11 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     <i class="ph-bold ph-sun hidden dark:inline text-base text-amber-400"></i>
                 </button>
 
-                <!-- Live Demo Launch Modal Button -->
-                <button type="button" onclick="openLaunchModal()" class="btn-yellow-glow-r bg-[#15803d] hover:bg-[#166534] dark:bg-[#16a34a] dark:hover:bg-[#15803d] text-white px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all tap-effect">
+                <!-- Live Demo Launch Button (Directly routes to login dashboard) -->
+                <a href="login.php" target="_blank" class="btn-yellow-glow-r bg-[#15803d] hover:bg-[#166534] dark:bg-[#16a34a] dark:hover:bg-[#15803d] text-white px-3 py-1.5 rounded-xl text-xs font-bold flex items-center gap-1.5 transition-all tap-effect" title="Launch TALA Live App (Login Dashboard)">
                     <i class="ph-bold ph-arrow-square-out text-sm relative z-10"></i>
                     <span class="relative z-10 hidden sm:inline">Launch Live App</span>
-                </button>
+                </a>
             </div>
         </div>
     </header>

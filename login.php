@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Login | TALA OS</title>
+    <title>Secure Login | TALA Web Platform</title>
     
     <!-- ANTI-FLASH SCRIPT: Must be at the top of the <head>! -->
     <script>
@@ -153,7 +153,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="w-16 h-16 bg-slate-50 dark:bg-zinc-800 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-colors">
                     <img src="TALA-LOGO.ico" alt="TALA Logo" class="w-10 h-10 object-contain" onerror="this.outerHTML='<i class=\'ph-fill ph-shield-check text-3xl text-green-600\'></i>'">
                 </div>
-                <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2 transition-colors">TALA OS</h1>
+                <h1 class="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2 transition-colors">TALA</h1>
                 <p class="text-[10px] font-extrabold text-slate-400 dark:text-zinc-500 uppercase tracking-widest transition-colors">Authorized Access Only</p>
             </div>
 
