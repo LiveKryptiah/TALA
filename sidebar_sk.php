@@ -432,12 +432,6 @@ $position = $_SESSION['sk_position'] ?? 'Official';
         
         <p class="tbp-heading">Records & Compliance</p>
 
-        <!-- SK Budget & Finance -->
-        <a href="sk2_budget.php" class="tbp-link <?= $current_page == 'sk2_budget.php' ? 'active' : '' ?>">
-            <i class="<?= $current_page == 'sk2_budget.php' ? 'ph-fill' : 'ph-bold' ?> ph-coins"></i>
-            <span>Budget & Finance</span>
-        </a>
-
         <!-- SK Budget Vouchers -->
         <a href="sk_voucher.php" class="tbp-link <?= $current_page == 'sk_voucher.php' ? 'active' : '' ?>">
             <i class="<?= $current_page == 'sk_voucher.php' ? 'ph-fill' : 'ph-bold' ?> ph-receipt"></i>

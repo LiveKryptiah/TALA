@@ -116,11 +116,11 @@ session_start();
             position: relative;
             z-index: 10;
             box-sizing: border-box;
-            padding-top: 54px;
-            padding-bottom: 84px;
+            padding-top: 48px;
+            padding-bottom: 76px;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
-            overflow: hidden !important;
+            overflow: hidden;
         }
 
         .slide-view {
@@ -135,8 +135,14 @@ session_start();
             opacity: 0;
             transform: scale(0.985);
             transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-            overflow: hidden !important;
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
             margin: auto;
+        }
+        .slide-view::-webkit-scrollbar {
+            display: none;
         }
 
         .slide-view.active-slide {
@@ -433,7 +439,7 @@ session_start();
         <!-- SLIDE 1: TITLE - TALA                      -->
         <!-- ========================================== -->
         <section class="slide-view active-slide flex items-center justify-center w-full h-full text-center" id="slide-1" data-title="TALA Overview">
-            <div class="w-full h-full flex flex-col items-center justify-center text-center my-auto p-2 sm:p-4">
+            <div class="w-full max-w-4xl mx-auto flex flex-col items-center justify-center text-center my-auto p-2 sm:p-4">
                 <!-- Centered Logo -->
                 <div class="flex items-center justify-center">
                     <img src="tala_logo_transparent.png" alt="TALA Logo" class="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52 max-w-[50vw] max-h-[25vh] object-contain rounded-full hover:scale-105 transition-transform duration-300">
@@ -992,19 +998,44 @@ session_start();
                     <!-- Card 1: FDP Portal -->
                     <div class="saas-card p-4 sm:p-5 flex flex-col justify-between">
                         <div>
-                            <div class="card-asset-grid h-28 sm:h-32 w-full rounded-2xl relative flex items-center justify-center p-3 overflow-hidden mb-3">
-                                <div class="w-full max-w-[220px] bg-white dark:bg-zinc-900 rounded-xl shadow-md p-2">
-                                    <div class="flex items-center gap-1.5 mb-2 px-0.5">
-                                        <span class="w-2 h-2 rounded-full bg-rose-400"></span>
-                                        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                                        <span class="w-2 h-2 rounded-full bg-[#15803d]"></span>
-                                    </div>
-                                    <div class="bg-slate-50 dark:bg-zinc-800/80 rounded-lg px-2.5 py-1.5 flex items-center justify-between text-[11px]">
-                                        <div class="flex items-center gap-1.5 text-slate-700 dark:text-zinc-200 font-semibold truncate">
-                                            <i class="ph-bold ph-lock-simple text-[#15803d]"></i>
-                                            <span class="truncate">tala.gov.ph/fdp-board</span>
+                            <div class="card-asset-grid h-28 sm:h-32 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
+                                <!-- Miniature FDP Live Document Window -->
+                                <div class="w-full max-w-[240px] bg-white/95 dark:bg-zinc-900/95 rounded-xl shadow-lg p-2.5">
+                                    <!-- Top Browser Title & Status Bar -->
+                                    <div class="flex items-center justify-between pb-1.5 mb-1.5 border-b border-slate-100 dark:border-zinc-800">
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+                                            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                                            <span class="w-2 h-2 rounded-full bg-[#15803d]"></span>
+                                            <span class="text-[9px] font-mono text-slate-400 dark:text-zinc-500 ml-1">fdp.gov.ph</span>
                                         </div>
-                                        <span class="w-1.5 h-1.5 rounded-full bg-[#15803d] animate-ping"></span>
+                                        <div class="flex items-center gap-1 text-[8px] font-bold font-mono px-1.5 py-0.5 rounded-full bg-green-500/10 text-[#15803d] dark:text-[#16a34a]">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-[#15803d] animate-ping"></span>
+                                            <span>DILG SEAL</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Live Document Capsule Preview -->
+                                    <div class="bg-slate-50 dark:bg-zinc-800/80 rounded-xl p-2 flex items-center gap-2 mb-1">
+                                        <div class="w-7 h-7 rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center flex-shrink-0">
+                                            <i class="ph-bold ph-file-pdf text-base"></i>
+                                        </div>
+                                        <div class="min-w-0 flex-1">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-[10px] font-black text-slate-800 dark:text-zinc-100 truncate">Q1–Q4 Financials.pdf</span>
+                                                <i class="ph-bold ph-check-circle text-xs text-[#15803d]"></i>
+                                            </div>
+                                            <div class="flex items-center gap-1 text-[8px] font-mono text-slate-400 dark:text-zinc-500 mt-0.5">
+                                                <span>184+ Disclosures</span>
+                                                <span>&bull;</span>
+                                                <span class="text-[#15803d] font-bold">100% Published</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Compliance Mini Meter -->
+                                    <div class="w-full bg-slate-100 dark:bg-zinc-800 rounded-full h-1.5 overflow-hidden">
+                                        <div class="bg-gradient-to-r from-emerald-500 to-[#15803d] h-full rounded-full w-full"></div>
                                     </div>
                                 </div>
                             </div>

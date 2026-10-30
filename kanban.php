@@ -32,6 +32,29 @@ try {
     }
 } catch (Exception $e) {}
 
+if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['create_project'])) {
+    $program = trim($_POST['program'] ?? '');
+    $activity = trim($_POST['project_activity'] ?? '');
+    $expected_output = trim($_POST['expected_output'] ?? '');
+    $duration = trim($_POST['duration'] ?? '');
+    $category = trim($_POST['category'] ?? 'Youth Development');
+    $status = trim($_POST['status'] ?? 'Planning');
+    $amount = (float)str_replace(',', '', $_POST['amount'] ?? '0');
+    $barangay = $isAdmin ? trim($_POST['barangay'] ?? $user_barangay) : $user_barangay;
+
+    if (!empty($program)) {
+        $stmt = $pdo->prepare("INSERT INTO budget_monitoring (barangay, program, project_activity, expected_output, duration, category, amount, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$barangay, $program, $activity, $expected_output, $duration, $category, $amount, $status]);
+    }
+    
+    $redirect_params = [];
+    if (!empty($_GET['brgy'])) $redirect_params['brgy'] = $_GET['brgy'];
+    if (!empty($_GET['search'])) $redirect_params['search'] = $_GET['search'];
+    $query_str = !empty($redirect_params) ? '?' . http_build_query($redirect_params) : '';
+    header("Location: kanban.php" . $query_str);
+    exit();
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['update_status'])) {
     $id = (int)($_POST['project_id'] ?? 0);
     $new_status = trim($_POST['new_status'] ?? '');
@@ -411,10 +434,10 @@ $active_pipeline_count = count($kanban['Planning']) + count($kanban['Bidding']) 
                         </a>
                     <?php endif; ?>
 
-                    <a href="<?= $isAdmin ? 'admin_budget.php' : 'sk2_budget.php' ?>" class="px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-700 dark:text-zinc-300 font-bold text-xs tap-effect flex items-center gap-1.5 transition-all whitespace-nowrap">
-                        <i class="ph-bold ph-coins text-xs"></i>
-                        <span>Budget Ledger</span>
-                    </a>
+                    <button type="button" onclick="openAddProjectModal()" class="btn-yellow-glow-r px-3.5 py-1.5 rounded-xl bg-[#15803d] hover:bg-[#166534] dark:bg-[#16a34a] dark:hover:bg-[#15803d] text-white font-bold text-xs tap-effect flex items-center gap-1.5 transition-all whitespace-nowrap shadow-sm">
+                        <i class="ph-bold ph-plus text-xs relative z-10"></i>
+                        <span class="relative z-10">Add Project</span>
+                    </button>
                 </div>
             </form>
 
@@ -643,6 +666,113 @@ $active_pipeline_count = count($kanban['Planning']) + count($kanban['Bidding']) 
         </div>
     </div>
 
+    <!-- NEW SK PROJECT CREATION MODAL -->
+    <div id="addProjectModalOverlay" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="absolute inset-0 bg-slate-900/60 dark:bg-black/80 backdrop-blur-sm cursor-pointer" onclick="closeAddProjectModal()"></div>
+        <div class="relative bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden max-w-lg w-full p-5 md:p-7 flex flex-col transform scale-95 opacity-0 transition-all duration-300 z-10 shadow-2xl border border-slate-100 dark:border-zinc-800" id="addProjectModalBox">
+            
+            <!-- Modal Header -->
+            <div class="flex items-center justify-between border-b border-slate-100 dark:border-zinc-800 pb-3 mb-4">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-xl bg-[#15803d]/10 text-[#15803d] dark:text-[#16a34a] flex items-center justify-center font-bold text-base">
+                        <i class="ph-bold ph-plus-circle"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-extrabold text-slate-900 dark:text-white leading-tight">Create SK Project</h3>
+                        <p class="text-[10px] text-slate-400 dark:text-zinc-500 font-mono">Deploy new project to board</p>
+                    </div>
+                </div>
+                <button type="button" onclick="closeAddProjectModal()" class="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-400 hover:text-slate-700 dark:hover:text-zinc-200 flex items-center justify-center tap-effect transition-all" title="Close">
+                    <i class="ph-bold ph-x text-xs"></i>
+                </button>
+            </div>
+
+            <!-- Creation Form -->
+            <form method="POST" action="kanban.php<?= !empty($filterQuery) ? $filterQuery : '' ?>" class="space-y-3.5 text-xs max-h-[68vh] overflow-y-auto custom-scrollbar pr-1">
+                <input type="hidden" name="create_project" value="1">
+
+                <?php if ($isAdmin): ?>
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 mb-1">Assigned Barangay *</label>
+                        <select name="barangay" required class="w-full bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 dark:text-white outline-none">
+                            <?php foreach ($all_barangays as $b): ?>
+                                <option value="<?= htmlspecialchars($b) ?>" <?= ($filter === $b || $user_barangay === $b) ? 'selected' : '' ?>><?= htmlspecialchars($b) ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php else: ?>
+                    <input type="hidden" name="barangay" value="<?= htmlspecialchars($user_barangay) ?>">
+                    <div class="p-2.5 rounded-xl bg-slate-50 dark:bg-zinc-800/40 flex items-center justify-between">
+                        <span class="text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500">Barangay Jurisdiction</span>
+                        <span class="font-bold text-xs text-[#15803d] dark:text-[#16a34a] flex items-center gap-1">
+                            <i class="ph-bold ph-map-pin"></i> <?= htmlspecialchars($user_barangay) ?>
+                        </span>
+                    </div>
+                <?php endif; ?>
+
+                <div>
+                    <label class="block text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 mb-1">Program / Project Name *</label>
+                    <input type="text" name="program" required placeholder="e.g. Linggo ng Kabataan 2026 or Youth Digital Hub" class="w-full bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 dark:text-white outline-none focus:border-[#15803d]">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 mb-1">Project Activity / Scope</label>
+                    <textarea name="project_activity" rows="2" placeholder="Brief summary of activities, target attendees, and key milestones" class="w-full bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2 text-xs font-medium text-slate-800 dark:text-white outline-none focus:border-[#15803d] resize-none"></textarea>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2.5">
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 mb-1">Allocated Budget (₱) *</label>
+                        <input type="number" step="0.01" min="0" name="amount" required placeholder="0.00" class="w-full bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2 text-xs font-black text-slate-800 dark:text-white outline-none focus:border-[#15803d]">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 mb-1">Initial Status</label>
+                        <select name="status" class="w-full bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 dark:text-white outline-none">
+                            <option value="Planning" selected>Planning</option>
+                            <option value="Bidding">Bidding</option>
+                            <option value="Ongoing">Ongoing</option>
+                            <option value="Completed">Completed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2.5">
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 mb-1">Duration / Period</label>
+                        <input type="text" name="duration" placeholder="e.g. Q1 2026 or 2 Months" class="w-full bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 dark:text-white outline-none focus:border-[#15803d]">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 mb-1">Category</label>
+                        <select name="category" class="w-full bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 dark:text-white outline-none">
+                            <option value="Youth Development" selected>Youth Development</option>
+                            <option value="Health & Sports">Health & Sports</option>
+                            <option value="Education">Education</option>
+                            <option value="Environmental Protection">Environmental Protection</option>
+                            <option value="Civic Engagement">Civic Engagement</option>
+                            <option value="Leadership & Governance">Leadership & Governance</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] uppercase font-bold text-slate-400 dark:text-zinc-500 mb-1">Expected Output</label>
+                    <input type="text" name="expected_output" placeholder="e.g. 150 Youth Beneficiaries Certified" class="w-full bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 dark:text-white outline-none focus:border-[#15803d]">
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex items-center justify-end gap-2 pt-3 border-t border-slate-100 dark:border-zinc-800 mt-4">
+                    <button type="button" onclick="closeAddProjectModal()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-600 dark:text-zinc-300 font-bold text-xs tap-effect transition-all">
+                        Cancel
+                    </button>
+                    <button type="submit" class="btn-yellow-glow-r px-5 py-2 rounded-xl bg-[#15803d] hover:bg-[#166534] text-white font-bold text-xs tap-effect transition-all flex items-center gap-1.5 shadow-sm">
+                        <i class="ph-bold ph-check text-xs relative z-10"></i>
+                        <span class="relative z-10">Save Project</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- MOBILE BOTTOM NAVIGATION (Android Style - Reference: sk_voucher.php) -->
     <nav class="md:hidden fixed bottom-0 left-0 right-0 h-[68px] bg-white/95 dark:bg-zinc-950/95 backdrop-blur-2xl z-50 flex justify-around items-center px-2 pb-[env(safe-area-inset-bottom)] transition-colors border-0">
         <?php if ($isAdmin): ?>
@@ -677,12 +807,12 @@ $active_pipeline_count = count($kanban['Planning']) + count($kanban['Bidding']) 
                 </div>
                 <span class="text-[10px] font-bold">Dashboard</span>
             </a>
-            <a href="sk2_budget.php" class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300 transition-colors tap-effect">
+            <button type="button" onclick="openAddProjectModal()" class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300 transition-colors tap-effect">
                 <div class="px-4 py-1 mb-1">
-                    <i class="ph-bold ph-coins text-2xl"></i>
+                    <i class="ph-bold ph-plus-circle text-2xl"></i>
                 </div>
-                <span class="text-[10px] font-bold">Budget</span>
-            </a>
+                <span class="text-[10px] font-bold">New Project</span>
+            </button>
             <a href="sk_voucher.php" class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300 transition-colors tap-effect">
                 <div class="px-4 py-1 mb-1">
                     <i class="ph-bold ph-receipt text-2xl"></i>
@@ -787,13 +917,45 @@ $active_pipeline_count = count($kanban['Planning']) + count($kanban['Bidding']) 
             }, 300);
         }
 
+        // Add Project Modal Logic
+        function openAddProjectModal() {
+            const modal = document.getElementById('addProjectModalOverlay');
+            const box = document.getElementById('addProjectModalBox');
+            if (!modal || !box) return;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            requestAnimationFrame(() => {
+                modal.classList.remove('opacity-0');
+                modal.classList.add('opacity-100');
+                box.classList.remove('scale-95', 'opacity-0');
+                box.classList.add('scale-100', 'opacity-100');
+            });
+        }
+
+        function closeAddProjectModal() {
+            const modal = document.getElementById('addProjectModalOverlay');
+            const box = document.getElementById('addProjectModalBox');
+            if (!modal || !box) return;
+
+            modal.classList.remove('opacity-100');
+            modal.classList.add('opacity-0');
+            box.classList.remove('scale-100', 'opacity-100');
+            box.classList.add('scale-95', 'opacity-0');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeProjectModal();
+                closeAddProjectModal();
             }
         });
     </script>
-
-    <?php include_once 'genesis_widget.php'; ?>
 </body>
 </html>

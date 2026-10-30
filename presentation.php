@@ -1197,22 +1197,44 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Ito ang ating Full Disclosure Portal. Awtomatiko nitong inilalathala ang quarterly reports ng lahat ng 46 na barangay na may malinaw na PDF preview upang tiyaking 100% compliant ang ating bayan sa mga direktiba ng DILG." data-speech-title="Full Disclosure (FDP) Portal">
                         <div>
                             <!-- Top UI Asset Container -->
-                            <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
-                                <!-- Miniature Browser Mockup Window -->
-                                <div class="w-full max-w-[220px] bg-white dark:bg-zinc-900 rounded-xl shadow-md border border-slate-200/60 dark:border-zinc-700/60 p-2 transform group-hover:scale-105 transition-transform duration-300">
-                                    <!-- Top Browser Dots -->
-                                    <div class="flex items-center gap-1.5 mb-2 px-0.5">
-                                        <span class="w-2 h-2 rounded-full bg-rose-400"></span>
-                                        <span class="w-2 h-2 rounded-full bg-amber-400"></span>
-                                        <span class="w-2 h-2 rounded-full bg-[#15803d]"></span>
-                                    </div>
-                                    <!-- Input Pill: Green Lock & URL -->
-                                    <div class="bg-slate-50 dark:bg-zinc-800/80 border border-slate-200 dark:border-zinc-700 rounded-lg px-2.5 py-1.5 flex items-center justify-between text-[11px]">
-                                        <div class="flex items-center gap-1.5 text-slate-700 dark:text-zinc-200 font-semibold truncate">
-                                            <i class="ph-bold ph-lock-simple text-[#15803d]"></i>
-                                            <span class="truncate">tala.gov.ph/fdp-board</span>
+                            <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl relative flex items-center justify-center p-3 overflow-hidden">
+                                <!-- Miniature FDP Live Document Window -->
+                                <div class="w-full max-w-[240px] bg-white/95 dark:bg-zinc-900/95 rounded-xl shadow-lg p-2.5 transform group-hover:scale-105 transition-transform duration-300">
+                                    <!-- Top Browser Title & Status Bar -->
+                                    <div class="flex items-center justify-between pb-1.5 mb-1.5 border-b border-slate-100 dark:border-zinc-800">
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="w-2 h-2 rounded-full bg-rose-400"></span>
+                                            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                                            <span class="w-2 h-2 rounded-full bg-[#15803d]"></span>
+                                            <span class="text-[9px] font-mono text-slate-400 dark:text-zinc-500 ml-1">fdp.gov.ph</span>
                                         </div>
-                                        <span class="w-1.5 h-1.5 rounded-full bg-[#15803d] animate-ping"></span>
+                                        <div class="flex items-center gap-1 text-[8px] font-bold font-mono px-1.5 py-0.5 rounded-full bg-green-500/10 text-[#15803d] dark:text-[#16a34a]">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-[#15803d] animate-ping"></span>
+                                            <span>DILG SEAL</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Live Document Capsule Preview -->
+                                    <div class="bg-slate-50 dark:bg-zinc-800/80 rounded-xl p-2 flex items-center gap-2 mb-1.5">
+                                        <div class="w-8 h-8 rounded-lg bg-rose-500/10 text-rose-600 dark:text-rose-400 flex items-center justify-center flex-shrink-0">
+                                            <i class="ph-bold ph-file-pdf text-base"></i>
+                                        </div>
+                                        <div class="min-w-0 flex-1">
+                                            <div class="flex items-center justify-between">
+                                                <span class="text-[10px] font-black text-slate-800 dark:text-zinc-100 truncate">Q1–Q4 Financials.pdf</span>
+                                                <i class="ph-bold ph-check-circle text-xs text-[#15803d]"></i>
+                                            </div>
+                                            <div class="flex items-center gap-1 text-[8px] font-mono text-slate-400 dark:text-zinc-500 mt-0.5">
+                                                <span>184+ Disclosures</span>
+                                                <span>&bull;</span>
+                                                <span class="text-[#15803d] font-bold">100% Published</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Compliance Mini Meter -->
+                                    <div class="w-full bg-slate-100 dark:bg-zinc-800 rounded-full h-1.5 overflow-hidden">
+                                        <div class="bg-gradient-to-r from-emerald-500 to-[#15803d] h-full rounded-full w-full"></div>
                                     </div>
                                 </div>
                             </div>

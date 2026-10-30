@@ -48,9 +48,6 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <a href="sk2_assembly.php" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold transition-colors <?= $current_page == 'sk2_assembly.php' ? 'bg-blue-50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400' : 'text-slate-600 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-white' ?>">
             <i class="ph-users-four text-xl <?= $current_page == 'sk2_assembly.php' ? 'ph-fill text-blue-600 dark:text-blue-400' : 'ph-bold text-slate-400 dark:text-zinc-500' ?> transition-colors"></i> KK Assembly
         </a>
-        <a href="sk2_budget.php" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold transition-colors <?= $current_page == 'sk2_budget.php' ? 'bg-blue-50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400' : 'text-slate-600 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-white' ?>">
-            <i class="ph-wallet text-xl <?= $current_page == 'sk2_budget.php' ? 'ph-fill text-blue-600 dark:text-blue-400' : 'ph-bold text-slate-400 dark:text-zinc-500' ?> transition-colors"></i> Budget & Finance
-        </a>
         <a href="sk2_civic.php" class="flex items-center gap-3 px-3 py-2.5 rounded-xl font-bold transition-colors <?= $current_page == 'sk2_civic.php' ? 'bg-blue-50 text-blue-700 dark:bg-blue-500/10 dark:text-blue-400' : 'text-slate-600 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-white' ?>">
             <i class="ph-hand-heart text-xl <?= $current_page == 'sk2_civic.php' ? 'ph-fill text-blue-600 dark:text-blue-400' : 'ph-bold text-slate-400 dark:text-zinc-500' ?> transition-colors"></i> Civic Programs
         </a>

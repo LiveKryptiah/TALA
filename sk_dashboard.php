@@ -552,9 +552,6 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
                             <a href="sk2_documents.php" class="p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-zinc-900/60 dark:hover:bg-zinc-900 hover:text-green-700 dark:hover:text-green-400 text-xs font-bold text-slate-700 dark:text-zinc-300 flex items-center gap-2 transition-colors tap-effect group">
                                 <i class="ph-bold ph-files text-slate-400 dark:text-zinc-500 group-hover:text-green-600 dark:group-hover:text-green-500 transition-colors"></i> Documents
                             </a>
-                            <a href="sk2_budget.php" class="p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-zinc-900/60 dark:hover:bg-zinc-900 hover:text-green-700 dark:hover:text-green-400 text-xs font-bold text-slate-700 dark:text-zinc-300 flex items-center gap-2 transition-colors tap-effect group">
-                                <i class="ph-bold ph-coins text-slate-400 dark:text-zinc-500 group-hover:text-green-600 dark:group-hover:text-green-500 transition-colors"></i> Budget
-                            </a>
                             <a href="kanban.php" class="p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-zinc-900/60 dark:hover:bg-zinc-900 hover:text-green-700 dark:hover:text-green-400 text-xs font-bold text-slate-700 dark:text-zinc-300 flex items-center gap-2 transition-colors tap-effect group">
                                 <i class="ph-bold ph-kanban text-slate-400 dark:text-zinc-500 group-hover:text-green-600 dark:group-hover:text-green-500 transition-colors"></i> Projects
                             </a>
@@ -576,11 +573,11 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
             </div>
             <span class="text-[10px] font-bold">Dashboard</span>
         </a>
-        <a href="sk2_budget.php" class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300 transition-colors tap-effect">
+        <a href="kanban.php" class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300 transition-colors tap-effect">
             <div class="px-4 py-1 mb-1">
-                <i class="ph-bold ph-coins text-2xl"></i>
+                <i class="ph-bold ph-kanban text-2xl"></i>
             </div>
-            <span class="text-[10px] font-bold">Budget</span>
+            <span class="text-[10px] font-bold">Projects</span>
         </a>
         <a href="tala_directory.php" class="flex flex-col items-center justify-center w-full h-full text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300 transition-colors tap-effect">
             <div class="px-4 py-1 mb-1">
