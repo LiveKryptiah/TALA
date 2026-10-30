@@ -83,22 +83,22 @@ if ($total_budget <= 0) $total_budget = 46000000;
             -webkit-tap-highlight-color: transparent;
             overflow-x: hidden;
             position: relative;
-            background-color: #fafbfc;
+            background-color: #fafbfc !important;
             background-image: 
-                radial-gradient(ellipse 70% 45% at 50% -10%, rgba(34, 197, 94, 0.16) 0%, rgba(250, 204, 21, 0.12) 40%, transparent 75%),
-                radial-gradient(circle 500px at 80% -5%, rgba(234, 179, 8, 0.10) 0%, transparent 60%),
-                radial-gradient(circle 450px at 20% -5%, rgba(21, 128, 61, 0.12) 0%, transparent 60%);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+                radial-gradient(ellipse 75% 50% at 50% -12%, rgba(34, 197, 94, 0.18) 0%, rgba(250, 204, 21, 0.14) 45%, transparent 75%),
+                radial-gradient(circle 500px at 80% -5%, rgba(234, 179, 8, 0.12) 0%, transparent 60%),
+                radial-gradient(circle 450px at 20% -5%, rgba(21, 128, 61, 0.14) 0%, transparent 60%) !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
         }
         .dark body {
-            background-color: #090a0b;
+            background-color: #090a0b !important;
             background-image: 
-                radial-gradient(ellipse 70% 45% at 50% -10%, rgba(34, 197, 94, 0.20) 0%, rgba(234, 179, 8, 0.14) 45%, transparent 75%),
-                radial-gradient(circle 500px at 80% -5%, rgba(202, 138, 4, 0.14) 0%, transparent 60%),
-                radial-gradient(circle 450px at 20% -5%, rgba(21, 128, 61, 0.18) 0%, transparent 60%);
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+                radial-gradient(ellipse 75% 50% at 50% -12%, rgba(34, 197, 94, 0.22) 0%, rgba(234, 179, 8, 0.16) 45%, transparent 75%),
+                radial-gradient(circle 500px at 80% -5%, rgba(202, 138, 4, 0.15) 0%, transparent 60%),
+                radial-gradient(circle 450px at 20% -5%, rgba(21, 128, 61, 0.20) 0%, transparent 60%) !important;
+            background-repeat: no-repeat !important;
+            background-attachment: fixed !important;
         }
 
         /* Modern Glass Card: Lessen Opacity, Frosted Blur, Modern Backdrop */
@@ -380,8 +380,8 @@ if ($total_budget <= 0) $total_budget = 46000000;
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 antialiased min-h-screen selection:bg-[#15803d] selection:text-white relative">
 
     <!-- Top Ambient Modern Gradient (Lessened Green & Yellow Aura) -->
-    <div class="fixed top-0 left-0 right-0 h-96 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[950px] h-[360px] bg-gradient-to-r from-emerald-500/15 via-green-500/15 to-amber-400/15 dark:from-emerald-600/20 dark:via-green-600/20 dark:to-yellow-500/20 blur-3xl rounded-full"></div>
+    <div class="fixed top-0 left-0 right-0 h-96 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[950px] h-[360px] bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-amber-400/20 dark:from-emerald-600/25 dark:via-green-600/25 dark:to-yellow-500/25 blur-3xl rounded-full"></div>
     </div>
 
     <!-- TOP HOVER DETECTOR ZONE (Hover near the top of the screen to reveal controls) -->
@@ -482,7 +482,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
     </header>
 
     <!-- MAIN PRESENTATION STAGE (Single-Screen Fit, Zero Scrolling) -->
-    <main class="w-full max-w-[1500px] mx-auto flex flex-col justify-center" id="presentationContainer">
+    <main class="w-full max-w-[1500px] mx-auto flex flex-col justify-center relative z-10" id="presentationContainer">
 
         <!-- ========================================== -->
         <!-- SLIDE 1: TITLE - TALA                      -->

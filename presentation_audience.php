@@ -80,14 +80,28 @@ session_start();
             background-attachment: fixed;
         }
 
-        /* Ambient subtle grid background */
+        /* Ambient Top Modern Gradient (Green & Yellow) with subtle dot grid */
         .stage-bg {
-            background-image: radial-gradient(rgba(21, 128, 61, 0.08) 1.2px, transparent 1.2px);
-            background-size: 24px 24px;
+            background-color: #fafbfc !important;
+            background-image: 
+                radial-gradient(ellipse 75% 50% at 50% -12%, rgba(34, 197, 94, 0.18) 0%, rgba(250, 204, 21, 0.14) 45%, transparent 75%),
+                radial-gradient(circle 500px at 80% -5%, rgba(234, 179, 8, 0.12) 0%, transparent 60%),
+                radial-gradient(circle 450px at 20% -5%, rgba(21, 128, 61, 0.14) 0%, transparent 60%),
+                radial-gradient(rgba(21, 128, 61, 0.08) 1.2px, transparent 1.2px) !important;
+            background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px !important;
+            background-repeat: no-repeat, no-repeat, no-repeat, repeat !important;
+            background-attachment: fixed !important;
         }
         .dark .stage-bg {
-            background-image: radial-gradient(rgba(34, 197, 94, 0.12) 1.2px, transparent 1.2px);
-            background-size: 24px 24px;
+            background-color: #090a0b !important;
+            background-image: 
+                radial-gradient(ellipse 75% 50% at 50% -12%, rgba(34, 197, 94, 0.22) 0%, rgba(234, 179, 8, 0.16) 45%, transparent 75%),
+                radial-gradient(circle 500px at 80% -5%, rgba(202, 138, 4, 0.15) 0%, transparent 60%),
+                radial-gradient(circle 450px at 20% -5%, rgba(21, 128, 61, 0.20) 0%, transparent 60%),
+                radial-gradient(rgba(34, 197, 94, 0.12) 1.2px, transparent 1.2px) !important;
+            background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px !important;
+            background-repeat: no-repeat, no-repeat, no-repeat, repeat !important;
+            background-attachment: fixed !important;
         }
 
         /* Presentation Stage: Perfect vertical centering and zero cut-off */
@@ -100,6 +114,7 @@ session_start();
             justify-content: center;
             align-items: center;
             position: relative;
+            z-index: 10;
             box-sizing: border-box;
             padding: 1.25rem 1.5rem;
         }
@@ -250,8 +265,8 @@ session_start();
 <body class="stage-bg text-slate-800 dark:text-zinc-100 flex flex-col justify-center items-center selection:bg-[#15803d] selection:text-white">
 
     <!-- Top Ambient Modern Gradient (Lessened Green & Yellow Aura) -->
-    <div class="fixed top-0 left-0 right-0 h-96 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[950px] h-[360px] bg-gradient-to-r from-emerald-500/15 via-green-500/15 to-amber-400/15 dark:from-emerald-600/20 dark:via-green-600/20 dark:to-yellow-500/20 blur-3xl rounded-full"></div>
+    <div class="fixed top-0 left-0 right-0 h-96 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[950px] h-[360px] bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-amber-400/20 dark:from-emerald-600/25 dark:via-green-600/25 dark:to-yellow-500/25 blur-3xl rounded-full"></div>
     </div>
 
     <!-- TOP PROGRESS BAR (Keynote Style Progress Telemetry) -->
