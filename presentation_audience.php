@@ -1707,8 +1707,11 @@ session_start();
             const needW = wrap.scrollWidth;
             if (!availH || !needH) return;
             const scale = Math.min(1, availH / needH, availW / needW);
+            // When content is taller than the stage, flex layout pins it to the top and it overflows
+            // downward; shift it up by half the overflow so the scaled result is truly centered.
+            const shiftY = needH > availH ? -((needH - availH) / 2) : 0;
             wrap.style.transformOrigin = 'center center';
-            wrap.style.transform = scale < 1 ? `scale(${scale.toFixed(4)})` : 'none';
+            wrap.style.transform = (scale < 1 || shiftY) ? `translateY(${shiftY.toFixed(1)}px) scale(${scale.toFixed(4)})` : 'none';
         }
         window.addEventListener('resize', fitActiveSlide);
         window.addEventListener('load', () => { fitActiveSlide(); setTimeout(fitActiveSlide, 400); });
