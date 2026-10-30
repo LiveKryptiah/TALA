@@ -1,149 +1,151 @@
-# TALA Presentation: English Speaking Script
+# TALA Presentation: MYDO and 46 SK Chairpersons
 
-Read at a steady pace. Pause after each main idea. The slide scripts include transitions; the card scripts add detail when needed.
+Audience: Municipal Youth Development Officer and the 46 SK chairpersons of Tumauini.
 
-## Slide 1: Introduction to TALA
+Use a steady, conversational pace. Pause before moving to a new section. Invite practical questions during the live demonstration.
 
-Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system. Next, I will explain the responsibilities that guided its design.
+## Slide 1: Introducing TALA to the MYDO and SK Chairpersons
 
-## Slide 2: The Purpose Behind the Platform
+Good day to our Municipal Youth Development Officer and to all 46 SK chairpersons of Tumauini. Thank you for giving me the opportunity to present TALA, or Tumauini Active Youth Ledger Analytics. This platform brings youth records, budgets, reports, and community services into one place. Today, I will show how it can help you organize barangay records and help the MYDO coordinate information across the municipality. Let us begin with the responsibilities that guided its design.
 
-First, let us look at the responsibilities behind youth governance. This slide names four laws that provide context for SK planning, local government, and ethical public service. The main idea is simple: officials need clear plans, organized records, and information that people can review. TALA helps support that work. However, these responsibilities can be difficult to manage through paper records alone.
+## Slide 2: Supporting Your Responsibilities
 
-## Slide 3: From Paper Records to Connected Tools
+First, let us look at the responsibilities behind the platform. As SK chairpersons, you prepare plans, manage records, and explain how youth programs are carried out. The MYDO also needs organized information to support coordination across the 46 barangays. The laws shown here provide context for planning, accountability, and public service. TALA helps organize the information used in this work. However, keeping these records complete and easy to find can be challenging when they are spread across paper files and separate documents.
 
-Next, let us compare the usual paper-based process with the TALA approach. Paper files can be hard to locate, and repeated data entry can slow down reporting. TALA brings related records into connected modules, making information easier to organize and retrieve. To show how this works, I will walk through the process from registration to review.
+## Slide 3: Making Barangay Reporting Easier
 
-## Slide 4: The Five-Stage Workflow
+Next, let us look at that practical challenge. When records are kept in separate files, finding a receipt, checking a report, or updating youth information can take extra time. For the MYDO, gathering information from 46 barangays adds another layer of coordination. TALA brings related records into connected modules so your team can find and review them more easily. The purpose is to give you a clearer way to organize the work you already do. To explain this further, let us follow the workflow.
 
-The workflow has five stages. First, youth registration creates the records used to identify participants. Next, officials prepare their program and budget plans. After that, they record vouchers and attach supporting documents. Once reports are approved, they can be published for public viewing. Finally, the municipal team reviews submissions and follows up on incomplete records. With that flow in mind, let us look at the financial tools.
+## Slide 4: From Youth Registration to Municipal Review
 
-## Slide 5: Financial Records and Public Disclosure
+The workflow has five stages. First, your team records youth information so you can identify participants and connect them with activities. Next, you prepare your program and budget plans. After that, you record vouchers and attach supporting documents. Once reports are reviewed and approved, they can be published for public viewing. Finally, the municipal team reviews submissions and follows up on records that need attention. This connects the work in each barangay with municipal coordination. Now, let us look more closely at the financial tools.
 
-Now, we move to three financial tools. The Full Disclosure Portal shares published reports with the public. The budget console helps officials compare planned amounts with recorded spending. The voucher module keeps transactions and supporting documents together. In simple terms, these tools help answer three questions: what was planned, what was spent, and where are the supporting records? Next, we will look beyond finances.
+## Slide 5: Organizing Budgets and Supporting Records
 
-## Slide 6: Governance and Community Participation
+Now, we move to three tools for financial records. The budget console helps your SK team compare planned amounts with recorded spending. The voucher module keeps receipts and supporting files connected to a transaction. The Full Disclosure Portal makes published reports available to the public. For SK chairpersons, this means a clearer place to organize the records you need. For the MYDO, it supports a more organized review of barangay information. These tools help answer three questions: what was planned, what was spent, and where are the supporting documents? Next, we will look beyond finances.
 
-In addition to financial records, TALA helps organize governance activities. Barangay badges show reporting progress. MYDC and YORP records help organize youth groups and representatives. Meeting minutes and resolutions preserve decisions. However, good governance also needs feedback, so the helpdesk provides a way for young people to raise concerns. Next, I will briefly explain the technology behind these tools.
+## Slide 6: Coordination, Decisions, and Youth Feedback
 
-## Slide 7: How the System Works
+In addition to financial records, TALA supports coordination and participation. Barangay badges show reporting progress and help identify where follow-up may be needed. MYDC and YORP records help the municipal team organize youth groups and their representatives. Minutes and resolutions preserve the decisions made during meetings. However, good governance also depends on listening to young people. The helpdesk provides a record of their questions, concerns, and suggestions so these can be followed up. Next, I will briefly explain how the system supports your daily use.
 
-Behind the platform, PHP processes requests and MySQL stores related records. On the screen, Tailwind CSS helps the pages adapt to different devices. The shared theme switch keeps light and dark mode consistent. User roles help separate the responsibilities of administrators and SK chairpersons. You do not need to remember every technical term. The main point is that these parts work together to organize information and control access. Finally, let us look at the overall value and the next steps.
+## Slide 7: Using the System in Your Daily Work
 
-## Slide 8: Overall Value and Next Steps
+For daily use, the main point is straightforward: your account gives you access to the tools for your role. SK chairpersons and municipal administrators have different responsibilities, so the system separates their access. The pages adapt to desktop and mobile screens, while the theme switch lets you choose light or dark mode. Behind the scenes, PHP processes requests and MySQL stores the related records. These technical parts work together to support the tasks you perform on screen. Finally, let us look at the overall value and the next steps.
 
-To conclude, TALA brings youth records, financial documents, and public information into one platform. Its value is easier organization, clearer reporting, and better access to available information. Looking ahead, the roadmap includes a mobile web app, project mapping, and SMS notifications. These are planned improvements. Next, I will open the live system and show how the current modules work. Thank you, and I welcome your questions.
+## Slide 8: Next Steps for the MYDO and the 46 Barangays
+
+To conclude, TALA is intended to help the MYDO and all 46 SK chairpersons keep youth records, financial documents, and public information more organized. Its usefulness will depend on accurate entries and regular updates from the people using it. Looking ahead, the roadmap includes a mobile web app, project mapping, and SMS notifications. These are planned improvements. Next, I will demonstrate the current system. As we go through it, I welcome your questions and suggestions about how it can better support the work in your barangays. Thank you.
 
 ## Optional Card Explanations
 
-### Introduction to TALA
+### Introducing TALA to the MYDO and SK Chairpersons
 
-Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system.
+Good day to our Municipal Youth Development Officer and to all 46 SK chairpersons of Tumauini. Thank you for giving me the opportunity to present TALA, or Tumauini Active Youth Ledger Analytics. This platform brings youth records, budgets, reports, and community services into one place. Today, I will show how it can help you organize barangay records and help the MYDO coordinate information across the municipality. Let us begin with the responsibilities that guided its design.
 
 ### RA 10742: Youth Planning
 
-First, Republic Act 10742 provides the foundation for the Sangguniang Kabataan. For this presentation, the key point is planning: youth programs need a clear development plan and an annual investment program. TALA helps organize the records used in that process.
+First, this part connects TALA with your planning responsibilities as SK chairpersons. The system helps organize the records used for your youth development plan and annual investment program, so your team can refer to them more easily.
 
 ### RA 11768: Accountability
 
-Next, Republic Act 11768 strengthens the SK framework. In TALA, we focus on making financial records easier to manage and review. This helps officials explain how youth funds are used.
+Next, this part focuses on accountability. For your SK team, keeping financial records organized makes it easier to explain how youth funds are used. For the MYDO, clearer records can also support coordination and follow-up.
 
 ### RA 7160: Local Government
 
-In addition, Republic Act 7160 provides the wider framework for local government. TALA brings barangay reports into one place so the municipal team can review them more easily.
+In addition, this part places barangay work within the wider local government setting. TALA brings related reports into one place to make it easier for the municipal team to review the information submitted by the barangays.
 
 ### RA 6713: Ethical Public Service
 
-Finally, Republic Act 6713 highlights ethical public service and accountability. TALA supports these goals by making public information easier to find and giving young people a way to raise concerns.
+Finally, this part highlights ethical public service. Organized records and accessible public information help your constituents understand your work. The helpdesk also gives young people a way to raise questions and concerns.
 
 ### The Paper-Based Process
 
-However, having clear responsibilities does not always make the work easy. With paper records, officials may need to enter the same details several times. Reports can be difficult to find, and the public may have to visit an office to request information.
+However, these responsibilities can take more time when records are spread across paper files and separate documents. A chairperson may need to locate a receipt or repeat an entry, while the MYDO may need to follow up with several barangays.
 
 ### The TALA Digital Approach
 
-This is where TALA helps. Instead of keeping information in separate paper files, officials can manage records through connected modules. Approved reports can be shared online, while budget records are easier to review.
+This is where TALA can help your teams. Related information is organized through connected modules. Your SK team can manage barangay records, while the municipal team can review the information available to its role.
 
 ### Stage 1: Youth Registration
 
-First, the process starts with youth registration. Staff record the details of each young person and can use a QR ID to help identify their record. This makes it easier to connect a participant with the activities they attend.
+First, your team records youth information. A QR ID can help identify the correct record and connect a young person with the activities they attend. This gives your barangay a more organized participant record.
 
 ### Stage 2: Program and Budget Planning
 
-Next, the SK team prepares its youth investment program and budget. TALA keeps the planned programs and their amounts together, making it easier to compare activities with the available funds.
+Next, your SK team prepares its youth investment program and budget. TALA keeps planned activities and their amounts together so you can review the plan alongside the available funds.
 
 ### Stage 3: Vouchers and Supporting Documents
 
-After planning comes financial documentation. Officials record check vouchers and attach receipts or other supporting files. Keeping these documents together makes liquidation and later review easier.
+After planning, your team records check vouchers and attaches receipts or other supporting documents. This keeps the details of a transaction together, making it easier to prepare records for liquidation and review.
 
 ### Stage 4: Public Disclosure
 
-Once reports are reviewed and approved, they can be published through the Full Disclosure Portal. The public can view the available documents online, including PDF reports, without needing a separate office visit.
+Once reports are reviewed and approved, they can be published through the Full Disclosure Portal. Your constituents can then view the available documents online, including PDF reports, without needing to request every copy at the office.
 
 ### Stage 5: Review and Monitoring
 
-Finally, the municipal team can review barangay submissions and monitor their progress. Governance badges help make reporting performance easier to see. The goal is to encourage timely and complete records.
+Finally, the municipal team can review barangay submissions and follow up on records that need attention. Governance badges make reporting progress easier to see across the 46 barangays.
 
 ### Full Disclosure Portal
 
-Let us now look at the Full Disclosure Portal. This is where the public can find published financial reports. The built-in PDF preview makes these documents easier to read in the browser.
+Let us now look at the Full Disclosure Portal. This is the public side of your published reports. Constituents can open the available PDFs in their browser and see the information your barangay has shared.
 
 ### Real-Time Budget Console
 
-Next is the budget console. It brings budget records from the barangays into a shared view. Officials can compare approved amounts with recorded spending and see which items need attention.
+Next is the budget console. Your SK team can compare approved amounts with recorded spending. The shared view also helps the municipal team review budget information across barangays and identify items that need clarification.
 
 ### Check Vouchers and Liquidation
 
-The third financial tool handles check vouchers and liquidation records. Receipts and supporting documents stay connected to the relevant transaction. As a result, officials can find the information they need for review more easily.
+This tool keeps check vouchers, receipts, and supporting files connected. When your team needs to explain a transaction or locate a document, the related information is easier to find.
 
 ### Barangay Governance Badges
 
-Beyond finances, TALA also supports governance. The badge system shows barangay reporting performance using Gold, Silver, and Bronze levels. This gives the team a quick way to see progress and identify follow-up work.
+Beyond finances, the badge system helps you see barangay reporting progress. Gold, Silver, and Bronze levels provide a quick overview. For the MYDO, this can help identify which barangays may need follow-up or assistance.
 
 ### MYDC and YORP Records
 
-Next, the MYDC and YORP modules organize records for youth organizations and their representatives. This helps the municipal team keep track of the groups involved in local youth development.
+Next, the MYDC and YORP modules organize youth organizations and their representatives. These records help the MYDO coordinate with participating groups and help SK teams identify youth organizations involved in local activities.
 
 ### Meeting Minutes and Resolutions
 
-In addition, the records module keeps minutes of meetings and resolutions in one place. Officials can refer to attendance, discussions, and decisions when preparing reports or following up on agreed actions.
+In addition, this module keeps meeting minutes and resolutions together. Your team can refer back to attendance, discussions, and decisions when preparing reports or checking the actions agreed during a meeting.
 
 ### Youth Helpdesk
 
-However, governance is also about listening. The helpdesk lets young people send questions, concerns, and suggestions. Each ticket provides a record that officials can use to follow up on the request.
+However, records are only one part of governance. The youth helpdesk lets constituents send concerns, questions, and suggestions. Keeping a ticket helps your team follow the request and refer back to the details.
 
 ### Server-Side Processing: PHP and PDO
 
-Now, let us briefly look at how the system is built. PHP handles the work on the server, while PDO prepared statements help the application work with database queries. In simple terms, this is the part that processes requests and saves records.
+Now, a brief look behind the screen. PHP processes the requests you make, such as opening a record or saving an entry. PDO prepared statements help the application handle its database queries.
 
 ### Data Storage: MySQL
 
-Next, MySQL stores the information behind the platform. It connects related records, such as a barangay, its budget, and its transactions. Database transactions help keep related changes together.
+Next, MySQL stores related information, such as your barangay, its budget, and its transactions. Database transactions help keep related changes together when the system saves them.
 
 ### Responsive Interface and Themes
 
-On the screen, Tailwind CSS helps keep the design consistent across different devices. The layout adapts to desktop and mobile screens, and the shared theme control changes the page between light and dark mode.
+On the screen, the layout adapts to desktop and mobile devices. This helps you use the platform from different screen sizes. You can also choose light or dark mode through the shared theme switch.
 
 ### User Roles and Access
 
-Finally, access controls help separate what different users can do. For example, an administrator and an SK chairperson have different responsibilities. These controls help keep account actions within the appropriate role.
+Finally, accounts have different access based on their responsibilities. An SK chairperson and a municipal administrator use different tools for their roles. These controls help organize who can perform particular actions.
 
 ### Connected Youth Governance
 
-To bring everything together, TALA connects youth records, financial documents, and public information in one platform. This makes daily work easier to organize and gives the community a clearer view of youth governance.
+To bring everything together, TALA gives your SK teams and the MYDO a connected place for youth records, financial documents, and public information. Accurate entries and regular updates will help make that information useful.
 
 ### Planned Mobile App
 
-Looking ahead, the roadmap includes a Progressive Web App. The aim is to improve mobile access and explore ways to prepare selected records when an internet connection is unavailable. This is a planned improvement.
+Looking ahead, a planned mobile web app aims to improve access for barangay users. The roadmap also explores preparing selected records when an internet connection is unavailable. This is a future improvement, rather than part of the current demonstration.
 
 ### Planned Project Mapping
 
-Another planned improvement is project mapping. A map would help users see where youth projects are located across Tumauini and connect those locations with the available project records.
+Another planned improvement is project mapping. This would help the MYDO and SK teams see where youth projects are located and connect those locations with the available project records.
 
 ### Planned SMS Notifications
 
-In addition, the roadmap includes SMS notifications. These would help share meeting reminders, opportunities, and urgent announcements with people who may not be online regularly.
+In addition, planned SMS notifications would help share meeting reminders, opportunities, and urgent announcements. This could help reach young people and barangay representatives who are not regularly online.
 
-### Live Demonstration and Questions
+### Live Demonstration and Your Feedback
 
-That concludes the overview. Next, I will demonstrate the live system so you can see how the modules work together. Thank you for listening. I am ready to answer your questions.
+Next, I will open the current system and demonstrate the workflow. To our MYDO and all 46 SK chairpersons, I welcome your questions and practical suggestions. Your feedback will help identify what your teams need most. Thank you.

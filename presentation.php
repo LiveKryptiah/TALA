@@ -609,9 +609,9 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 1: TITLE - TALA                      -->
         <!-- ========================================== -->
-        <section class="slide-view active-slide flex flex-col items-center justify-center w-full h-full text-center" id="slide-1" data-title="TALA" data-notes="Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system. Next, I will explain the responsibilities that guided its design.">
+        <section class="slide-view active-slide flex flex-col items-center justify-center w-full h-full text-center" id="slide-1" data-title="TALA" data-notes="Good day to our Municipal Youth Development Officer and to all 46 SK chairpersons of Tumauini. Thank you for giving me the opportunity to present TALA, or Tumauini Active Youth Ledger Analytics. This platform brings youth records, budgets, reports, and community services into one place. Today, I will show how it can help you organize barangay records and help the MYDO coordinate information across the municipality. Let us begin with the responsibilities that guided its design.">
             
-            <div class="w-full h-full flex flex-col items-center justify-center text-center my-auto p-4 group cursor-pointer" data-speech="Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system." data-speech-title="Introduction to TALA">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center my-auto p-4 group cursor-pointer" data-speech="Good day to our Municipal Youth Development Officer and to all 46 SK chairpersons of Tumauini. Thank you for giving me the opportunity to present TALA, or Tumauini Active Youth Ledger Analytics. This platform brings youth records, budgets, reports, and community services into one place. Today, I will show how it can help you organize barangay records and help the MYDO coordinate information across the municipality. Let us begin with the responsibilities that guided its design." data-speech-title="Introducing TALA to the MYDO and SK Chairpersons">
                 
                 <!-- Centered Logo -->
                 <div class="flex items-center justify-center">
@@ -683,7 +683,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 2: REPUBLIC ACTS IN GOVERNMENT       -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-2" data-title="Republic Acts in Government" data-notes="First, let us look at the responsibilities behind youth governance. This slide names four laws that provide context for SK planning, local government, and ethical public service. The main idea is simple: officials need clear plans, organized records, and information that people can review. TALA helps support that work. However, these responsibilities can be difficult to manage through paper records alone.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-2" data-title="Republic Acts in Government" data-notes="First, let us look at the responsibilities behind the platform. As SK chairpersons, you prepare plans, manage records, and explain how youth programs are carried out. The MYDO also needs organized information to support coordination across the 46 barangays. The laws shown here provide context for planning, accountability, and public service. TALA helps organize the information used in this work. However, keeping these records complete and easy to find can be challenging when they are spread across paper files and separate documents.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -700,7 +700,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full">
                     
                     <!-- Card 1: RA 10742 -->
-                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="First, Republic Act 10742 provides the foundation for the Sangguniang Kabataan. For this presentation, the key point is planning: youth programs need a clear development plan and an annual investment program. TALA helps organize the records used in that process." data-speech-title="RA 10742: Youth Planning">
+                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="First, this part connects TALA with your planning responsibilities as SK chairpersons. The system helps organize the records used for your youth development plan and annual investment program, so your team can refer to them more easily." data-speech-title="RA 10742: Youth Planning">
                         <div>
                             <div class="card-asset-grid h-28 sm:h-30 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-2.5">
                                 <div class="w-full max-w-[200px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-2 text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -724,7 +724,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 2: RA 11768 -->
-                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Next, Republic Act 11768 strengthens the SK framework. In TALA, we focus on making financial records easier to manage and review. This helps officials explain how youth funds are used." data-speech-title="RA 11768: Accountability">
+                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Next, this part focuses on accountability. For your SK team, keeping financial records organized makes it easier to explain how youth funds are used. For the MYDO, clearer records can also support coordination and follow-up." data-speech-title="RA 11768: Accountability">
                         <div>
                             <div class="card-asset-grid h-28 sm:h-30 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-2.5">
                                 <div class="w-full max-w-[200px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-2 text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -748,7 +748,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 3: RA 7160 -->
-                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="In addition, Republic Act 7160 provides the wider framework for local government. TALA brings barangay reports into one place so the municipal team can review them more easily." data-speech-title="RA 7160: Local Government">
+                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="In addition, this part places barangay work within the wider local government setting. TALA brings related reports into one place to make it easier for the municipal team to review the information submitted by the barangays." data-speech-title="RA 7160: Local Government">
                         <div>
                             <div class="card-asset-grid h-28 sm:h-30 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-2.5">
                                 <div class="w-full max-w-[200px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-2 text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -772,7 +772,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 4: RA 6713 -->
-                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Finally, Republic Act 6713 highlights ethical public service and accountability. TALA supports these goals by making public information easier to find and giving young people a way to raise concerns." data-speech-title="RA 6713: Ethical Public Service">
+                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Finally, this part highlights ethical public service. Organized records and accessible public information help your constituents understand your work. The helpdesk also gives young people a way to raise questions and concerns." data-speech-title="RA 6713: Ethical Public Service">
                         <div>
                             <div class="card-asset-grid h-28 sm:h-30 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-2.5">
                                 <div class="w-full max-w-[200px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-2 text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -814,7 +814,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 3: THE PROBLEM & THE SOLUTION        -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-3" data-title="Problem vs Solution" data-notes="Next, let us compare the usual paper-based process with the TALA approach. Paper files can be hard to locate, and repeated data entry can slow down reporting. TALA brings related records into connected modules, making information easier to organize and retrieve. To show how this works, I will walk through the process from registration to review.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-3" data-title="Problem vs Solution" data-notes="Next, let us look at that practical challenge. When records are kept in separate files, finding a receipt, checking a report, or updating youth information can take extra time. For the MYDO, gathering information from 46 barangays adds another layer of coordination. TALA brings related records into connected modules so your team can find and review them more easily. The purpose is to give you a clearer way to organize the work you already do. To explain this further, let us follow the workflow.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -831,7 +831,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 w-full">
                     
                     <!-- Left: Traditional Roadblocks -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="However, having clear responsibilities does not always make the work easy. With paper records, officials may need to enter the same details several times. Reports can be difficult to find, and the public may have to visit an office to request information." data-speech-title="The Paper-Based Process">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="However, these responsibilities can take more time when records are spread across paper files and separate documents. A chairperson may need to locate a receipt or repeat an entry, while the MYDO may need to follow up with several barangays." data-speech-title="The Paper-Based Process">
                         <div>
                             <!-- Top UI Asset: Paper Bottleneck Alert Mockup -->
                             <div class="card-asset-grid h-28 sm:h-32 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden mb-3">
@@ -891,7 +891,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Right: The TALA Solution -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="This is where TALA helps. Instead of keeping information in separate paper files, officials can manage records through connected modules. Approved reports can be shared online, while budget records are easier to review." data-speech-title="The TALA Digital Approach">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="This is where TALA can help your teams. Related information is organized through connected modules. Your SK team can manage barangay records, while the municipal team can review the information available to its role." data-speech-title="The TALA Digital Approach">
                         <div>
                             <!-- Top UI Asset: TALA Cloud Ledger in Design Green -->
                             <div class="card-asset-grid h-28 sm:h-32 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden mb-3">
@@ -972,7 +972,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 4: THE END-TO-END WORKFLOW           -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-4" data-title="System Workflow" data-notes="The workflow has five stages. First, youth registration creates the records used to identify participants. Next, officials prepare their program and budget plans. After that, they record vouchers and attach supporting documents. Once reports are approved, they can be published for public viewing. Finally, the municipal team reviews submissions and follows up on incomplete records. With that flow in mind, let us look at the financial tools.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-4" data-title="System Workflow" data-notes="The workflow has five stages. First, your team records youth information so you can identify participants and connect them with activities. Next, you prepare your program and budget plans. After that, you record vouchers and attach supporting documents. Once reports are reviewed and approved, they can be published for public viewing. Finally, the municipal team reviews submissions and follows up on records that need attention. This connects the work in each barangay with municipal coordination. Now, let us look more closely at the financial tools.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -989,7 +989,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2.5 sm:gap-3 w-full">
                     
                     <!-- Stage 1: Onboarding & ID (Mini Digital QR ID Mockup) -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="First, the process starts with youth registration. Staff record the details of each young person and can use a QR ID to help identify their record. This makes it easier to connect a participant with the activities they attend." data-speech-title="Stage 1: Youth Registration">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="First, your team records youth information. A QR ID can help identify the correct record and connect a young person with the activities they attend. This gives your barangay a more organized participant record." data-speech-title="Stage 1: Youth Registration">
                         <div>
                             <!-- Top UI Asset: Miniature QR ID Card -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2 overflow-hidden mb-2.5">
@@ -1031,7 +1031,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stage 2: AYIP Planning (Stacked Telemetry Pills) -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Next, the SK team prepares its youth investment program and budget. TALA keeps the planned programs and their amounts together, making it easier to compare activities with the available funds." data-speech-title="Stage 2: Program and Budget Planning">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Next, your SK team prepares its youth investment program and budget. TALA keeps planned activities and their amounts together so you can review the plan alongside the available funds." data-speech-title="Stage 2: Program and Budget Planning">
                         <div>
                             <!-- Top UI Asset: Stacked Budget Pills -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex flex-col items-center justify-center gap-1.5 p-2 overflow-hidden mb-2.5">
@@ -1062,7 +1062,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stage 3: Disbursement (Network Pipeline Diagram) -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="After planning comes financial documentation. Officials record check vouchers and attach receipts or other supporting files. Keeping these documents together makes liquidation and later review easier." data-speech-title="Stage 3: Vouchers and Supporting Documents">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="After planning, your team records check vouchers and attaches receipts or other supporting documents. This keeps the details of a transaction together, making it easier to prepare records for liquidation and review." data-speech-title="Stage 3: Vouchers and Supporting Documents">
                         <div>
                             <!-- Top UI Asset: Network Pipeline -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2 overflow-hidden mb-2.5">
@@ -1099,7 +1099,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stage 4: FDP Disclosure (Mini Browser Mockup) -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Once reports are reviewed and approved, they can be published through the Full Disclosure Portal. The public can view the available documents online, including PDF reports, without needing a separate office visit." data-speech-title="Stage 4: Public Disclosure">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Once reports are reviewed and approved, they can be published through the Full Disclosure Portal. Your constituents can then view the available documents online, including PDF reports, without needing to request every copy at the office." data-speech-title="Stage 4: Public Disclosure">
                         <div>
                             <!-- Top UI Asset: Mini Browser Mockup -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2 overflow-hidden mb-2.5">
@@ -1133,7 +1133,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stage 5: Executive Review & Audit Loop -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Finally, the municipal team can review barangay submissions and monitor their progress. Governance badges help make reporting performance easier to see. The goal is to encourage timely and complete records." data-speech-title="Stage 5: Review and Monitoring">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Finally, the municipal team can review barangay submissions and follow up on records that need attention. Governance badges make reporting progress easier to see across the 46 barangays." data-speech-title="Stage 5: Review and Monitoring">
                         <div>
                             <!-- Top UI Asset: Executive Audit Badge in Design Green -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2 overflow-hidden mb-2.5">
@@ -1181,7 +1181,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 5: FEATURES PART 1 - FISCAL PIPELINE -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-5" data-title="Features: Fiscal Transparency" data-notes="Now, we move to three financial tools. The Full Disclosure Portal shares published reports with the public. The budget console helps officials compare planned amounts with recorded spending. The voucher module keeps transactions and supporting documents together. In simple terms, these tools help answer three questions: what was planned, what was spent, and where are the supporting records? Next, we will look beyond finances.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-5" data-title="Features: Fiscal Transparency" data-notes="Now, we move to three tools for financial records. The budget console helps your SK team compare planned amounts with recorded spending. The voucher module keeps receipts and supporting files connected to a transaction. The Full Disclosure Portal makes published reports available to the public. For SK chairpersons, this means a clearer place to organize the records you need. For the MYDO, it supports a more organized review of barangay information. These tools help answer three questions: what was planned, what was spent, and where are the supporting documents? Next, we will look beyond finances.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -1198,7 +1198,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 w-full">
                     
                     <!-- Card 1: Full Disclosure (Browser / URL Mockup style with Green accents) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Let us now look at the Full Disclosure Portal. This is where the public can find published financial reports. The built-in PDF preview makes these documents easier to read in the browser." data-speech-title="Full Disclosure Portal">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Let us now look at the Full Disclosure Portal. This is the public side of your published reports. Constituents can open the available PDFs in their browser and see the information your barangay has shared." data-speech-title="Full Disclosure Portal">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl relative flex items-center justify-center p-3 overflow-hidden">
@@ -1263,7 +1263,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 2: Budget Console (Interactive Telemetry Pills style) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next is the budget console. It brings budget records from the barangays into a shared view. Officials can compare approved amounts with recorded spending and see which items need attention." data-speech-title="Real-Time Budget Console">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next is the budget console. Your SK team can compare approved amounts with recorded spending. The shared view also helps the municipal team review budget information across barangays and identify items that need clarification." data-speech-title="Real-Time Budget Console">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex flex-col items-center justify-center gap-2 p-3 overflow-hidden">
@@ -1302,7 +1302,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 3: Check Voucher & Liquidation (Network Node with Center Icon) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="The third financial tool handles check vouchers and liquidation records. Receipts and supporting documents stay connected to the relevant transaction. As a result, officials can find the information they need for review more easily." data-speech-title="Check Vouchers and Liquidation">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="This tool keeps check vouchers, receipts, and supporting files connected. When your team needs to explain a transaction or locate a document, the related information is easier to find." data-speech-title="Check Vouchers and Liquidation">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1374,7 +1374,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 6: FEATURES PART 2 - CIVIC TECH      -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-6" data-title="Features: Civic Governance" data-notes="In addition to financial records, TALA helps organize governance activities. Barangay badges show reporting progress. MYDC and YORP records help organize youth groups and representatives. Meeting minutes and resolutions preserve decisions. However, good governance also needs feedback, so the helpdesk provides a way for young people to raise concerns. Next, I will briefly explain the technology behind these tools.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-6" data-title="Features: Civic Governance" data-notes="In addition to financial records, TALA supports coordination and participation. Barangay badges show reporting progress and help identify where follow-up may be needed. MYDC and YORP records help the municipal team organize youth groups and their representatives. Minutes and resolutions preserve the decisions made during meetings. However, good governance also depends on listening to young people. The helpdesk provides a record of their questions, concerns, and suggestions so these can be followed up. Next, I will briefly explain how the system supports your daily use.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -1391,7 +1391,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full">
                     
                     <!-- Card 1: Barangay Badges (100% Green Governance Seal Matrix) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Beyond finances, TALA also supports governance. The badge system shows barangay reporting performance using Gold, Silver, and Bronze levels. This gives the team a quick way to see progress and identify follow-up work." data-speech-title="Barangay Governance Badges">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Beyond finances, the badge system helps you see barangay reporting progress. Gold, Silver, and Bronze levels provide a quick overview. For the MYDO, this can help identify which barangays may need follow-up or assistance." data-speech-title="Barangay Governance Badges">
                         <div>
                             <!-- Top UI Asset Container: Pure Green Matrix -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2.5 overflow-hidden">
@@ -1461,7 +1461,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 2: Council & YORP (Interactive Pills with Loader style in Green) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next, the MYDC and YORP modules organize records for youth organizations and their representatives. This helps the municipal team keep track of the groups involved in local youth development." data-speech-title="MYDC and YORP Records">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next, the MYDC and YORP modules organize youth organizations and their representatives. These records help the MYDO coordinate with participating groups and help SK teams identify youth organizations involved in local activities." data-speech-title="MYDC and YORP Records">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex flex-col items-center justify-center gap-2 p-3 overflow-hidden">
@@ -1500,7 +1500,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 3: Minutes & Assembly Resolutions -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="In addition, the records module keeps minutes of meetings and resolutions in one place. Officials can refer to attendance, discussions, and decisions when preparing reports or following up on agreed actions." data-speech-title="Meeting Minutes and Resolutions">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="In addition, this module keeps meeting minutes and resolutions together. Your team can refer back to attendance, discussions, and decisions when preparing reports or checking the actions agreed during a meeting." data-speech-title="Meeting Minutes and Resolutions">
                         <div>
                             <!-- Top UI Asset Container: Resolution Document Mockup -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1543,7 +1543,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 4: Civic Feedback & Tickets -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="However, governance is also about listening. The helpdesk lets young people send questions, concerns, and suggestions. Each ticket provides a record that officials can use to follow up on the request." data-speech-title="Youth Helpdesk">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="However, records are only one part of governance. The youth helpdesk lets constituents send concerns, questions, and suggestions. Keeping a ticket helps your team follow the request and refer back to the details." data-speech-title="Youth Helpdesk">
                         <div>
                             <!-- Top UI Asset Container: Citizen Helpdesk Ticket Mockup -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl relative flex items-center justify-center p-3 overflow-hidden">
@@ -1610,7 +1610,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 7: TECHNICAL ARCHITECTURE & STACK    -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-7" data-title="Technical Architecture" data-notes="Behind the platform, PHP processes requests and MySQL stores related records. On the screen, Tailwind CSS helps the pages adapt to different devices. The shared theme switch keeps light and dark mode consistent. User roles help separate the responsibilities of administrators and SK chairpersons. You do not need to remember every technical term. The main point is that these parts work together to organize information and control access. Finally, let us look at the overall value and the next steps.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-7" data-title="Technical Architecture" data-notes="For daily use, the main point is straightforward: your account gives you access to the tools for your role. SK chairpersons and municipal administrators have different responsibilities, so the system separates their access. The pages adapt to desktop and mobile screens, while the theme switch lets you choose light or dark mode. Behind the scenes, PHP processes requests and MySQL stores the related records. These technical parts work together to support the tasks you perform on screen. Finally, let us look at the overall value and the next steps.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -1627,7 +1627,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full">
                     
                     <!-- Stack 1: Backend Runtime (Browser / Window Mockup style with Green accents) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Now, let us briefly look at how the system is built. PHP handles the work on the server, while PDO prepared statements help the application work with database queries. In simple terms, this is the part that processes requests and saves records." data-speech-title="Server-Side Processing: PHP and PDO">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Now, a brief look behind the screen. PHP processes the requests you make, such as opening a record or saving an entry. PDO prepared statements help the application handle its database queries." data-speech-title="Server-Side Processing: PHP and PDO">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1666,7 +1666,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stack 2: Data Layer (Interactive Pills style with Green accents) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next, MySQL stores the information behind the platform. It connects related records, such as a barangay, its budget, and its transactions. Database transactions help keep related changes together." data-speech-title="Data Storage: MySQL">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next, MySQL stores related information, such as your barangay, its budget, and its transactions. Database transactions help keep related changes together when the system saves them." data-speech-title="Data Storage: MySQL">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex flex-col items-center justify-center gap-2 p-3 overflow-hidden">
@@ -1703,7 +1703,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stack 3: Presentation & UI (Bold Typography with Green Glow) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="On the screen, Tailwind CSS helps keep the design consistent across different devices. The layout adapts to desktop and mobile screens, and the shared theme control changes the page between light and dark mode." data-speech-title="Responsive Interface and Themes">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="On the screen, the layout adapts to desktop and mobile devices. This helps you use the platform from different screen sizes. You can also choose light or dark mode through the shared theme switch." data-speech-title="Responsive Interface and Themes">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1737,7 +1737,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stack 4: Security Standards (Network Nodes with Center Key/Shield) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Finally, access controls help separate what different users can do. For example, an administrator and an SK chairperson have different responsibilities. These controls help keep account actions within the appropriate role." data-speech-title="User Roles and Access">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Finally, accounts have different access based on their responsibilities. An SK chairperson and a municipal administrator use different tools for their roles. These controls help organize who can perform particular actions." data-speech-title="User Roles and Access">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1806,7 +1806,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 8: OUTRO - IMPACT, ROADMAP & LAUNCH  -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-8" data-title="Impact, Roadmap & Outro" data-notes="To conclude, TALA brings youth records, financial documents, and public information into one platform. Its value is easier organization, clearer reporting, and better access to available information. Looking ahead, the roadmap includes a mobile web app, project mapping, and SMS notifications. These are planned improvements. Next, I will open the live system and show how the current modules work. Thank you, and I welcome your questions.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-8" data-title="Impact, Roadmap & Outro" data-notes="To conclude, TALA is intended to help the MYDO and all 46 SK chairpersons keep youth records, financial documents, and public information more organized. Its usefulness will depend on accurate entries and regular updates from the people using it. Looking ahead, the roadmap includes a mobile web app, project mapping, and SMS notifications. These are planned improvements. Next, I will demonstrate the current system. As we go through it, I welcome your questions and suggestions about how it can better support the work in your barangays. Thank you.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -1821,7 +1821,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
 
                 <!-- Four equal section cards: impact and three roadmap priorities -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full">
-                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="To bring everything together, TALA connects youth records, financial documents, and public information in one platform. This makes daily work easier to organize and gives the community a clearer view of youth governance." data-speech-title="Connected Youth Governance">
+                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="To bring everything together, TALA gives your SK teams and the MYDO a connected place for youth records, financial documents, and public information. Accurate entries and regular updates will help make that information useful." data-speech-title="Connected Youth Governance">
                         <div>
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
                                 <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-3 transform group-hover:scale-105 transition-transform duration-300">
@@ -1845,7 +1845,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                         </div>
                     </div>
 
-                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="Looking ahead, the roadmap includes a Progressive Web App. The aim is to improve mobile access and explore ways to prepare selected records when an internet connection is unavailable. This is a planned improvement." data-speech-title="Planned Mobile App">
+                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="Looking ahead, a planned mobile web app aims to improve access for barangay users. The roadmap also explores preparing selected records when an internet connection is unavailable. This is a future improvement, rather than part of the current demonstration." data-speech-title="Planned Mobile App">
                         <div>
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
                                 <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-3 transform group-hover:scale-105 transition-transform duration-300">
@@ -1869,7 +1869,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                         </div>
                     </div>
 
-                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="Another planned improvement is project mapping. A map would help users see where youth projects are located across Tumauini and connect those locations with the available project records." data-speech-title="Planned Project Mapping">
+                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="Another planned improvement is project mapping. This would help the MYDO and SK teams see where youth projects are located and connect those locations with the available project records." data-speech-title="Planned Project Mapping">
                         <div>
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
                                 <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-3 transform group-hover:scale-105 transition-transform duration-300">
@@ -1893,7 +1893,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                         </div>
                     </div>
 
-                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="In addition, the roadmap includes SMS notifications. These would help share meeting reminders, opportunities, and urgent announcements with people who may not be online regularly." data-speech-title="Planned SMS Notifications">
+                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="In addition, planned SMS notifications would help share meeting reminders, opportunities, and urgent announcements. This could help reach young people and barangay representatives who are not regularly online." data-speech-title="Planned SMS Notifications">
                         <div>
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
                                 <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-3 transform group-hover:scale-105 transition-transform duration-300">
@@ -1920,7 +1920,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 </div>
 
                 <!-- Bottom Live Launchpad & Closing Banner -->
-                <div class="saas-card rounded-2xl p-3 sm:p-4 flex flex-col md:flex-row items-center justify-between gap-3 mt-2 w-full group" data-speech="That concludes the overview. Next, I will demonstrate the live system so you can see how the modules work together. Thank you for listening. I am ready to answer your questions." data-speech-title="Live Demonstration and Questions">
+                <div class="saas-card rounded-2xl p-3 sm:p-4 flex flex-col md:flex-row items-center justify-between gap-3 mt-2 w-full group" data-speech="Next, I will open the current system and demonstrate the workflow. To our MYDO and all 46 SK chairpersons, I welcome your questions and practical suggestions. Your feedback will help identify what your teams need most. Thank you." data-speech-title="Live Demonstration and Your Feedback">
                     <div class="flex items-center gap-3">
                         <img src="mascot.png" alt="TALA Mascot" class="w-10 h-10 object-contain hidden sm:block">
                         <div>
@@ -1969,12 +1969,12 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="flex items-center gap-2 mb-1 flex-wrap">
                     <span class="text-[11px] font-mono font-black uppercase text-[#15803d] dark:text-[#16a34a] tracking-wider flex items-center gap-1.5 bg-green-500/10 px-2.5 py-0.5 rounded-full">
                         <span class="w-2 h-2 rounded-full bg-[#15803d] animate-ping"></span>
-                        Read aloud to the panel:
+                        Speaking guide:
                     </span>
-                    <span class="text-xs font-bold text-slate-500 dark:text-zinc-400 font-sans truncate" id="hudSectionLabel">Introduction to TALA</span>
+                    <span class="text-xs font-bold text-slate-500 dark:text-zinc-400 font-sans truncate" id="hudSectionLabel">Introducing TALA to the MYDO and SK Chairpersons</span>
                 </div>
                 <p id="hudSpeechText" class="text-sm sm:text-base md:text-lg font-bold text-slate-900 dark:text-white leading-relaxed">
-                    Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system.
+                    Good day to our Municipal Youth Development Officer and to all 46 SK chairpersons of Tumauini. Thank you for giving me the opportunity to present TALA, or Tumauini Active Youth Ledger Analytics. This platform brings youth records, budgets, reports, and community services into one place. Today, I will show how it can help you organize barangay records and help the MYDO coordinate information across the municipality. Let us begin with the responsibilities that guided its design.
                 </p>
             </div>
         </div>
@@ -2278,39 +2278,39 @@ if ($total_budget <= 0) $total_budget = 46000000;
         let hudVisible = true;
         let speechResetTimer = null;
 
-        // Plain English scripts with transitions for each slide.
+        // Plain English scripts for the MYDO and the 46 SK chairpersons.
         const defaultSlideSpeeches = {
             "1": {
-                        "title": "Introduction to TALA",
-                        "text": "Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system. Next, I will explain the responsibilities that guided its design."
+                        "title": "Introducing TALA to the MYDO and SK Chairpersons",
+                        "text": "Good day to our Municipal Youth Development Officer and to all 46 SK chairpersons of Tumauini. Thank you for giving me the opportunity to present TALA, or Tumauini Active Youth Ledger Analytics. This platform brings youth records, budgets, reports, and community services into one place. Today, I will show how it can help you organize barangay records and help the MYDO coordinate information across the municipality. Let us begin with the responsibilities that guided its design."
             },
             "2": {
-                        "title": "The Purpose Behind the Platform",
-                        "text": "First, let us look at the responsibilities behind youth governance. This slide names four laws that provide context for SK planning, local government, and ethical public service. The main idea is simple: officials need clear plans, organized records, and information that people can review. TALA helps support that work. However, these responsibilities can be difficult to manage through paper records alone."
+                        "title": "Supporting Your Responsibilities",
+                        "text": "First, let us look at the responsibilities behind the platform. As SK chairpersons, you prepare plans, manage records, and explain how youth programs are carried out. The MYDO also needs organized information to support coordination across the 46 barangays. The laws shown here provide context for planning, accountability, and public service. TALA helps organize the information used in this work. However, keeping these records complete and easy to find can be challenging when they are spread across paper files and separate documents."
             },
             "3": {
-                        "title": "From Paper Records to Connected Tools",
-                        "text": "Next, let us compare the usual paper-based process with the TALA approach. Paper files can be hard to locate, and repeated data entry can slow down reporting. TALA brings related records into connected modules, making information easier to organize and retrieve. To show how this works, I will walk through the process from registration to review."
+                        "title": "Making Barangay Reporting Easier",
+                        "text": "Next, let us look at that practical challenge. When records are kept in separate files, finding a receipt, checking a report, or updating youth information can take extra time. For the MYDO, gathering information from 46 barangays adds another layer of coordination. TALA brings related records into connected modules so your team can find and review them more easily. The purpose is to give you a clearer way to organize the work you already do. To explain this further, let us follow the workflow."
             },
             "4": {
-                        "title": "The Five-Stage Workflow",
-                        "text": "The workflow has five stages. First, youth registration creates the records used to identify participants. Next, officials prepare their program and budget plans. After that, they record vouchers and attach supporting documents. Once reports are approved, they can be published for public viewing. Finally, the municipal team reviews submissions and follows up on incomplete records. With that flow in mind, let us look at the financial tools."
+                        "title": "From Youth Registration to Municipal Review",
+                        "text": "The workflow has five stages. First, your team records youth information so you can identify participants and connect them with activities. Next, you prepare your program and budget plans. After that, you record vouchers and attach supporting documents. Once reports are reviewed and approved, they can be published for public viewing. Finally, the municipal team reviews submissions and follows up on records that need attention. This connects the work in each barangay with municipal coordination. Now, let us look more closely at the financial tools."
             },
             "5": {
-                        "title": "Financial Records and Public Disclosure",
-                        "text": "Now, we move to three financial tools. The Full Disclosure Portal shares published reports with the public. The budget console helps officials compare planned amounts with recorded spending. The voucher module keeps transactions and supporting documents together. In simple terms, these tools help answer three questions: what was planned, what was spent, and where are the supporting records? Next, we will look beyond finances."
+                        "title": "Organizing Budgets and Supporting Records",
+                        "text": "Now, we move to three tools for financial records. The budget console helps your SK team compare planned amounts with recorded spending. The voucher module keeps receipts and supporting files connected to a transaction. The Full Disclosure Portal makes published reports available to the public. For SK chairpersons, this means a clearer place to organize the records you need. For the MYDO, it supports a more organized review of barangay information. These tools help answer three questions: what was planned, what was spent, and where are the supporting documents? Next, we will look beyond finances."
             },
             "6": {
-                        "title": "Governance and Community Participation",
-                        "text": "In addition to financial records, TALA helps organize governance activities. Barangay badges show reporting progress. MYDC and YORP records help organize youth groups and representatives. Meeting minutes and resolutions preserve decisions. However, good governance also needs feedback, so the helpdesk provides a way for young people to raise concerns. Next, I will briefly explain the technology behind these tools."
+                        "title": "Coordination, Decisions, and Youth Feedback",
+                        "text": "In addition to financial records, TALA supports coordination and participation. Barangay badges show reporting progress and help identify where follow-up may be needed. MYDC and YORP records help the municipal team organize youth groups and their representatives. Minutes and resolutions preserve the decisions made during meetings. However, good governance also depends on listening to young people. The helpdesk provides a record of their questions, concerns, and suggestions so these can be followed up. Next, I will briefly explain how the system supports your daily use."
             },
             "7": {
-                        "title": "How the System Works",
-                        "text": "Behind the platform, PHP processes requests and MySQL stores related records. On the screen, Tailwind CSS helps the pages adapt to different devices. The shared theme switch keeps light and dark mode consistent. User roles help separate the responsibilities of administrators and SK chairpersons. You do not need to remember every technical term. The main point is that these parts work together to organize information and control access. Finally, let us look at the overall value and the next steps."
+                        "title": "Using the System in Your Daily Work",
+                        "text": "For daily use, the main point is straightforward: your account gives you access to the tools for your role. SK chairpersons and municipal administrators have different responsibilities, so the system separates their access. The pages adapt to desktop and mobile screens, while the theme switch lets you choose light or dark mode. Behind the scenes, PHP processes requests and MySQL stores the related records. These technical parts work together to support the tasks you perform on screen. Finally, let us look at the overall value and the next steps."
             },
             "8": {
-                        "title": "Overall Value and Next Steps",
-                        "text": "To conclude, TALA brings youth records, financial documents, and public information into one platform. Its value is easier organization, clearer reporting, and better access to available information. Looking ahead, the roadmap includes a mobile web app, project mapping, and SMS notifications. These are planned improvements. Next, I will open the live system and show how the current modules work. Thank you, and I welcome your questions."
+                        "title": "Next Steps for the MYDO and the 46 Barangays",
+                        "text": "To conclude, TALA is intended to help the MYDO and all 46 SK chairpersons keep youth records, financial documents, and public information more organized. Its usefulness will depend on accurate entries and regular updates from the people using it. Looking ahead, the roadmap includes a mobile web app, project mapping, and SMS notifications. These are planned improvements. Next, I will demonstrate the current system. As we go through it, I welcome your questions and suggestions about how it can better support the work in your barangays. Thank you."
             }
 };
 
