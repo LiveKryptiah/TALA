@@ -498,6 +498,9 @@ function getMobileNavClass($page, $current_page) {
                                 <a href="public_yorp.php" class="<?= getDropdownChildClass('public_yorp.php', $current_page) ?>">
                                     <i class="ph-bold ph-address-book icon-gradient"></i> YORP Tracker
                                 </a>
+                                <a href="presentation.php" class="<?= getDropdownChildClass('presentation.php', $current_page) ?>">
+                                    <i class="ph-bold ph-presentation icon-gradient"></i> System Presentation
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -555,6 +558,7 @@ function getMobileNavClass($page, $current_page) {
                     <a href="public_disclosure.php" class="<?= getMobileNavClass('public_disclosure.php', $current_page) ?>">Full Disclosure</a>
                     <a href="public_budget.php" class="<?= getMobileNavClass('public_budget.php', $current_page) ?>">Budget Reports</a>
                     <a href="public_governance.php" class="<?= getMobileNavClass('public_governance.php', $current_page) ?>">Public Documents</a>
+                    <a href="presentation.php" class="<?= getMobileNavClass('presentation.php', $current_page) ?>">System Presentation</a>
                 </div>
             </div>
 

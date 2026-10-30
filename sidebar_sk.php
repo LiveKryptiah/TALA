@@ -225,7 +225,7 @@ $position = $_SESSION['sk_position'] ?? 'Official';
         transition: border-color 0.3s ease !important;
     }
     .tbp-profile-card {
-        background: linear-gradient(135deg, #15803d 0%, #16a34a 100%) !important;
+        background: linear-gradient(135deg, #15803d 0%, #166534 100%) !important;
         border-radius: 12px !important;
         padding: 8px 10px !important;
         border: none !important;
@@ -352,7 +352,7 @@ $position = $_SESSION['sk_position'] ?? 'Official';
     }
     html.dark #tala-bulletproof-sk-sidebar .tbp-link.active:hover {
         background-color: rgba(34, 197, 94, 0.22) !important;
-        color: #4ade80 !important;
+        color: #22c55e !important;
     }
     html.dark #tala-bulletproof-sk-sidebar .tbp-link.active i,
     html.dark #tala-bulletproof-sk-sidebar .tbp-link:active i,
@@ -364,7 +364,7 @@ $position = $_SESSION['sk_position'] ?? 'Official';
         border-top-color: rgba(39, 39, 42, 0.8) !important;
     }
     html.dark #tala-bulletproof-sk-sidebar .tbp-profile-card {
-        background: linear-gradient(135deg, #15803d 0%, #16a34a 100%) !important;
+        background: linear-gradient(135deg, #166534 0%, #15803d 100%) !important;
         border: none !important;
     }
     html.dark #tala-bulletproof-sk-sidebar .tbp-avatar {

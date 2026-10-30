@@ -173,7 +173,7 @@ try {
     .tala-brand-subtitle { color: #64748b !important; transition: color 0.3s ease !important; }
 
     .tala-profile-card {
-        background: linear-gradient(135deg, #15803d 0%, #16a34a 100%) !important;
+        background: linear-gradient(135deg, #15803d 0%, #166534 100%) !important;
         border-radius: 12px !important;
         padding: 8px 10px !important;
         border: none !important;
@@ -207,7 +207,7 @@ try {
     }
     html.dark #tala-admin-sidebar .tala-nav-btn.active:hover {
         background-color: rgba(34, 197, 94, 0.22) !important;
-        color: #4ade80 !important;
+        color: #22c55e !important;
     }
     html.dark #tala-admin-sidebar .tala-nav-btn.active i,
     html.dark #tala-admin-sidebar .tala-nav-btn:active i,
@@ -225,7 +225,7 @@ try {
     html.dark #tala-admin-sidebar .sidebar-heading { color: #52525b !important; }
     html.dark .tala-brand-text { color: #f4f4f5 !important; }
     html.dark .tala-brand-subtitle { color: #a1a1aa !important; }
-    html.dark .tala-profile-card { background: linear-gradient(135deg, #15803d 0%, #16a34a 100%) !important; border: none !important; }
+    html.dark .tala-profile-card { background: linear-gradient(135deg, #166534 0%, #15803d 100%) !important; border: none !important; }
     html.dark .tala-logout-btn { background-color: rgba(255, 255, 255, 0.18) !important; border-color: rgba(255, 255, 255, 0.28) !important; color: #ffffff !important; }
     html.dark .tala-logout-btn:hover { background-color: rgba(239, 68, 68, 0.88) !important; }
 
@@ -269,33 +269,33 @@ try {
     <div class="w-full shrink-0 flex items-center justify-around snap-start h-full">
         
         <!-- 1. Dashboard -->
-        <a href="tala_dashboard.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'tala_dashboard.php' ? 'text-[#15803d] dark:text-[#4ade80]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
-            <div class="px-4 py-1 <?= $current_page == 'tala_dashboard.php' ? 'bg-emerald-600/15 dark:bg-emerald-500/20 text-[#15803d] dark:text-[#4ade80] rounded-full' : '' ?> mb-1 transition-colors">
-                <i class="<?= $current_page == 'tala_dashboard.php' ? 'ph-fill text-[#15803d] dark:text-[#4ade80]' : 'ph-bold' ?> ph-squares-four text-2xl"></i>
+        <a href="tala_dashboard.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'tala_dashboard.php' ? 'text-[#15803d] dark:text-[#16a34a]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
+            <div class="px-4 py-1 <?= $current_page == 'tala_dashboard.php' ? 'bg-green-600/15 dark:bg-green-500/20 text-[#15803d] dark:text-[#16a34a] rounded-full' : '' ?> mb-1 transition-colors">
+                <i class="<?= $current_page == 'tala_dashboard.php' ? 'ph-fill text-[#15803d] dark:text-[#16a34a]' : 'ph-bold' ?> ph-squares-four text-2xl"></i>
             </div>
             <span class="text-[10px] font-bold">Dashboard</span>
         </a>
 
         <!-- 2. Calendar -->
-        <a href="admin_calendar.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'admin_calendar.php' ? 'text-[#15803d] dark:text-[#4ade80]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
-            <div class="px-4 py-1 <?= $current_page == 'admin_calendar.php' ? 'bg-emerald-600/15 dark:bg-emerald-500/20 text-[#15803d] dark:text-[#4ade80] rounded-full' : '' ?> mb-1 transition-colors">
-                <i class="<?= $current_page == 'admin_calendar.php' ? 'ph-fill text-[#15803d] dark:text-[#4ade80]' : 'ph-bold' ?> ph-calendar-blank text-2xl"></i>
+        <a href="admin_calendar.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'admin_calendar.php' ? 'text-[#15803d] dark:text-[#16a34a]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
+            <div class="px-4 py-1 <?= $current_page == 'admin_calendar.php' ? 'bg-green-600/15 dark:bg-green-500/20 text-[#15803d] dark:text-[#16a34a] rounded-full' : '' ?> mb-1 transition-colors">
+                <i class="<?= $current_page == 'admin_calendar.php' ? 'ph-fill text-[#15803d] dark:text-[#16a34a]' : 'ph-bold' ?> ph-calendar-blank text-2xl"></i>
             </div>
             <span class="text-[10px] font-bold">Calendar</span>
         </a>
 
         <!-- 3. Directory -->
-        <a href="tala_directory.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'tala_directory.php' ? 'text-[#15803d] dark:text-[#4ade80]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
-            <div class="px-4 py-1 <?= $current_page == 'tala_directory.php' ? 'bg-emerald-600/15 dark:bg-emerald-500/20 text-[#15803d] dark:text-[#4ade80] rounded-full' : '' ?> mb-1 transition-colors">
-                <i class="<?= $current_page == 'tala_directory.php' ? 'ph-fill text-[#15803d] dark:text-[#4ade80]' : 'ph-bold' ?> ph-users-three text-2xl"></i>
+        <a href="tala_directory.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'tala_directory.php' ? 'text-[#15803d] dark:text-[#16a34a]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
+            <div class="px-4 py-1 <?= $current_page == 'tala_directory.php' ? 'bg-green-600/15 dark:bg-green-500/20 text-[#15803d] dark:text-[#16a34a] rounded-full' : '' ?> mb-1 transition-colors">
+                <i class="<?= $current_page == 'tala_directory.php' ? 'ph-fill text-[#15803d] dark:text-[#16a34a]' : 'ph-bold' ?> ph-users-three text-2xl"></i>
             </div>
             <span class="text-[10px] font-bold">Youth</span>
         </a>
 
         <!-- 4. Approvals -->
-        <a href="admin_approval.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'admin_approval.php' ? 'text-[#15803d] dark:text-[#4ade80]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors relative">
-            <div class="px-4 py-1 <?= $current_page == 'admin_approval.php' ? 'bg-emerald-600/15 dark:bg-emerald-500/20 text-[#15803d] dark:text-[#4ade80] rounded-full' : '' ?> mb-1 transition-colors relative">
-                <i class="<?= $current_page == 'admin_approval.php' ? 'ph-fill text-[#15803d] dark:text-[#4ade80]' : 'ph-bold' ?> ph-shield-check text-2xl"></i>
+        <a href="admin_approval.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'admin_approval.php' ? 'text-[#15803d] dark:text-[#16a34a]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors relative">
+            <div class="px-4 py-1 <?= $current_page == 'admin_approval.php' ? 'bg-green-600/15 dark:bg-green-500/20 text-[#15803d] dark:text-[#16a34a] rounded-full' : '' ?> mb-1 transition-colors relative">
+                <i class="<?= $current_page == 'admin_approval.php' ? 'ph-fill text-[#15803d] dark:text-[#16a34a]' : 'ph-bold' ?> ph-shield-check text-2xl"></i>
                 <?php if(isset($pending_approvals) && $pending_approvals > 0): ?>
                     <span class="absolute top-0 right-2 w-2.5 h-2.5 bg-red-500 border-2 border-white dark:border-zinc-950 rounded-full"></span>
                 <?php endif; ?>
@@ -309,25 +309,25 @@ try {
     <div class="w-full shrink-0 flex items-center justify-around snap-start h-full">
         
         <!-- 5. Kanban / Projects -->
-        <a href="kanban.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'kanban.php' ? 'text-[#15803d] dark:text-[#4ade80]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
-            <div class="px-4 py-1 <?= $current_page == 'kanban.php' ? 'bg-emerald-600/15 dark:bg-emerald-500/20 text-[#15803d] dark:text-[#4ade80] rounded-full' : '' ?> mb-1 transition-colors">
-                <i class="<?= $current_page == 'kanban.php' ? 'ph-fill text-[#15803d] dark:text-[#4ade80]' : 'ph-bold' ?> ph-kanban text-2xl"></i>
+        <a href="kanban.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'kanban.php' ? 'text-[#15803d] dark:text-[#16a34a]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
+            <div class="px-4 py-1 <?= $current_page == 'kanban.php' ? 'bg-green-600/15 dark:bg-green-500/20 text-[#15803d] dark:text-[#16a34a] rounded-full' : '' ?> mb-1 transition-colors">
+                <i class="<?= $current_page == 'kanban.php' ? 'ph-fill text-[#15803d] dark:text-[#16a34a]' : 'ph-bold' ?> ph-kanban text-2xl"></i>
             </div>
             <span class="text-[10px] font-bold">Projects</span>
         </a>
 
         <!-- 6. Governance / Files -->
-        <a href="admin_governance.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'admin_governance.php' ? 'text-[#15803d] dark:text-[#4ade80]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
-            <div class="px-4 py-1 <?= $current_page == 'admin_governance.php' ? 'bg-emerald-600/15 dark:bg-emerald-500/20 text-[#15803d] dark:text-[#4ade80] rounded-full' : '' ?> mb-1 transition-colors">
-                <i class="<?= $current_page == 'admin_governance.php' ? 'ph-fill text-[#15803d] dark:text-[#4ade80]' : 'ph-bold' ?> ph-file text-2xl"></i>
+        <a href="admin_governance.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'admin_governance.php' ? 'text-[#15803d] dark:text-[#16a34a]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors">
+            <div class="px-4 py-1 <?= $current_page == 'admin_governance.php' ? 'bg-green-600/15 dark:bg-green-500/20 text-[#15803d] dark:text-[#16a34a] rounded-full' : '' ?> mb-1 transition-colors">
+                <i class="<?= $current_page == 'admin_governance.php' ? 'ph-fill text-[#15803d] dark:text-[#16a34a]' : 'ph-bold' ?> ph-file text-2xl"></i>
             </div>
             <span class="text-[10px] font-bold">Files</span>
         </a>
 
         <!-- 7. E-Sumbong -->
-        <a href="tickets.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'tickets.php' ? 'text-[#15803d] dark:text-[#4ade80]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors relative">
-            <div class="px-4 py-1 <?= $current_page == 'tickets.php' ? 'bg-emerald-600/15 dark:bg-emerald-500/20 text-[#15803d] dark:text-[#4ade80] rounded-full' : '' ?> mb-1 transition-colors relative">
-                <i class="<?= $current_page == 'tickets.php' ? 'ph-fill text-[#15803d] dark:text-[#4ade80]' : 'ph-bold' ?> ph-megaphone text-2xl"></i>
+        <a href="tickets.php" class="flex flex-col items-center justify-center w-1/4 h-full <?= $current_page == 'tickets.php' ? 'text-[#15803d] dark:text-[#16a34a]' : 'text-slate-400 dark:text-zinc-500 hover:text-slate-700 dark:hover:text-zinc-300' ?> tap-effect transition-colors relative">
+            <div class="px-4 py-1 <?= $current_page == 'tickets.php' ? 'bg-green-600/15 dark:bg-green-500/20 text-[#15803d] dark:text-[#16a34a] rounded-full' : '' ?> mb-1 transition-colors relative">
+                <i class="<?= $current_page == 'tickets.php' ? 'ph-fill text-[#15803d] dark:text-[#16a34a]' : 'ph-bold' ?> ph-megaphone text-2xl"></i>
                 <?php if(isset($pending_tickets) && $pending_tickets > 0): ?>
                     <span class="absolute top-0 right-2 w-2.5 h-2.5 bg-red-500 border-2 border-white dark:border-zinc-950 rounded-full"></span>
                 <?php endif; ?>
@@ -391,6 +391,9 @@ try {
         </a>
         <a href="department_monitor.php" class="tala-nav-btn <?= $current_page == 'department_monitor.php' ? 'active' : '' ?>">
             <i class="<?= $current_page == 'department_monitor.php' ? 'ph-fill' : 'ph-bold' ?> ph-eye"></i> Inter-Agency Monitor
+        </a>
+        <a href="presentation.php" target="_blank" class="tala-nav-btn <?= $current_page == 'presentation.php' ? 'active' : '' ?>">
+            <i class="<?= $current_page == 'presentation.php' ? 'ph-fill' : 'ph-bold' ?> ph-presentation"></i> System Presentation
         </a>
 
         <p class="sidebar-heading">Administrative</p>

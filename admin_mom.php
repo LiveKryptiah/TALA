@@ -456,12 +456,6 @@ $total_displayed = count($mom_records);
                         </div>
                     </div>
 
-                    <!-- Record Minutes Action Button -->
-                    <button type="button" onclick="openUploadModal()" class="btn-yellow-glow-r px-3.5 py-2 rounded-xl bg-[#15803d] hover:bg-[#166534] dark:bg-[#16a34a] dark:hover:bg-[#15803d] text-white text-xs font-bold flex items-center gap-1.5 transition-all duration-200 hover:-translate-y-0.5 tap-effect flex-shrink-0 cursor-pointer">
-                        <i class="ph-bold ph-plus text-sm"></i>
-                        <span>Record Minutes</span>
-                    </button>
-
                     <!-- Dark Mode Toggle Button -->
                     <button type="button" onclick="toggleTheme()" id="headerThemeToggle" class="glass-card w-[36px] h-[36px] sm:w-[40px] sm:h-[40px] rounded-xl flex items-center justify-center text-slate-500 hover:text-slate-900 dark:text-zinc-400 dark:hover:text-white transition-all duration-200 hover:-translate-y-0.5 tap-effect flex-shrink-0 group cursor-pointer" title="Toggle Dark Mode">
                         <i id="headerThemeIcon" class="ph-bold ph-moon text-base sm:text-lg transition-transform duration-200"></i>
@@ -513,14 +507,14 @@ $total_displayed = count($mom_records);
                     <?php endforeach; ?>
                 </div>
 
-                <!-- Search and Barangay Dropdown -->
-                <div class="flex flex-wrap sm:flex-nowrap items-center gap-2 w-full xl:w-auto">
+                <!-- Dropdowns, Search & Action Buttons Cluster -->
+                <div class="flex flex-wrap items-center gap-2 w-full xl:w-auto">
                     <!-- Barangay Select -->
-                    <form method="GET" class="w-full sm:w-48">
+                    <form method="GET" class="w-full sm:w-auto sm:flex-1 md:w-40 lg:w-44 min-w-[130px]">
                         <?php if ($type_filter !== 'All'): ?><input type="hidden" name="type" value="<?= htmlspecialchars($type_filter) ?>"><?php endif; ?>
                         <?php if ($status_filter !== 'All'): ?><input type="hidden" name="status" value="<?= htmlspecialchars($status_filter) ?>"><?php endif; ?>
                         <?php if (!empty($search)): ?><input type="hidden" name="search" value="<?= htmlspecialchars($search) ?>"><?php endif; ?>
-                        <select name="barangay" onchange="this.form.submit()" class="w-full bg-slate-100 dark:bg-zinc-800/80 text-slate-800 dark:text-zinc-200 rounded-xl px-3 py-1.5 text-xs font-semibold outline-none cursor-pointer transition-colors border-0">
+                        <select name="barangay" onchange="this.form.submit()" class="w-full bg-slate-100 dark:bg-zinc-800 text-slate-800 dark:text-zinc-100 rounded-xl px-3 py-1.5 text-xs font-semibold outline-none cursor-pointer transition-colors border-0">
                             <option value="">All 46 Barangays</option>
                             <?php foreach ($all_barangays as $b): ?>
                                 <option value="<?= htmlspecialchars($b) ?>" <?= $brgy_filter === $b ? 'selected' : '' ?>><?= htmlspecialchars($b) ?></option>
@@ -529,19 +523,28 @@ $total_displayed = count($mom_records);
                     </form>
 
                     <!-- Search Input -->
-                    <form method="GET" class="relative w-full sm:w-56">
+                    <form method="GET" class="relative w-full sm:w-auto sm:flex-1 md:w-48 lg:w-52 min-w-[140px]">
                         <?php if ($type_filter !== 'All'): ?><input type="hidden" name="type" value="<?= htmlspecialchars($type_filter) ?>"><?php endif; ?>
                         <?php if ($status_filter !== 'All'): ?><input type="hidden" name="status" value="<?= htmlspecialchars($status_filter) ?>"><?php endif; ?>
                         <?php if (!empty($brgy_filter)): ?><input type="hidden" name="barangay" value="<?= htmlspecialchars($brgy_filter) ?>"><?php endif; ?>
-                        <i class="ph-bold ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
-                        <input type="text" name="search" value="<?= htmlspecialchars($search) ?>" placeholder="Search session, barangay..." class="w-full bg-slate-100 dark:bg-zinc-800/80 text-slate-800 dark:text-zinc-200 placeholder-slate-400 dark:placeholder-zinc-500 rounded-xl pl-8 pr-3 py-1.5 text-xs font-semibold outline-none transition-colors border-0">
+                        <i class="ph-bold ph-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 text-xs"></i>
+                        <input type="text" name="search" value="<?= htmlspecialchars($search) ?>" placeholder="Search session, barangay..." class="w-full bg-slate-100 dark:bg-zinc-800 text-slate-800 dark:text-zinc-100 placeholder-slate-400 dark:placeholder-zinc-500 rounded-xl pl-8 pr-3 py-1.5 text-xs font-semibold outline-none transition-colors border-0">
                     </form>
 
-                    <?php if (!empty($search) || !empty($brgy_filter) || $type_filter !== 'All' || $status_filter !== 'All'): ?>
-                        <a href="admin_mom.php" class="flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-600 hover:text-slate-900 dark:text-zinc-300 dark:hover:text-white font-bold h-[30px] w-[30px] rounded-xl text-xs transition-all duration-200 active:scale-[0.95] tap-effect flex-shrink-0" title="Clear Filters">
-                            <i class="ph-bold ph-x text-xs"></i>
-                        </a>
-                    <?php endif; ?>
+                    <!-- Action Buttons Cluster -->
+                    <div class="flex items-center gap-1.5 w-full sm:w-auto ml-auto sm:ml-0 flex-shrink-0">
+                        <?php if (!empty($search) || !empty($brgy_filter) || $type_filter !== 'All' || $status_filter !== 'All'): ?>
+                            <a href="admin_mom.php" class="flex items-center justify-center bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-600 hover:text-slate-900 dark:text-zinc-300 dark:hover:text-white font-bold h-[30px] w-[30px] rounded-xl text-xs transition-all duration-200 active:scale-[0.95] tap-effect flex-shrink-0" title="Clear Filters">
+                                <i class="ph-bold ph-x text-xs"></i>
+                            </a>
+                        <?php endif; ?>
+
+                        <!-- Record Minutes Action Button -->
+                        <button type="button" onclick="openUploadModal()" class="btn-yellow-glow-r flex-1 sm:flex-none px-3.5 py-1.5 rounded-xl bg-[#15803d] hover:bg-[#166534] dark:bg-[#16a34a] dark:hover:bg-[#15803d] text-white font-bold text-xs tap-effect flex items-center justify-center gap-1.5 flex-shrink-0 transition-all duration-200 active:scale-[0.97] shadow-none group cursor-pointer whitespace-nowrap">
+                            <i class="ph-bold ph-plus text-xs transition-transform duration-300 group-hover:scale-110 relative z-10"></i>
+                            <span class="relative z-10">Record Minutes</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -663,11 +666,17 @@ $total_displayed = count($mom_records);
                                         </div>
                                         <p class="font-extrabold text-sm text-slate-800 dark:text-zinc-200">No Meeting Records Found</p>
                                         <p class="text-xs text-slate-400 dark:text-zinc-500 font-medium mt-0.5">Try clearing filters or search parameters, or record a new session.</p>
-                                        <?php if (!empty($search) || !empty($brgy_filter) || $type_filter !== 'All' || $status_filter !== 'All'): ?>
-                                            <a href="admin_mom.php" class="mt-3 inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-zinc-700 transition-colors tap-effect">
-                                                <span>Clear Filters</span>
-                                            </a>
-                                        <?php endif; ?>
+                                        <div class="mt-3 flex items-center justify-center gap-2">
+                                            <?php if (!empty($search) || !empty($brgy_filter) || $type_filter !== 'All' || $status_filter !== 'All'): ?>
+                                                <a href="admin_mom.php" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 text-xs font-semibold hover:bg-slate-200 dark:hover:bg-zinc-700 transition-colors tap-effect">
+                                                    <span>Clear Filters</span>
+                                                </a>
+                                            <?php endif; ?>
+                                            <button type="button" onclick="openUploadModal()" class="btn-yellow-glow-r inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-[#15803d] hover:bg-[#166534] dark:bg-[#16a34a] dark:hover:bg-[#15803d] text-white text-xs font-bold transition-all tap-effect">
+                                                <i class="ph-bold ph-plus text-xs"></i>
+                                                <span>Record Minutes</span>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             <?php endif; ?>

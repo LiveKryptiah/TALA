@@ -215,19 +215,25 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
             opacity: 1;
         }
 
-        /* Barangay Ranking Card: Softened gradient with rich green header and gentle emerald-tinted body (lessened white) */
+        /* Barangay Ranking Card: Rich green gradient across entire card with high-contrast white text */
         .card-ranking-gradient {
-            background: linear-gradient(180deg, #15803d 0%, #16a34a 28%, #d1fae5 72%, #dcfce7 100%) !important;
+            background: linear-gradient(155deg, #15803d 0%, #16a34a 45%, #14532d 100%) !important;
             border: none !important;
             box-shadow: none !important;
             -webkit-box-shadow: none !important;
             transition: all 0.2s ease;
         }
         .dark .card-ranking-gradient {
-            background: linear-gradient(180deg, #15803d 0%, #16a34a 24%, #142e1d 65%, #18181b 100%) !important;
+            background: linear-gradient(155deg, #166534 0%, #15803d 45%, #0f3d20 100%) !important;
             border: none !important;
             box-shadow: none !important;
             -webkit-box-shadow: none !important;
+        }
+        .card-ranking-gradient .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.25) !important;
+        }
+        .card-ranking-gradient .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.45) !important;
         }
 
         /* Mobile Overlay */
@@ -518,20 +524,20 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
                         <div id="brgyTopPanel" class="space-y-2.5 max-h-[290px] overflow-y-auto custom-scrollbar pr-1">
                             <?php 
                             $rank = 1;
-                            if (empty($top_10)) echo "<p class='text-xs text-slate-400 dark:text-zinc-500 italic py-4 text-center'>No records found in this range.</p>";
+                            if (empty($top_10)) echo "<p class='text-xs text-green-100 italic py-4 text-center'>No records found in this range.</p>";
                             foreach ($top_10 as $b): 
                                 $pct = ($b['count'] / $highest_count) * 100;
                             ?>
                             <div>
                                 <div class="flex justify-between text-xs mb-1">
-                                    <span class="font-bold text-slate-700 dark:text-zinc-300 truncate">
-                                        <span class="text-slate-400 dark:text-zinc-500 font-semibold mr-1"><?= $rank++ ?>.</span>
+                                    <span class="font-bold text-white truncate">
+                                        <span class="text-green-200 font-semibold mr-1"><?= $rank++ ?>.</span>
                                         <?= htmlspecialchars($b['barangay']) ?>
                                     </span>
-                                    <span class="font-bold text-slate-900 dark:text-white"><?= number_format($b['count']) ?></span>
+                                    <span class="font-extrabold text-white"><?= number_format($b['count']) ?></span>
                                 </div>
-                                <div class="w-full bg-green-950/10 dark:bg-zinc-800/80 rounded-full h-1">
-                                    <div class="bg-[#15803d] dark:bg-[#16a34a] h-1 rounded-full transition-all" style="width: <?= $pct ?>%"></div>
+                                <div class="w-full bg-black/25 rounded-full h-1">
+                                    <div class="bg-white h-1 rounded-full transition-all" style="width: <?= $pct ?>%"></div>
                                 </div>
                             </div>
                             <?php endforeach; ?>
@@ -542,20 +548,20 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
                             <?php 
                             $total_brgys = count($all_brgys);
                             $rank = $total_brgys > 0 ? $total_brgys : 46; 
-                            if (empty($bottom_10)) echo "<p class='text-xs text-slate-400 dark:text-zinc-500 italic py-4 text-center'>No records found.</p>";
+                            if (empty($bottom_10)) echo "<p class='text-xs text-green-100 italic py-4 text-center'>No records found.</p>";
                             foreach ($bottom_10 as $b): 
                                 $pct = ($b['count'] / $highest_count) * 100;
                             ?>
                             <div>
                                 <div class="flex justify-between text-xs mb-1">
-                                    <span class="font-bold text-slate-700 dark:text-zinc-300 truncate">
-                                        <span class="text-slate-400 dark:text-zinc-500 font-semibold mr-1"><?= $rank-- ?>.</span>
+                                    <span class="font-bold text-white truncate">
+                                        <span class="text-green-200 font-semibold mr-1"><?= $rank-- ?>.</span>
                                         <?= htmlspecialchars($b['barangay']) ?>
                                     </span>
-                                    <span class="font-bold text-slate-500 dark:text-zinc-400"><?= number_format($b['count']) ?></span>
+                                    <span class="font-bold text-green-100"><?= number_format($b['count']) ?></span>
                                 </div>
-                                <div class="w-full bg-green-950/10 dark:bg-zinc-800/80 rounded-full h-1">
-                                    <div class="bg-slate-400 dark:bg-zinc-600 h-1 rounded-full transition-all" style="width: <?= $pct ?>%"></div>
+                                <div class="w-full bg-black/25 rounded-full h-1">
+                                    <div class="bg-white/50 h-1 rounded-full transition-all" style="width: <?= $pct ?>%"></div>
                                 </div>
                             </div>
                             <?php endforeach; ?>

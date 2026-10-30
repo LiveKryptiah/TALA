@@ -425,6 +425,11 @@ try {
                     <i class="ph-fill ph-calendar-star mr-2 text-xl icon-gradient"></i>
                     View Events
                 </a>
+
+                <a href="presentation.php" target="_blank" class="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white font-bold px-6 py-4 rounded-xl transition-all flex items-center justify-center tap-effect" title="Watch Official System Presentation">
+                    <i class="ph-bold ph-presentation mr-2 text-xl text-amber-400"></i>
+                    System Presentation
+                </a>
             </div>
 
             <!-- Social Proof with Real-Time Telemetry Count -->
