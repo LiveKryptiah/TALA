@@ -35,6 +35,8 @@ try {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <title>GUK Management | TALA OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,6 +46,8 @@ try {
         tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] }, colors: { guk: { 50: '#fdf4ff', 500: '#d946ef', 600: '#c026d3', 900: '#701a75' } } } } }
     </script>
     <style>body { background-color: #f8fafc; }</style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="text-slate-800 antialiased flex selection:bg-guk-500 selection:text-white h-screen overflow-hidden">
 

@@ -35,6 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <title>Submit PPA Appointment</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,6 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         body { background-color: #f8fafc; overflow-x: hidden; }
         .admin-card { background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.02); border: 1px solid #edf1f5; padding: 25px; }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="flex min-h-screen bg-slate-50">
 

@@ -72,12 +72,16 @@ if ($role === 'admin') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <title>DTS | TALA OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style> body { font-family: 'Plus Jakarta Sans', sans-serif; } </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-slate-50 text-slate-800">
     <?php include ($role === 'admin' ? 'sidebar_admin.php' : 'sidebar_sk.php'); ?>

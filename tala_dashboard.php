@@ -106,6 +106,8 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TALA OS | Executive Dashboard</title>
@@ -300,6 +302,8 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
             background-color: #15803d;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 antialiased flex min-h-screen overflow-x-hidden selection:bg-[#15803d] selection:text-white dark:selection:bg-[#16a34a] dark:selection:text-white transition-colors duration-300">
 
@@ -659,13 +663,19 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
                         label: 'Registrations',
                         data: chartValues.length > 0 ? chartValues : [0],
                         borderColor: isDark ? '#16a34a' : '#15803d',
-                        borderWidth: 2,
-                        pointRadius: chartValues.length > 15 ? 0 : 3,
+                        borderWidth: 3,
+                        borderCapStyle: 'round',
+                        borderJoinStyle: 'round',
+                        pointRadius: 0,
+                        pointHitRadius: 12,
                         pointHoverRadius: 5,
                         pointBackgroundColor: isDark ? '#16a34a' : '#15803d',
                         fill: true,
                         backgroundColor: gradient,
-                        tension: 0.35
+                        // Smooth wave-style joins through the actual registration totals.
+                        cubicInterpolationMode: 'default',
+                        tension: 0.5,
+                        capBezierPoints: true
                     }]
                 },
                 options: {
@@ -692,6 +702,7 @@ foreach (['mascot.png', 'mascot.webp', 'mascot.jpg', 'mascot.svg'] as $m) {
                             }
                         },
                         y: {
+                            beginAtZero: true,
                             border: { display: false },
                             grid: {
                                 color: isDark ? 'rgba(39, 39, 42, 0.6)' : 'rgba(241, 245, 249, 0.9)'

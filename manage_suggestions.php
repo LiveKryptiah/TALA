@@ -30,10 +30,14 @@ $suggestions = $pdo->query("SELECT * FROM suggestions ORDER BY created_at DESC")
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <title>Community Suggestions | TALA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-gray-50 flex h-screen font-sans overflow-hidden">
   <!-- 1. Include the Sidebar -->

@@ -54,6 +54,8 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Events | TALA Tumauini 2026</title>
@@ -157,8 +159,11 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
             background-color: transparent !important;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
+<body data-public-page="public_events.php" class="tala-public bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
 
  <?php include 'navigation.php'; ?>
 
@@ -191,7 +196,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
         <!-- Events List -->
         <div class="space-y-8">
             <?php foreach ($events as $ev): ?>
-                <div class="bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden flex flex-col md:flex-row transition-all duration-300">
+                <div class="bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden flex flex-col md:flex-row transition-all duration-300 tala-public-card">
                     
                     <!-- Event Info Section -->
                     <div class="p-8 md:p-10 md:w-1/2 bg-slate-50/50 dark:bg-zinc-900/50 border-b md:border-b-0 md:border-r border-slate-100 dark:border-zinc-800 flex flex-col justify-center transition-colors">
@@ -222,7 +227,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
                         </div>
 
                         <?php if ($ev['current_count'] >= $ev['participant_limit']): ?>
-                            <div class="bg-slate-50 dark:bg-zinc-950/50 text-slate-500 dark:text-zinc-500 font-bold text-center py-8 rounded-2xl border-2 border-dashed border-slate-200 dark:border-zinc-800 flex flex-col items-center gap-2 transition-colors">
+                            <div class="bg-slate-50 dark:bg-zinc-950/50 text-slate-500 dark:text-zinc-500 font-bold text-center py-8 rounded-2xl border-2 border-dashed border-slate-200 dark:border-zinc-800 flex flex-col items-center gap-2 transition-colors tala-public-card">
                                 <i class="ph-fill ph-prohibit text-4xl text-slate-300 dark:text-zinc-700"></i>
                                 <span>EVENT FULL</span>
                             </div>
@@ -259,7 +264,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
             
             <!-- Empty State -->
             <?php if(empty($events)): ?>
-                <div class="text-center py-20 bg-white dark:bg-zinc-900 rounded-[2rem] border border-slate-200 dark:border-zinc-800 border-dashed transition-colors">
+                <div class="text-center py-20 bg-white dark:bg-zinc-900 rounded-[2rem] border border-slate-200 dark:border-zinc-800 border-dashed transition-colors tala-public-card">
                     <div class="w-20 h-20 flex items-center justify-center mx-auto mb-4 text-5xl transition-colors">
                         <i class="ph-fill ph-calendar-x icon-gradient"></i>
                     </div>
@@ -271,21 +276,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 py-10 px-6 lg:px-8 mt-auto transition-colors duration-300">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <img src="TALA-LOGO.ico" class="w-8 h-8 object-contain" alt="TALA Logo" onerror="this.src='https://via.placeholder.com/32?text=TALA'">
-                <p class="text-xs font-semibold text-slate-500 dark:text-zinc-500 transition-colors">
-                    &copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office. All rights reserved.
-                </p>
-            </div>
-            <div class="flex items-center gap-6 text-xs font-semibold text-slate-500 dark:text-zinc-500">
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Contact Support</a>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
     <!-- Scripts -->
     <script>

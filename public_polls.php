@@ -84,6 +84,8 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pulse of the Youth | TALA Tumauini</title>
@@ -141,8 +143,11 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
         /* Dark Mode Custom Radio Button Styling */
         .dark input[type="radio"]:checked + label { border-color: #16a34a; background-color: rgba(22, 163, 74, 0.1); color: #4ade80; }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
+<body data-public-page="public_polls.php" class="tala-public bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
 
     <?php include 'navigation.php'; ?>
 
@@ -161,7 +166,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
 
         <div class="space-y-8">
             <?php if(empty($polls)): ?>
-                <div class="text-center py-20 bg-white dark:bg-zinc-900 rounded-[2rem] border border-slate-200 dark:border-zinc-800 border-dashed transition-colors">
+                <div class="text-center py-20 bg-white dark:bg-zinc-900 rounded-[2rem] border border-slate-200 dark:border-zinc-800 border-dashed transition-colors tala-public-card">
                     <i class="ph-fill ph-check-square-offset text-5xl text-slate-300 dark:text-zinc-600 mb-4 inline-block transition-colors"></i>
                     <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-1 transition-colors">No active polls right now</h3>
                     <p class="text-slate-500 dark:text-zinc-400 text-sm transition-colors">Check back later when the SK requires community feedback.</p>
@@ -170,7 +175,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
                 <?php foreach($polls as $poll): 
                     $options = $pdo->query("SELECT * FROM poll_options WHERE poll_id = {$poll['id']}")->fetchAll(PDO::FETCH_ASSOC);
                 ?>
-                    <div class="bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-[2rem] transition-colors">
+                    <div class="bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-[2rem] transition-colors tala-public-card">
                         <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 text-[10px] font-extrabold uppercase tracking-widest mb-4 transition-colors">
                             <i class="ph-fill ph-map-pin"></i> <?= htmlspecialchars($poll['barangay']) ?>
                         </span>
@@ -216,11 +221,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 py-10 px-6 lg:px-8 mt-auto transition-colors duration-300">
-        <div class="max-w-7xl mx-auto text-center text-xs font-semibold text-slate-500 dark:text-zinc-500 transition-colors">
-            &copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office.
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
     <!-- Dark Mode Sync Script -->
     <script>

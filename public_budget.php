@@ -38,6 +38,8 @@ if ($selected_barangay) {
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Transparency | TALA Tumauini</title>
@@ -68,8 +70,11 @@ if ($selected_barangay) {
         .hover-lift { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .hover-lift:hover { transform: translateY(-4px); }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 dark:bg-black text-slate-800 dark:text-brand-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
+<body data-public-page="public_budget.php" class="tala-public bg-slate-50 dark:bg-black text-slate-800 dark:text-brand-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
 
     <?php include 'navigation.php'; ?>
 
@@ -96,7 +101,7 @@ if ($selected_barangay) {
             </div>
 
             <?php if(empty($barangay_summaries)): ?>
-                <div class="text-center py-24 text-slate-400 dark:text-brand-300 bg-white dark:bg-[#010803] rounded-[2rem] border border-slate-200 dark:border-[#021207]">
+                <div class="text-center py-24 text-slate-400 dark:text-brand-300 bg-white dark:bg-[#010803] rounded-[2rem] border border-slate-200 dark:border-[#021207] tala-public-card">
                     <i class="ph-fill ph-empty text-6xl mb-4 opacity-50 text-brand-600 dark:text-brand-500"></i>
                     <h2 class="text-xl font-extrabold text-slate-700 dark:text-white mb-2">No Budgets Recorded</h2>
                     <p class="text-sm font-medium">There are currently no budget allocations registered in the system.</p>
@@ -158,14 +163,14 @@ if ($selected_barangay) {
                     <p class="text-slate-400 dark:text-brand-400 text-xs font-bold uppercase tracking-widest mb-2">Total Budget Allocation</p>
                     <h2 class="text-4xl sm:text-5xl font-black tracking-tight text-green-400">₱<?= number_format($total_budget, 2) ?></h2>
                 </div>
-                <div class="hidden sm:flex flex-col text-right relative z-10 bg-white/10 dark:bg-white/5 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/10">
+                <div class="hidden sm:flex flex-col text-right relative z-10 bg-white/10 dark:bg-white/5 backdrop-blur-sm px-6 py-4 rounded-2xl border border-white/10 tala-public-card">
                     <span class="text-2xl font-black text-white"><?= count($budgets) ?></span>
                     <span class="text-[10px] font-bold text-slate-300 dark:text-brand-300 uppercase tracking-widest">Active Programs</span>
                 </div>
             </div>
 
             <!-- Budget Table -->
-            <div class="bg-white dark:bg-[#010803] rounded-3xl border border-slate-200 dark:border-[#021207] overflow-hidden">
+            <div class="bg-white dark:bg-[#010803] rounded-3xl border border-slate-200 dark:border-[#021207] overflow-hidden tala-public-card">
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse min-w-[800px]">
                         <thead>
@@ -217,13 +222,6 @@ if ($selected_barangay) {
         <?php endif; ?>
     </main>
 
-    <footer class="bg-white dark:bg-[#010803] border-t border-slate-200 dark:border-[#021207] py-10 px-6 lg:px-8 mt-auto">
-        <div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <img src="TALA-LOGO.ico" class="w-8 h-8 object-contain dark:opacity-50" alt="TALA Logo">
-                <p class="text-xs font-semibold text-slate-500 dark:text-brand-300">&copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 </body>
 </html>

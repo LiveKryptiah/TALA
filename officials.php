@@ -19,6 +19,8 @@ foreach ($officials_data as $off) {
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youth Leaders | TALA Tumauini 2026</title>
@@ -64,8 +66,11 @@ foreach ($officials_data as $off) {
             box-shadow: 0 10px 25px -3px rgba(21, 128, 61, 0.4);
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white">
+<body data-public-page="officials.php" class="tala-public bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white dark:text-zinc-100 dark:bg-zinc-900">
 
   <?php include 'navigation.php'; ?>
 
@@ -74,15 +79,15 @@ foreach ($officials_data as $off) {
         
         <!-- Inline Page Header -->
         <div class="mb-16 text-center max-w-3xl mx-auto px-6 lg:px-8">
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Youth Leaders</h1>
-            <p class="text-slate-600 text-base sm:text-lg">The dedicated officials representing the youth of Tumauini.</p>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3 dark:text-white">Youth Leaders</h1>
+            <p class="text-slate-600 text-base sm:text-lg dark:text-zinc-300">The dedicated officials representing the youth of Tumauini.</p>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <!-- SK Chairpersons Directory -->
             <div class="flex items-center justify-center gap-3 mb-12">
                 <div class="h-px bg-slate-200 flex-1 max-w-[100px]"></div>
-                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 text-center">Sangguniang Kabataan Officials</h3>
+                <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 text-center dark:text-white">Sangguniang Kabataan Officials</h3>
                 <div class="h-px bg-slate-200 flex-1 max-w-[100px]"></div>
             </div>
             
@@ -90,33 +95,33 @@ foreach ($officials_data as $off) {
                 <?php if(!empty($sk_officials)): ?>
                     <?php foreach ($sk_officials as $barangay => $officials): ?>
                         <?php foreach ($officials as $off): ?>
-                            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300 relative mt-6">
+                            <div class="bg-white rounded-3xl shadow-sm border border-slate-200/80 text-center hover:shadow-md hover:-translate-y-1 transition-all duration-300 relative mt-6 dark:bg-zinc-900 tala-public-card">
                                 <!-- Floating Avatar -->
                                 <div class="absolute -top-10 left-1/2 transform -translate-x-1/2">
                                     <?php if (!empty($off['profile_picture'])): ?>
-                                        <img src="<?= htmlspecialchars($off['profile_picture']) ?>" class="w-20 h-20 object-cover rounded-[1.25rem] shadow-sm border-[3px] border-white bg-slate-50">
+                                        <img src="<?= htmlspecialchars($off['profile_picture']) ?>" class="w-20 h-20 object-cover rounded-[1.25rem] shadow-sm border-[3px] border-white bg-slate-50 dark:bg-zinc-900">
                                     <?php else: ?>
-                                        <div class="w-20 h-20 bg-slate-50 text-slate-400 rounded-[1.25rem] flex items-center justify-center text-3xl shadow-sm border-[3px] border-white"><i class="ph-fill ph-user"></i></div>
+                                        <div class="w-20 h-20 bg-slate-50 text-slate-400 rounded-[1.25rem] flex items-center justify-center text-3xl shadow-sm border-[3px] border-white dark:text-zinc-500 dark:bg-zinc-900"><i class="ph-fill ph-user"></i></div>
                                     <?php endif; ?>
                                 </div>
                                 
                                 <div class="pt-14 pb-6 px-4">
-                                    <h4 class="font-extrabold text-slate-900 text-[15px] leading-tight mb-1 line-clamp-1" title="<?= htmlspecialchars($off['full_name']) ?>"><?= htmlspecialchars($off['full_name']) ?></h4>
+                                    <h4 class="font-extrabold text-slate-900 text-[15px] leading-tight mb-1 line-clamp-1 dark:text-white" title="<?= htmlspecialchars($off['full_name']) ?>"><?= htmlspecialchars($off['full_name']) ?></h4>
                                     <p class="text-[10px] font-bold text-brand-600 uppercase tracking-widest mb-3"><?= htmlspecialchars($off['sk_position'] ?? 'SK Official') ?></p>
-                                    <span class="inline-flex items-center text-[11px] font-bold text-slate-500 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-200 line-clamp-1 w-max max-w-full justify-center">
-                                        <i class="ph-fill ph-map-pin mr-1.5 text-slate-400"></i> <?= htmlspecialchars($barangay) ?>
+                                    <span class="inline-flex items-center text-[11px] font-bold text-slate-500 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-200 line-clamp-1 w-max max-w-full justify-center dark:text-zinc-400 dark:bg-zinc-900 dark:border-zinc-700">
+                                        <i class="ph-fill ph-map-pin mr-1.5 text-slate-400 dark:text-zinc-500"></i> <?= htmlspecialchars($barangay) ?>
                                     </span>
                                 </div>
                             </div>
                         <?php endforeach; ?>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <div class="col-span-full text-center py-16 bg-white rounded-[2rem] border border-slate-200 border-dashed shadow-sm">
-                        <div class="w-16 h-16 bg-slate-50 text-slate-300 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                    <div class="col-span-full text-center py-16 bg-white rounded-[2rem] border border-slate-200 border-dashed shadow-sm dark:bg-zinc-900 dark:border-zinc-700 tala-public-card">
+                        <div class="w-16 h-16 bg-slate-50 text-slate-300 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl dark:bg-zinc-900">
                             <i class="ph-fill ph-users"></i>
                         </div>
-                        <h3 class="text-lg font-bold text-slate-800 mb-1">No Youth Leaders Found</h3>
-                        <p class="text-sm text-slate-500">The directory is currently being updated.</p>
+                        <h3 class="text-lg font-bold text-slate-800 mb-1 dark:text-zinc-100">No Youth Leaders Found</h3>
+                        <p class="text-sm text-slate-500 dark:text-zinc-400">The directory is currently being updated.</p>
                     </div>
                 <?php endif; ?>
             </div>
@@ -124,21 +129,7 @@ foreach ($officials_data as $off) {
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-10 px-6 lg:px-8 mt-auto">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <img src="TALA-LOGO.ico" class="w-8 h-8 object-contain" alt="TALA Logo" onerror="this.src='https://via.placeholder.com/32?text=TALA'">
-                <p class="text-xs font-semibold text-slate-500">
-                    &copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office. All rights reserved.
-                </p>
-            </div>
-            <div class="flex items-center gap-6 text-xs font-semibold text-slate-500">
-                <a href="#" class="hover:text-brand-800 transition">Privacy Policy</a>
-                <a href="#" class="hover:text-brand-800 transition">Terms of Service</a>
-                <a href="#" class="hover:text-brand-800 transition">Contact Support</a>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
     <!-- Script for Mobile Menu -->
     <script>

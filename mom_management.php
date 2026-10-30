@@ -84,6 +84,8 @@ $officials_list = [
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOM Management | TALA OS</title>
@@ -106,6 +108,8 @@ $officials_list = [
         .ambient-bg { position: fixed; inset: 0; z-index: -1; background: #f8fafc; overflow: hidden; pointer-events: none; }
         .blob { position: absolute; filter: blur(90px); opacity: 0.5; border-radius: 50%; }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="text-slate-800 antialiased flex h-screen overflow-hidden">
 

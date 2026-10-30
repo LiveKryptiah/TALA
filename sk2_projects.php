@@ -118,6 +118,8 @@ if (!function_exists('getPriorityColor')) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects Board | TALA OS</title>
@@ -148,6 +150,8 @@ if (!function_exists('getPriorityColor')) {
         #taskModal.active { opacity: 1; pointer-events: auto; }
         #taskModal.active .modal-content { transform: scale(1); }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="text-slate-800 antialiased overflow-hidden">
 

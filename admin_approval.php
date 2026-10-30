@@ -3,20 +3,20 @@ ob_start();
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-require_once 'db_connect.php';
-
 // Security Check: Only Municipal Admin allowed
-if (!isset($_SESSION['admin_logged_in']) || ($_SESSION['role'] ?? '') !== 'admin') {
+if (($_SESSION['admin_logged_in'] ?? false) !== true || ($_SESSION['role'] ?? '') !== 'admin') {
     header("Location: login.php");
     exit();
 }
+
+require_once 'db_connect.php';
 
 $message = $_SESSION['flash_msg'] ?? ($_GET['msg'] ?? '');
 $msg_type = $_SESSION['flash_type'] ?? ($_GET['type'] ?? 'success');
 unset($_SESSION['flash_msg'], $_SESSION['flash_type']);
 
 // Handle Approve / Reject Actions
-if (isset($_GET['action']) && isset($_GET['id'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['action']) && isset($_GET['id'])) {
     $action = $_GET['action'];
     $id = (int)$_GET['id'];
 
@@ -118,6 +118,8 @@ $current_filtered_count = count($accounts);
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Account Approvals | TALA OS</title>
@@ -303,6 +305,8 @@ $current_filtered_count = count($accounts);
             main { margin-left: 0 !important; padding: 0 !important; }
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 antialiased flex min-h-screen lg:h-screen overflow-x-hidden overflow-y-auto lg:overflow-hidden selection:bg-[#15803d] selection:text-white dark:selection:bg-[#16a34a] dark:selection:text-white transition-colors duration-300">
 
@@ -509,7 +513,7 @@ $current_filtered_count = count($accounts);
                                     <td class="py-2.5 px-4 md:px-5 align-middle whitespace-nowrap">
                                         <div class="flex flex-wrap items-center gap-1.5">
                                             <span class="inline-flex items-center text-xs font-bold text-slate-700 dark:text-zinc-300 bg-slate-100 dark:bg-zinc-800 px-2 py-0.5 rounded-lg uppercase tracking-wider transition-colors">
-                                                <i class="ph-fill ph-map-pin mr-1 text-green-600 dark:text-green-500 text-[11px]"></i> Brgy. <?= htmlspecialchars($account['barangay_assigned']) ?>
+                                                <i class="ph-fill ph-map-pin mr-1 text-green-600 dark:text-green-500 text-[11px]"></i> Brgy. <?= htmlspecialchars($account['barangay_assigned'] === 'Banig' ? 'Banig/Dy Abra' : $account['barangay_assigned']) ?>
                                             </span>
                                             <span class="inline-flex items-center text-xs font-bold text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-500/10 px-2 py-0.5 rounded-lg uppercase tracking-wider transition-colors">
                                                 <i class="ph-fill ph-identification-badge mr-1 text-[11px]"></i> <?= htmlspecialchars($account['sk_position']) ?>

@@ -2,8 +2,25 @@
 // sidebar_sk.php - TALA OS Standardized SK Navigation Sidebar
 // Standardized to TALA OS Design System (Reference: sk_voucher.php & sk_mom.php)
 $current_page = basename($_SERVER['PHP_SELF']);
-$sk_name = $_SESSION['admin_username'] ?? 'SK Official';
+$sk_name = $_SESSION['admin_full_name'] ?? $_SESSION['admin_username'] ?? 'SK Official';
+$sk_photo = $_SESSION['admin_profile_picture'] ?? '';
+// Refresh the current official's portrait, including sessions opened before a roster import.
+if (!empty($_SESSION['admin_id']) && isset($pdo)) {
+    try {
+        $profile_stmt = $pdo->prepare('SELECT full_name, profile_picture FROM admins WHERE id = ?');
+        $profile_stmt->execute([(int)$_SESSION['admin_id']]);
+        $profile = $profile_stmt->fetch(PDO::FETCH_ASSOC);
+        if ($profile) {
+            $sk_name = $profile['full_name'] ?: $sk_name;
+            $sk_photo = $profile['profile_picture'] ?? '';
+            $_SESSION['admin_full_name'] = $sk_name;
+            $_SESSION['admin_profile_picture'] = $sk_photo;
+        }
+    } catch (PDOException $exception) {}
+}
+if (!is_string($sk_photo) || strpos($sk_photo, 'uploads/sk_profiles/') !== 0 || strpos($sk_photo, '..') !== false) $sk_photo = '';
 $barangay = $_SESSION['barangay_assigned'] ?? 'Barangay';
+$barangay_label = $barangay === 'Banig' ? 'Banig/Dy Abra' : $barangay;
 $position = $_SESSION['sk_position'] ?? 'Official';
 ?>
 
@@ -480,12 +497,16 @@ $position = $_SESSION['sk_position'] ?? 'Official';
     <!-- User Profile & Logout (Minimal Single-Row Card) -->
     <div class="tbp-footer">
         <div class="tbp-profile-card">
-            <div class="tbp-avatar">
-                <?= strtoupper(substr($sk_name, 0, 1)) ?>
+            <div class="tbp-avatar" style="overflow: hidden;">
+                <?php if ($sk_photo): ?>
+                    <img src="<?= htmlspecialchars($sk_photo, ENT_QUOTES, 'UTF-8') ?>" alt="<?= htmlspecialchars($sk_name, ENT_QUOTES, 'UTF-8') ?>" style="width: 100%; height: 100%; object-fit: cover; border-radius: inherit;">
+                <?php else: ?>
+                    <?= htmlspecialchars(strtoupper(substr($sk_name, 0, 1)), ENT_QUOTES, 'UTF-8') ?>
+                <?php endif; ?>
             </div>
             <div class="tbp-profile-info">
                 <p class="tbp-profile-name" title="<?= htmlspecialchars($sk_name) ?>"><?= htmlspecialchars($sk_name) ?></p>
-                <p class="tbp-profile-role" title="<?= htmlspecialchars($position) ?> &bull; Brgy. <?= htmlspecialchars($barangay) ?>"><?= htmlspecialchars($position) ?></p>
+                <p class="tbp-profile-role" title="<?= htmlspecialchars($position) ?> &bull; Brgy. <?= htmlspecialchars($barangay_label) ?>"><?= htmlspecialchars($position) ?></p>
             </div>
             <a href="logout.php" class="tbp-logout-btn" title="Sign Out">
                 <i class="ph-bold ph-sign-out"></i>

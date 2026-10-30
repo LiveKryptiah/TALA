@@ -18,6 +18,8 @@ $totalMembers = count($members);
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MYDC Registry | TALA Youth Portal</title>
@@ -53,8 +55,11 @@ $totalMembers = count($members);
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.3s ease, color 0.3s ease; }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-white dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 min-h-screen flex flex-col selection:bg-green-500 selection:text-white transition-colors duration-300">
+<body data-public-page="mydc_registry.php" class="tala-public bg-white dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 min-h-screen flex flex-col selection:bg-green-500 selection:text-white transition-colors duration-300">
 
     <!-- PUBLIC NAVIGATION HEADER (Uncompromised) -->
     <?php include 'navigation.php'; ?>
@@ -94,13 +99,13 @@ $totalMembers = count($members);
         <!-- MEMBER CARDS GRID -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="registryGrid">
             <?php if(empty($members)): ?>
-                <div class="col-span-full text-center py-20 border-2 border-dashed border-slate-200 dark:border-zinc-800 rounded-3xl bg-slate-50/50 dark:bg-zinc-900/50 transition-colors">
+                <div class="col-span-full text-center py-20 border-2 border-dashed border-slate-200 dark:border-zinc-800 rounded-3xl bg-slate-50/50 dark:bg-zinc-900/50 transition-colors tala-public-card">
                     <i class="ph-fill ph-users text-5xl text-slate-300 dark:text-zinc-600 mb-3 inline-block transition-colors"></i>
                     <p class="text-slate-500 dark:text-zinc-400 font-bold text-base transition-colors">No active MYDC members registered yet.</p>
                 </div>
             <?php else: foreach($members as $m): ?>
                 
-                <div class="member-card bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 hover:border-green-500 dark:hover:border-green-500 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between group">
+                <div class="member-card bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 hover:border-green-500 dark:hover:border-green-500 rounded-2xl p-6 transition-all duration-300 flex flex-col justify-between group tala-public-card">
                     <div>
                         <!-- Avatar & Info -->
                         <div class="flex items-center gap-4 mb-4">
@@ -140,16 +145,7 @@ $totalMembers = count($members);
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-slate-100 dark:border-zinc-800 bg-slate-50 dark:bg-zinc-950 py-10 text-center text-xs font-bold text-slate-400 dark:text-zinc-500 mt-auto transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>© <?= date('Y') ?> TALA Youth Portal — Municipal Youth Development Council</p>
-            <div class="flex items-center gap-6 text-slate-500 dark:text-zinc-500">
-                <a href="#" class="hover:text-green-600 dark:hover:text-green-400 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-green-600 dark:hover:text-green-400 transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-green-600 dark:hover:text-green-400 transition-colors">Help Desk</a>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
     <!-- REAL-TIME FILTER SCRIPT -->
     <script>

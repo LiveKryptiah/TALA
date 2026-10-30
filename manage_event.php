@@ -48,6 +48,8 @@ $isCompleted = ($event['status'] ?? '') === 'Completed';
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title><?= htmlspecialchars($event['title']) ?> | Event Roster</title>
@@ -113,6 +115,8 @@ $isCompleted = ($event['status'] ?? '') === 'Completed';
 
         .tap-effect:active { transform: scale(0.98); opacity: 0.8; transition: transform 0.1s; }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 antialiased flex h-screen overflow-hidden selection:bg-[#1da85b] selection:text-white transition-colors duration-300">
 

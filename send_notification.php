@@ -137,10 +137,14 @@ function sendFCM($projectId, $accessToken, $token, $title, $body, $imageUrl, $ic
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TALA System - Push Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans flex h-screen overflow-hidden relative">
   <!-- 1. Include the Sidebar -->

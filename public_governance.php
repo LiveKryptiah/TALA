@@ -10,6 +10,8 @@ if (is_dir($base_dir)) {
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Governance Document Portal | TALA OS</title>
@@ -61,8 +63,11 @@ if (is_dir($base_dir)) {
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #3f3f46; }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="text-slate-800 dark:text-zinc-100 bg-slate-50 dark:bg-zinc-950 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen transition-colors duration-300">
+<body data-public-page="public_governance.php" class="tala-public text-slate-800 dark:text-zinc-100 bg-slate-50 dark:bg-zinc-950 antialiased selection:bg-brand-500 selection:text-white flex flex-col min-h-screen transition-colors duration-300">
 
     <!-- DYNAMIC NAVIGATION BAR INCLUDED HERE -->
     <?php include 'navigation.php'; ?>
@@ -137,11 +142,7 @@ if (is_dir($base_dir)) {
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-white dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 py-8 mt-12 transition-colors duration-300">
-        <div class="max-w-[1200px] mx-auto px-6 text-center">
-            <p class="text-sm font-bold text-slate-400 dark:text-zinc-500 transition-colors">© <?= date('Y') ?> TALA OS. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
     <!-- Dark Mode Sync Script -->
     <script>

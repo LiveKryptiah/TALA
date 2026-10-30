@@ -92,6 +92,8 @@ $total_creators = (int)$pdo->query("SELECT COUNT(DISTINCT created_by) FROM highl
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Portal Highlights | TALA OS</title>
@@ -200,6 +202,8 @@ $total_creators = (int)$pdo->query("SELECT COUNT(DISTINCT created_by) FROM highl
             -webkit-box-shadow: none !important;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 antialiased flex min-h-screen lg:h-screen overflow-x-hidden overflow-y-auto lg:overflow-hidden selection:bg-[#15803d] selection:text-white dark:selection:bg-[#16a34a] dark:selection:text-white transition-colors duration-300">
 

@@ -121,11 +121,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!DOCTYPE html>
         <html lang="en">
         <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Success | TALA</title>
             <script src="https://cdn.tailwindcss.com"></script>
-        </head>
+            <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+</head>
         <body class="bg-gray-100 flex items-center justify-center h-screen">
             <div class="bg-white p-8 rounded-xl shadow-lg max-w-md w-full text-center border-t-4 border-green-600">
                 <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">

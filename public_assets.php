@@ -59,6 +59,8 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SK Equipment Request | TALA Tumauini</title>
@@ -73,8 +75,11 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
         .btn-gradient { background: #15803d; color: #ffffff; transition: all 0.2s ease; }
         .btn-gradient:hover { background: #166534; transform: translateY(-1px); }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white">
+<body data-public-page="public_assets.php" class="tala-public bg-slate-50 text-slate-800 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white dark:text-zinc-100 dark:bg-zinc-900">
 
     <?php include 'navigation.php'; ?>
 
@@ -84,8 +89,8 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-50 text-brand-600 mb-4 border border-brand-100">
                 <i class="ph-fill ph-package text-3xl"></i>
             </div>
-            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">Borrow SK Equipment</h1>
-            <p class="text-slate-600 text-base sm:text-lg font-medium">Request to borrow tents, chairs, sound systems, or sports equipment for your local events.</p>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-3 dark:text-white">Borrow SK Equipment</h1>
+            <p class="text-slate-600 text-base sm:text-lg font-medium dark:text-zinc-300">Request to borrow tents, chairs, sound systems, or sports equipment for your local events.</p>
         </div>
 
         <?php if ($message): ?>
@@ -94,19 +99,19 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
             </div>
         <?php endif; ?>
 
-        <div class="bg-white p-8 md:p-10 rounded-[2rem]">
+        <div class="bg-white p-8 md:p-10 rounded-[2rem] dark:bg-zinc-900 tala-public-card">
             <?php if(empty($groupedAssets)): ?>
                 <div class="text-center py-10">
                     <i class="ph-fill ph-warning-circle text-4xl text-amber-400 mb-3 inline-block"></i>
-                    <h3 class="text-lg font-bold text-slate-800">No equipment currently available</h3>
-                    <p class="text-sm text-slate-500 mt-1">All registered SK assets are either fully borrowed or undergoing maintenance.</p>
+                    <h3 class="text-lg font-bold text-slate-800 dark:text-zinc-100">No equipment currently available</h3>
+                    <p class="text-sm text-slate-500 mt-1 dark:text-zinc-400">All registered SK assets are either fully borrowed or undergoing maintenance.</p>
                 </div>
             <?php else: ?>
                 <form method="POST" class="space-y-6">
                     
-                    <div class="pb-6 border-b border-slate-100">
-                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">1. Select Equipment <span class="text-red-500">*</span></label>
-                        <select name="asset_id" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-bold text-slate-800 focus:ring-2 focus:ring-brand-600 outline-none cursor-pointer appearance-none">
+                    <div class="pb-6 border-b border-slate-100 dark:border-zinc-800">
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 dark:text-zinc-400">1. Select Equipment <span class="text-red-500">*</span></label>
+                        <select name="asset_id" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-bold text-slate-800 focus:ring-2 focus:ring-brand-600 outline-none cursor-pointer appearance-none dark:text-zinc-100 dark:bg-zinc-900 dark:border-zinc-700">
                             <option value="" disabled selected>Choose an item from your barangay...</option>
                             <?php foreach($groupedAssets as $brgyName => $items): ?>
                                 <optgroup label="📍 <?= htmlspecialchars($brgyName) ?>">
@@ -120,27 +125,27 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
                         </select>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-slate-100">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6 border-b border-slate-100 dark:border-zinc-800">
                         <div class="md:col-span-2">
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">2. Purpose of Borrowing <span class="text-red-500">*</span></label>
-                            <input type="text" name="purpose" required placeholder="e.g. Inter-purok basketball league, family gathering" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none">
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 dark:text-zinc-400">2. Purpose of Borrowing <span class="text-red-500">*</span></label>
+                            <input type="text" name="purpose" required placeholder="e.g. Inter-purok basketball league, family gathering" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none dark:bg-zinc-900 dark:border-zinc-700">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Borrow Date <span class="text-red-500">*</span></label>
-                            <input type="date" name="borrow_date" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none text-slate-600">
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 dark:text-zinc-400">Borrow Date <span class="text-red-500">*</span></label>
+                            <input type="date" name="borrow_date" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none text-slate-600 dark:text-zinc-300 dark:bg-zinc-900 dark:border-zinc-700">
                         </div>
                         <div>
-                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Return Date <span class="text-red-500">*</span></label>
-                            <input type="date" name="return_date" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none text-slate-600">
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-2 dark:text-zinc-400">Return Date <span class="text-red-500">*</span></label>
+                            <input type="date" name="return_date" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3.5 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none text-slate-600 dark:text-zinc-300 dark:bg-zinc-900 dark:border-zinc-700">
                         </div>
                     </div>
 
                     <div class="pt-2">
-                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">3. Verify Identity <span class="text-red-500">*</span></label>
+                        <label class="block text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 dark:text-zinc-400">3. Verify Identity <span class="text-red-500">*</span></label>
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <input type="text" name="full_name" placeholder="Registered Name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none">
-                            <input type="email" name="email" placeholder="Registered Email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none">
-                            <input type="tel" name="contact" placeholder="Contact Number" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none">
+                            <input type="text" name="full_name" placeholder="Registered Name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none dark:bg-zinc-900 dark:border-zinc-700">
+                            <input type="email" name="email" placeholder="Registered Email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none dark:bg-zinc-900 dark:border-zinc-700">
+                            <input type="tel" name="contact" placeholder="Contact Number" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-sm font-medium focus:ring-2 focus:ring-brand-600 outline-none dark:bg-zinc-900 dark:border-zinc-700">
                         </div>
                     </div>
 
@@ -152,10 +157,6 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
         </div>
     </main>
 
-    <footer class="bg-white border-t border-slate-200 py-10 px-6 lg:px-8 mt-auto">
-        <div class="max-w-7xl mx-auto text-center text-xs font-semibold text-slate-500">
-            &copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office.
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 </body>
 </html>

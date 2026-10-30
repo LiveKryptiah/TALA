@@ -206,6 +206,8 @@ if ($current_page === 'dashboard') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <title>Mayor's Office Portal | TALA OS</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -251,6 +253,8 @@ if ($current_page === 'dashboard') {
         aside.collapsed nav a { justify-content: center !important; padding-left: 0 !important; padding-right: 0 !important; }
         aside.collapsed .sidebar-user-card { padding: 8px !important; justify-content: center !important; }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="text-slate-800 antialiased selection:bg-[#1da85b] selection:text-white flex overflow-x-hidden">
 

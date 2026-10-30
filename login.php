@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($username) && !empty($password)) {
         try {
-            $stmt = $pdo->prepare("SELECT id, username, password_hash, role, status, barangay_assigned, sk_position FROM admins WHERE username = :username");
+            $stmt = $pdo->prepare("SELECT id, username, full_name, profile_picture, password_hash, role, status, barangay_assigned, sk_position FROM admins WHERE username = :username");
             $stmt->execute([':username' => $username]);
             $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -38,6 +38,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $_SESSION['admin_logged_in'] = true;
                     $_SESSION['admin_id'] = $admin['id'];
                     $_SESSION['admin_username'] = $admin['username'];
+                    $_SESSION['admin_full_name'] = $admin['full_name'] ?: $admin['username'];
+                    $_SESSION['admin_profile_picture'] = $admin['profile_picture'] ?? '';
                     $_SESSION['role'] = $admin['role']; 
                     $_SESSION['admin_barangay'] = $admin['barangay_assigned']; 
                     $_SESSION['barangay_assigned'] = $admin['barangay_assigned'];
@@ -70,6 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Secure Login | TALA Web Platform</title>
@@ -137,6 +141,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             -webkit-box-shadow: none !important;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 antialiased min-h-screen flex items-center justify-center relative overflow-hidden selection:bg-brand-500 selection:text-white transition-colors duration-300">
 

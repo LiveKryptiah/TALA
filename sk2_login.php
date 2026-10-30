@@ -59,6 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | TALA OS Command Center</title>
@@ -95,6 +97,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             -webkit-box-shadow: none !important;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="min-h-screen flex items-center justify-center relative overflow-hidden text-slate-800 bg-slate-50">
 

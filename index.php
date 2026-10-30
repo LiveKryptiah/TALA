@@ -118,6 +118,8 @@ try {
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TALA | Tumauini Active Youth Ledger & Analytics</title>
@@ -353,8 +355,11 @@ try {
             -webkit-filter: none !important;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-white dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased selection:bg-slate-900 selection:text-white dark:selection:bg-white dark:selection:text-zinc-900 transition-colors duration-300">
+<body data-public-page="index.php" class="tala-public tala-public-home bg-white dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased selection:bg-slate-900 selection:text-white dark:selection:bg-white dark:selection:text-zinc-900 transition-colors duration-300">
 
     <!-- TALA LOADING SCREEN -->
     <div id="tala-loader" class="fixed inset-0 z-[9999] bg-white dark:bg-zinc-950 flex flex-col items-center justify-center transition-opacity duration-700 ease-in-out">
@@ -364,12 +369,7 @@ try {
     </div>
 
     <!-- TOP CONTACT BAR -->
-    <div id="top-contact-bar" class="bg-white dark:bg-zinc-950 text-slate-700 dark:text-zinc-300 py-1.5 px-6 lg:px-8 text-[11px] font-bold tracking-wider uppercase flex justify-between sm:justify-end items-center gap-6 relative z-[60] transition-all duration-300 hero-nav-blend">
-        <!-- Dark Mode Toggle Button -->
-        <button onclick="toggleTheme()" id="theme-toggle" class="hover:text-green-600 dark:hover:text-green-500 transition-colors flex items-center gap-1.5 focus:outline-none tap-effect" title="Toggle Dark Mode">
-            <i id="theme-icon" class="ph-fill ph-moon text-sm"></i> <span class="hidden sm:inline">Theme</span>
-        </button>
-        
+    <div id="top-contact-bar" class="bg-white dark:bg-zinc-950 text-slate-700 dark:text-zinc-300 py-1.5 px-6 lg:px-8 text-[11px] font-bold tracking-wider uppercase flex justify-end items-center gap-6 relative z-[60] transition-all duration-300 hero-nav-blend">
         <div class="flex items-center gap-6">
             <a href="tel:+639982731960" class="flex items-center gap-1.5 hover:text-green-600 dark:hover:text-green-500 transition-colors">
                 <i class="ph-fill ph-phone text-sm icon-gradient"></i> <span class="hidden sm:inline">+63 998 273 1960</span>
@@ -925,7 +925,7 @@ try {
                 <div class="lg:w-1/2 relative h-72 lg:h-auto bg-slate-900">
                     <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-green-950 opacity-90 z-0"></div>
                     <i id="center-bg-icon" class="ph-fill ph-heartbeat absolute inset-0 m-auto text-[12rem] text-white opacity-10 z-0 flex items-center justify-center"></i>
-                    <img id="center-img" src="center-health.jpg" alt="Center of Participation" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 z-10">
+                    <img id="center-img" src="assets/centers/health.webp" alt="Youth health outreach at a barangay clinic" width="1280" height="960" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 opacity-100 z-10">
                 </div>
             </div>
         </div>
@@ -983,7 +983,7 @@ try {
                             <?php foreach ($lydo_officials as $lydo): ?>
                                 <div class="bg-slate-50 dark:bg-zinc-900 p-8 rounded-[2rem] text-center w-full md:w-72 scroll-animate delay-200 hover:-translate-y-1 transition-transform shadow-sm">
                                     <?php if (!empty($lydo['profile_picture'])): ?>
-                                        <img src="<?= htmlspecialchars($lydo['profile_picture']) ?>" class="w-28 h-28 object-cover rounded-full mx-auto mb-5 shadow-sm">
+                                        <img src="<?= htmlspecialchars($lydo['profile_picture']) ?>" alt="Municipal Youth Development Officer" class="w-36 h-48 sm:w-40 sm:h-52 object-cover object-top rounded-2xl mx-auto mb-5 shadow-sm">
                                     <?php else: ?>
                                         <div class="w-28 h-28 bg-slate-200 dark:bg-zinc-800 text-slate-400 dark:text-zinc-500 rounded-full flex items-center justify-center text-5xl mx-auto mb-5 shadow-sm"><i class="ph-fill ph-user"></i></div>
                                     <?php endif; ?>
@@ -1137,27 +1137,7 @@ try {
     </div>
 
     <!-- MAIN FOOTER -->
-    <footer class="bg-white dark:bg-zinc-950 py-12 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-3">
-                    <img src="TALA-LOGO.ico" alt="TALA Logo" class="w-10 h-10 object-contain grayscale opacity-60 dark:opacity-40">
-                    <div>
-                        <h2 class="text-xl font-extrabold text-slate-800 dark:text-white tracking-tight">TALA</h2>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">MDMIS System</p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap justify-center gap-6 text-sm font-bold text-slate-500 dark:text-zinc-400">
-                    <a href="login.php" class="hover:text-slate-900 dark:hover:text-white transition-colors">Admin Portal</a>
-                    <a href="public_registration.php" class="hover:text-slate-900 dark:hover:text-white transition-colors">Youth Registration</a>
-                    <a href="public_events.php" class="hover:text-slate-900 dark:hover:text-white transition-colors">Events</a>
-                </div>
-            </div>
-            <div class="mt-10 pt-8 text-center text-sm font-medium text-slate-400 dark:text-zinc-500">
-                <p>&copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
     <!-- DYNAMIC POP-UP NOTIFICATION -->
     <?php if ($popup): ?>
@@ -1287,15 +1267,15 @@ try {
 
             // 3. 9 CENTERS OF PARTICIPATION LOGIC
             const centers = [
-                { title: "Health", icon: "ph-heartbeat", img: "center-health.jpg", desc: "Ensuring the physical, mental, and social well-being of the youth through accessible healthcare, nutrition programs, and mental health awareness." },
-                { title: "Education", icon: "ph-books", img: "center-education.jpg", desc: "Providing equitable access to quality education, skills training, and lifelong learning opportunities to prepare the youth for the future." },
-                { title: "Economic Empowerment", icon: "ph-briefcase", img: "center-economy.jpg", desc: "Promoting decent work, entrepreneurship, and financial literacy to help youth achieve financial independence and contribute to the local economy." },
-                { title: "Social Inclusion & Equity", icon: "ph-users", img: "center-inclusion.jpg", desc: "Fostering a culture of equality and ensuring that marginalized and vulnerable youth sectors have a voice and access to opportunities." },
-                { title: "Peace-Building & Security", icon: "ph-shield-check", img: "center-peace.jpg", desc: "Empowering the youth as agents of peace, justice, and conflict resolution to build safe and secure communities." },
-                { title: "Governance", icon: "ph-bank", img: "center-governance.jpg", desc: "Strengthening youth participation in local governance and policy-making to ensure their needs are represented in public administration." },
-                { title: "Active Citizenship", icon: "ph-hand-heart", img: "center-citizenship.jpg", desc: "Encouraging volunteerism, civic engagement, and active community participation to foster a deep sense of patriotism and social responsibility." },
-                { title: "Environment", icon: "ph-leaf", img: "center-environment.jpg", desc: "Mobilizing the youth for climate action, disaster risk reduction, and environmental protection to ensure a sustainable future." },
-                { title: "Global Mobility", icon: "ph-globe-hemisphere-east", img: "center-mobility.jpg", desc: "Enhancing youth competitiveness through cross-border exchanges, international cooperation, and global awareness programs." }
+                { title: "Health", icon: "ph-heartbeat", img: "assets/centers/health.webp", desc: "Ensuring the physical, mental, and social well-being of the youth through accessible healthcare, nutrition programs, and mental health awareness." },
+                { title: "Education", icon: "ph-books", img: "assets/centers/education.webp", desc: "Providing equitable access to quality education, skills training, and lifelong learning opportunities to prepare the youth for the future." },
+                { title: "Economic Empowerment", icon: "ph-briefcase", img: "assets/centers/economy.webp", desc: "Promoting decent work, entrepreneurship, and financial literacy to help youth achieve financial independence and contribute to the local economy." },
+                { title: "Social Inclusion & Equity", icon: "ph-users", img: "assets/centers/inclusion.webp", desc: "Fostering a culture of equality and ensuring that marginalized and vulnerable youth sectors have a voice and access to opportunities." },
+                { title: "Peace-Building & Security", icon: "ph-shield-check", img: "assets/centers/peace.webp", desc: "Empowering the youth as agents of peace, justice, and conflict resolution to build safe and secure communities." },
+                { title: "Governance", icon: "ph-bank", img: "assets/centers/governance.webp", desc: "Strengthening youth participation in local governance and policy-making to ensure their needs are represented in public administration." },
+                { title: "Active Citizenship", icon: "ph-hand-heart", img: "assets/centers/citizenship.webp", desc: "Encouraging volunteerism, civic engagement, and active community participation to foster a deep sense of patriotism and social responsibility." },
+                { title: "Environment", icon: "ph-leaf", img: "assets/centers/environment.webp", desc: "Mobilizing the youth for climate action, disaster risk reduction, and environmental protection to ensure a sustainable future." },
+                { title: "Global Mobility", icon: "ph-globe-hemisphere-east", img: "assets/centers/mobility.webp", desc: "Enhancing youth competitiveness through cross-border exchanges, international cooperation, and global awareness programs." }
             ];
 
             let centerIndex = 0;
@@ -1330,6 +1310,7 @@ try {
                     centerIcon.className = `ph-fill ${centers[index].icon} icon-gradient mr-4 text-4xl`;
                     centerBgIcon.className = `ph-fill ${centers[index].icon} absolute inset-0 m-auto text-[12rem] text-white opacity-10 z-0 flex items-center justify-center`;
                     centerImg.src = centers[index].img;
+                    centerImg.alt = centers[index].title + ' youth participation scene';
                     centerCounter.textContent = `${index + 1} of 9`;
                     
                     Array.from(dotsContainer.children).forEach((dot, i) => {

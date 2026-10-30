@@ -65,6 +65,8 @@ if ($selected_barangay) {
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Disclosure Board | TALA Tumauini</title>
@@ -95,8 +97,11 @@ if ($selected_barangay) {
         .hover-lift { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .hover-lift:hover { transform: translateY(-4px); }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 dark:bg-black text-slate-800 dark:text-brand-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
+<body data-public-page="public_disclosure.php" class="tala-public bg-slate-50 dark:bg-black text-slate-800 dark:text-brand-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
 
     <?php include 'navigation.php'; ?>
 
@@ -125,7 +130,7 @@ if ($selected_barangay) {
             </div>
 
             <?php if(empty($barangay_summaries)): ?>
-                <div class="text-center py-20 text-slate-400 dark:text-brand-300 bg-white dark:bg-[#010803] rounded-[2rem] border border-slate-200 dark:border-[#021207]">
+                <div class="text-center py-20 text-slate-400 dark:text-brand-300 bg-white dark:bg-[#010803] rounded-[2rem] border border-slate-200 dark:border-[#021207] tala-public-card">
                     <i class="ph-fill ph-folder-open text-5xl mb-3 opacity-50 text-brand-600 dark:text-brand-500"></i>
                     <h2 class="text-lg font-extrabold text-slate-700 dark:text-white mb-1">No Documents Found</h2>
                     <p class="text-xs font-medium">No barangays have published their official documents yet.</p>
@@ -167,7 +172,7 @@ if ($selected_barangay) {
             <!-- LEVEL 2: DIRECT PDF GALLERY VIEW -->
             
             <!-- Exact Mockup Header -->
-            <div class="bg-white dark:bg-[#010803] border border-slate-200 dark:border-[#021207] rounded-[2rem] p-6 md:p-8 mb-6 flex flex-col md:flex-row items-center justify-between gap-6 mt-2">
+            <div class="bg-white dark:bg-[#010803] border border-slate-200 dark:border-[#021207] rounded-[2rem] p-6 md:p-8 mb-6 flex flex-col md:flex-row items-center justify-between gap-6 mt-2 tala-public-card">
                 
                 <!-- Left Side: Barangay Logo / Default Scenery -->
                 <div class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-slate-50 dark:border-[#021207] flex items-center justify-center overflow-hidden shrink-0 bg-slate-100 dark:bg-black relative">
@@ -221,7 +226,7 @@ if ($selected_barangay) {
                                 <h3 class="text-[15px] font-black text-center text-slate-900 dark:text-white tracking-tight uppercase px-2 line-clamp-2 min-h-[45px] flex items-center justify-center" title="<?= htmlspecialchars($category) ?>"><?= htmlspecialchars($category) ?></h3>
                                 
                                 <!-- Curved PDF Card -->
-                                <div class="group relative flex flex-col bg-white dark:bg-[#010803] rounded-3xl border border-slate-200 dark:border-[#052e16] transition-all hover-lift overflow-hidden">
+                                <div class="group relative flex flex-col bg-white dark:bg-[#010803] rounded-3xl border border-slate-200 dark:border-[#052e16] transition-all hover-lift overflow-hidden tala-public-card">
                                     
                                     <!-- Page Counter (If Multiple Files) -->
                                     <?php if(count($docs) > 1): ?>
@@ -326,13 +331,6 @@ if ($selected_barangay) {
         <?php endif; ?>
     </main>
 
-    <footer class="bg-white dark:bg-[#010803] border-t border-slate-200 dark:border-[#021207] py-8 px-6 lg:px-8 mt-auto">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-                <img src="TALA-LOGO.ico" class="w-6 h-6 object-contain dark:opacity-50" alt="TALA Logo">
-                <p class="text-[11px] font-semibold text-slate-500 dark:text-brand-300">&copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 </body>
 </html>

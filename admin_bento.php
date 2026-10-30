@@ -69,6 +69,8 @@ $displayInitial = strtoupper(substr($displayName, 0, 1));
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Landing Page | TALA OS</title>
@@ -116,6 +118,8 @@ $displayInitial = strtoupper(substr($displayName, 0, 1));
             box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.4) !important;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="text-slate-800 antialiased flex h-screen overflow-hidden selection:bg-brand-500 selection:text-white">
 

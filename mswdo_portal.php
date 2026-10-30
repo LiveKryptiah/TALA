@@ -313,6 +313,8 @@ try {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <title>MSWDO Portal | TALA OS</title>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
@@ -350,6 +352,8 @@ try {
 
         .risk-bar { transition: width 1s cubic-bezier(0.4, 0, 0.2, 1); }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="text-slate-800 antialiased selection:bg-[#1da85b] selection:text-white flex overflow-x-hidden">
 

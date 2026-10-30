@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+/* Public pages share the homepage's typography, surfaces and spacing. */
+.tala-public {
+    --public-background: #fff;
+    --public-surface: #f8fafc;
+    --public-field: #fff;
+    --public-text: #1e293b;
+    --public-muted: #64748b;
+    background: var(--public-background) !important;
+    color: var(--public-text) !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+.dark .tala-public {
+    --public-background: #09090b;
+    --public-surface: #18181b;
+    --public-field: #27272a;
+    --public-text: #f4f4f5;
+    --public-muted: #a1a1aa;
+}
+.tala-public:not(.tala-public-home) > main {
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: 5rem;
+    min-width: 0;
+}
+.tala-public main > div:has(> h1) { text-align: left; margin-bottom: 2.5rem; max-width: none; }
+.tala-public main h1:not(#left-title) {
+    font-size: clamp(1.875rem, 4vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -.035em;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #15803d 0%, #16a34a 30%, #eab308 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.dark .tala-public main h1:not(#left-title) { background-image: linear-gradient(135deg, #22c55e, #4ade80 35%, #facc15); }
+.tala-public .tala-public-card, .tala-public .glass-card {
+    background: var(--public-surface) !important;
+    border: 0 !important;
+    border-radius: 2rem;
+    box-shadow: 0 1px 3px #0f172a05 !important;
+}
+.tala-public main :is(input:not([type=checkbox]):not([type=radio]):not([type=hidden]), textarea, select) {
+    border-radius: .875rem;
+    color: var(--public-text);
+    background-color: var(--public-field) !important;
+}
+.tala-public main :is(input, textarea, select):focus-visible {
+    outline: 2px solid #22c55e80 !important;
+    outline-offset: 2px;
+}
+.tala-public footer { background: var(--public-background) !important; border-top: 0 !important; }
+.tala-public .btn-gradient { border: 0 !important; box-shadow: none !important; }
+.tala-public [data-public-heading] { text-align: left !important; }
+.tala-public[data-public-page="public_yorp.php"] { height: auto !important; width: 100%; overflow: visible !important; }
+.tala-public[data-public-page="public_yorp.php"] main { overflow: visible; }
+.tala-public[data-public-page="public_yorp.php"] main > div { height: auto; max-height: none; min-height: 640px; }
+.tala-public[data-public-page="public_yorp.php"] main > div > div { height: auto; }
+@media (max-width: 639px) {
+    .tala-public:not(.tala-public-home) > main { padding-inline: 1rem; padding-bottom: 3rem; }
+    .tala-public .tala-public-card { border-radius: 1.5rem; }
+}

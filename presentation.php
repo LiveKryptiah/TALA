@@ -31,6 +31,8 @@ if ($total_budget <= 0) $total_budget = 46000000;
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>TALA System Presentation | Tumauini Youth Governance 2026</title>
@@ -452,6 +454,8 @@ if ($total_budget <= 0) $total_budget = 46000000;
             }
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 antialiased min-h-screen selection:bg-[#15803d] selection:text-white relative">
 
@@ -605,9 +609,9 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 1: TITLE - TALA                      -->
         <!-- ========================================== -->
-        <section class="slide-view active-slide flex flex-col items-center justify-center w-full h-full text-center" id="slide-1" data-title="TALA" data-notes="Batiin ang panel at mga panauhin. TALA: Tumauini Active Youth Ledger Analytics web platform.">
+        <section class="slide-view active-slide flex flex-col items-center justify-center w-full h-full text-center" id="slide-1" data-title="TALA" data-notes="Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system. Next, I will explain the responsibilities that guided its design.">
             
-            <div class="w-full h-full flex flex-col items-center justify-center text-center my-auto p-4 group cursor-pointer" data-speech="Magandang araw po sa ating kagalang-galang na panel at mga panauhin. Ikinagagalak ko pong iprisinta ang Tumauini Active Youth Ledger Analytics o TALA — ang opisyal na digital governance web platform na nilikha upang maghatid ng buong transparency, real-time tracking ng pondo, at mabilis na serbisyo para sa kabataan ng Tumauini." data-speech-title="Pambungad: Ang TALA Web Platform">
+            <div class="w-full h-full flex flex-col items-center justify-center text-center my-auto p-4 group cursor-pointer" data-speech="Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system." data-speech-title="Introduction to TALA">
                 
                 <!-- Centered Logo -->
                 <div class="flex items-center justify-center">
@@ -679,7 +683,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 2: REPUBLIC ACTS IN GOVERNMENT       -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-2" data-title="Republic Acts in Government" data-notes="Ipaliwanag ang mga legal na batayan ng pamahalaan: RA 10742 (10% youth fund cap, CBYDP at ABYIP), RA 11768 (mandatory full disclosure at financial autonomy), RA 7160 (Local Government Code at DILG FDP policy sa 46 barangay), at RA 6713 (Code of Conduct at public inspection).">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-2" data-title="Republic Acts in Government" data-notes="First, let us look at the responsibilities behind youth governance. This slide names four laws that provide context for SK planning, local government, and ethical public service. The main idea is simple: officials need clear plans, organized records, and information that people can review. TALA helps support that work. However, these responsibilities can be difficult to manage through paper records alone.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -696,7 +700,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full">
                     
                     <!-- Card 1: RA 10742 -->
-                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Ang Republic Act 10742 o SK Reform Act of 2015 ang nagtatakda ng statutory 10% youth development fund mula sa pangkalahatang pondo ng barangay. Ipinag-uutos din nito ang pagbuo ng Comprehensive Barangay Youth Development Plan (CBYDP) at Annual Barangay Youth Investment Program (ABYIP)." data-speech-title="RA 10742: SK Reform Act of 2015">
+                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="First, Republic Act 10742 provides the foundation for the Sangguniang Kabataan. For this presentation, the key point is planning: youth programs need a clear development plan and an annual investment program. TALA helps organize the records used in that process." data-speech-title="RA 10742: Youth Planning">
                         <div>
                             <div class="card-asset-grid h-28 sm:h-30 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-2.5">
                                 <div class="w-full max-w-[200px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-2 text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -720,7 +724,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 2: RA 11768 -->
-                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Ang Republic Act 11768 o SK Reform Amendments of 2022 ang nagpatibay sa financial autonomy ng kabataan. Mahigpit nitong ipinag-uutos ang digital at physical Full Disclosure ng mga financial statements, voucher, at disbursement upang matiyak ang pananagutan sa bawat sentimo." data-speech-title="RA 11768: SK Amendments of 2022">
+                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Next, Republic Act 11768 strengthens the SK framework. In TALA, we focus on making financial records easier to manage and review. This helps officials explain how youth funds are used." data-speech-title="RA 11768: Accountability">
                         <div>
                             <div class="card-asset-grid h-28 sm:h-30 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-2.5">
                                 <div class="w-full max-w-[200px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-2 text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -744,7 +748,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 3: RA 7160 -->
-                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Ang Republic Act 7160 o Local Government Code of 1991 ang sandigan ng lokal na pamamahala. Alinsunod sa DILG Full Disclosure Policy at COA accounting rules, kailangang regular na ilathala ang quarterly reports ng lahat ng 46 na barangay ng Tumauini nang walang antala." data-speech-title="RA 7160: Local Government Code at DILG FDP">
+                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="In addition, Republic Act 7160 provides the wider framework for local government. TALA brings barangay reports into one place so the municipal team can review them more easily." data-speech-title="RA 7160: Local Government">
                         <div>
                             <div class="card-asset-grid h-28 sm:h-30 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-2.5">
                                 <div class="w-full max-w-[200px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-2 text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -768,7 +772,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 4: RA 6713 -->
-                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Ang Republic Act 6713 o Code of Conduct and Ethical Standards for Public Officials and Employees ang nagtitiyak na bukas sa pampublikong pagsusuri ang lahat ng opisyal na dokumento at ledgers, may mabilis na pagtugon sa mga hinaing ng mamamayan, at sumusunod sa pinakamataas na pamantayan ng integridad." data-speech-title="RA 6713: Code of Conduct & Ethical Standards">
+                    <div class="saas-card p-3.5 sm:p-4 flex flex-col justify-between group" data-speech="Finally, Republic Act 6713 highlights ethical public service and accountability. TALA supports these goals by making public information easier to find and giving young people a way to raise concerns." data-speech-title="RA 6713: Ethical Public Service">
                         <div>
                             <div class="card-asset-grid h-28 sm:h-30 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-2.5">
                                 <div class="w-full max-w-[200px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-2 text-center transform group-hover:scale-105 transition-transform duration-300">
@@ -810,7 +814,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 3: THE PROBLEM & THE SOLUTION        -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-3" data-title="Problem vs Solution" data-notes="Ihambing ang lumang sistema sa TALA. Ang dating proseso ay mabagal at mano-mano; ang TALA ay may automated disclosures at live fund tracking.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-3" data-title="Problem vs Solution" data-notes="Next, let us compare the usual paper-based process with the TALA approach. Paper files can be hard to locate, and repeated data entry can slow down reporting. TALA brings related records into connected modules, making information easier to organize and retrieve. To show how this works, I will walk through the process from registration to review.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -827,7 +831,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 w-full">
                     
                     <!-- Left: Traditional Roadblocks -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Sa tradisyunal na sistema, nahihirapan ang mga SK official sa tambak na papeles at manu-manong pagpapaskil sa bulletin board. Madalas nawawala o naaantala ang mga ulat, walang malinaw na pagsubaybay sa 46 milyong pisong pondo ng kabataan, at walang paraan ang publiko upang makita ang mga transaksyon." data-speech-title="Tradisyunal na Pamamahala sa Papel">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="However, having clear responsibilities does not always make the work easy. With paper records, officials may need to enter the same details several times. Reports can be difficult to find, and the public may have to visit an office to request information." data-speech-title="The Paper-Based Process">
                         <div>
                             <!-- Top UI Asset: Paper Bottleneck Alert Mockup -->
                             <div class="card-asset-grid h-28 sm:h-32 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden mb-3">
@@ -887,7 +891,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Right: The TALA Solution -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Sa pamamagitan ng TALA, pinalitan natin ito ng mabilis at modernong web platform. Isang click lang, nai-publish agad ang quarterly Full Disclosure reports sa internet, live na namomonitor ang pondo ng 46 na barangay, at may direktang access ang kabataan sa mga opisyal na rekord." data-speech-title="Ang Digital na Solusyon ng TALA">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="This is where TALA helps. Instead of keeping information in separate paper files, officials can manage records through connected modules. Approved reports can be shared online, while budget records are easier to review." data-speech-title="The TALA Digital Approach">
                         <div>
                             <!-- Top UI Asset: TALA Cloud Ledger in Design Green -->
                             <div class="card-asset-grid h-28 sm:h-32 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden mb-3">
@@ -968,7 +972,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 4: THE END-TO-END WORKFLOW           -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-4" data-title="System Workflow" data-notes="Ilatag ang kumpletong daloy ng datos sa lahat ng 5 yugto sa isang pinag-isang screen.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-4" data-title="System Workflow" data-notes="The workflow has five stages. First, youth registration creates the records used to identify participants. Next, officials prepare their program and budget plans. After that, they record vouchers and attach supporting documents. Once reports are approved, they can be published for public viewing. Finally, the municipal team reviews submissions and follows up on incomplete records. With that flow in mind, let us look at the financial tools.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -985,7 +989,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2.5 sm:gap-3 w-full">
                     
                     <!-- Stage 1: Onboarding & ID (Mini Digital QR ID Mockup) -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Sa Unang Yugto, magpaparehistro online ang kabataan at mabibigyan ng opisyal na QR ID na may tamper-proof security. Tinitiyak nito na lehitimo ang bawat benepisyaryo at walang multo sa attendance o pamamahagi ng tulong." data-speech-title="Yugto 1: Pagpaparehistro at Digital QR ID">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="First, the process starts with youth registration. Staff record the details of each young person and can use a QR ID to help identify their record. This makes it easier to connect a participant with the activities they attend." data-speech-title="Stage 1: Youth Registration">
                         <div>
                             <!-- Top UI Asset: Miniature QR ID Card -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2 overflow-hidden mb-2.5">
@@ -1027,7 +1031,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stage 2: AYIP Planning (Stacked Telemetry Pills) -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Sa Ikalawang Yugto, binubuo ng SK Chairperson at Treasurer ang Annual Barangay Youth Investment Program. Awtomatikong binabantayan ng TALA ang statutory 10% fund cap upang maiwasan ang deficit o labis na paggastos." data-speech-title="Yugto 2: Pagpaplano ng AYIP at Badyet">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Next, the SK team prepares its youth investment program and budget. TALA keeps the planned programs and their amounts together, making it easier to compare activities with the available funds." data-speech-title="Stage 2: Program and Budget Planning">
                         <div>
                             <!-- Top UI Asset: Stacked Budget Pills -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex flex-col items-center justify-center gap-1.5 p-2 overflow-hidden mb-2.5">
@@ -1058,7 +1062,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stage 3: Disbursement (Network Pipeline Diagram) -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Sa Ikatlong Yugto, dito inia-upload ang mga check voucher at opisyal na resibo gamit ang standardized COA accounting codes. Mula ilang linggong paghihintay, nagiging minuto na lamang ang proseso ng liquidation." data-speech-title="Yugto 3: Check Voucher at Liquidation">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="After planning comes financial documentation. Officials record check vouchers and attach receipts or other supporting files. Keeping these documents together makes liquidation and later review easier." data-speech-title="Stage 3: Vouchers and Supporting Documents">
                         <div>
                             <!-- Top UI Asset: Network Pipeline -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2 overflow-hidden mb-2.5">
@@ -1095,7 +1099,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stage 4: FDP Disclosure (Mini Browser Mockup) -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Sa Ika-apat na Yugto, ang mga naaprubahang quarterly financial reports ay awtomatikong nai-publish sa pampublikong Full Disclosure Portal na may in-browser PDF preview alinsunod sa kautusan ng DILG." data-speech-title="Yugto 4: Awtomatikong Pag-post sa FDP">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Once reports are reviewed and approved, they can be published through the Full Disclosure Portal. The public can view the available documents online, including PDF reports, without needing a separate office visit." data-speech-title="Stage 4: Public Disclosure">
                         <div>
                             <!-- Top UI Asset: Mini Browser Mockup -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2 overflow-hidden mb-2.5">
@@ -1129,7 +1133,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stage 5: Executive Review & Audit Loop -->
-                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Sa Ikalimang Yugto, nirerepaso ng MYDC Federation at Commission on Audit ang compliance ng bawat barangay. Ginagawaran ang mga barangay ng Governance Badges upang mapanatili ang tapat at maayos na pamamahala." data-speech-title="Yugto 5: Pagsusuri ng Pamunuan at Audit">
+                    <div class="saas-card p-3 sm:p-3.5 flex flex-col justify-between group" data-speech="Finally, the municipal team can review barangay submissions and monitor their progress. Governance badges help make reporting performance easier to see. The goal is to encourage timely and complete records." data-speech-title="Stage 5: Review and Monitoring">
                         <div>
                             <!-- Top UI Asset: Executive Audit Badge in Design Green -->
                             <div class="card-asset-grid h-24 sm:h-28 w-full rounded-xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2 overflow-hidden mb-2.5">
@@ -1177,7 +1181,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 5: FEATURES PART 1 - FISCAL PIPELINE -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-5" data-title="Features: Fiscal Transparency" data-notes="I-highlight ang pampinansyal na haligi ng TALA: Full Disclosure Portal alinsunod sa DILG, Real-Time Budget Console para sa 46 barangay, at COA Check Voucher liquidation.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-5" data-title="Features: Fiscal Transparency" data-notes="Now, we move to three financial tools. The Full Disclosure Portal shares published reports with the public. The budget console helps officials compare planned amounts with recorded spending. The voucher module keeps transactions and supporting documents together. In simple terms, these tools help answer three questions: what was planned, what was spent, and where are the supporting records? Next, we will look beyond finances.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -1194,7 +1198,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 w-full">
                     
                     <!-- Card 1: Full Disclosure (Browser / URL Mockup style with Green accents) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Ito ang ating Full Disclosure Portal. Awtomatiko nitong inilalathala ang quarterly reports ng lahat ng 46 na barangay na may malinaw na PDF preview upang tiyaking 100% compliant ang ating bayan sa mga direktiba ng DILG." data-speech-title="Full Disclosure (FDP) Portal">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Let us now look at the Full Disclosure Portal. This is where the public can find published financial reports. The built-in PDF preview makes these documents easier to read in the browser." data-speech-title="Full Disclosure Portal">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl relative flex items-center justify-center p-3 overflow-hidden">
@@ -1259,7 +1263,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 2: Budget Console (Interactive Telemetry Pills style) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Ito naman ang Real-Time Budget Registry. Pinagsasama nito ang pondo ng 46 na barangay sa iisang live ledger upang masubaybayan ang approved budget laban sa aktwal na nagastos at maiwasan ang kakulangan." data-speech-title="Real-Time Budget Console">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next is the budget console. It brings budget records from the barangays into a shared view. Officials can compare approved amounts with recorded spending and see which items need attention." data-speech-title="Real-Time Budget Console">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex flex-col items-center justify-center gap-2 p-3 overflow-hidden">
@@ -1298,7 +1302,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 3: Check Voucher & Liquidation (Network Node with Center Icon) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Sa module na ito pinoproseso ang mga check voucher at liquidation. Direktang ikinakabit ang mga digital na resibo kasama ang COA codes upang maiwasan ang pagkawala ng dokumento at mapabilis ang audit." data-speech-title="Check Voucher at Liquidation">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="The third financial tool handles check vouchers and liquidation records. Receipts and supporting documents stay connected to the relevant transaction. As a result, officials can find the information they need for review more easily." data-speech-title="Check Vouchers and Liquidation">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1370,7 +1374,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 6: FEATURES PART 2 - CIVIC TECH      -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-6" data-title="Features: Civic Governance" data-notes="Present the civic governance modules: Barangay Ranking gamifies compliance; MYDC & YORP organizes all youth organizations; Minutes & Resolutions archives official assembly records; Ticketing ensures youth feedback is acted upon.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-6" data-title="Features: Civic Governance" data-notes="In addition to financial records, TALA helps organize governance activities. Barangay badges show reporting progress. MYDC and YORP records help organize youth groups and representatives. Meeting minutes and resolutions preserve decisions. However, good governance also needs feedback, so the helpdesk provides a way for young people to raise concerns. Next, I will briefly explain the technology behind these tools.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -1387,7 +1391,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full">
                     
                     <!-- Card 1: Barangay Badges (100% Green Governance Seal Matrix) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Ito ang ating Barangay Governance Badges system. Awtomatiko nitong sinusuri ang 46 na barangay at nagbibigay ng Gold, Silver, at Bronze seals ayon sa bilis at husay ng kanilang pagsumite ng ulat." data-speech-title="Barangay Governance Badges">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Beyond finances, TALA also supports governance. The badge system shows barangay reporting performance using Gold, Silver, and Bronze levels. This gives the team a quick way to see progress and identify follow-up work." data-speech-title="Barangay Governance Badges">
                         <div>
                             <!-- Top UI Asset Container: Pure Green Matrix -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2.5 overflow-hidden">
@@ -1457,7 +1461,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 2: Council & YORP (Interactive Pills with Loader style in Green) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Dito pinamamahalaan ang opisyal na rehistro ng mga kinikilalang youth organizations at lider ng kabataan upang masiguro ang lehitimong representasyon sa konseho." data-speech-title="Akreditasyon ng MYDC at YORP">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next, the MYDC and YORP modules organize records for youth organizations and their representatives. This helps the municipal team keep track of the groups involved in local youth development." data-speech-title="MYDC and YORP Records">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex flex-col items-center justify-center gap-2 p-3 overflow-hidden">
@@ -1496,7 +1500,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 3: Minutes & Assembly Resolutions -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Dito naka-archive ang mga opisyal na resolusyon, ordinansa, at minutes of meeting ng SK. Naitala rin ang roll call at quorum upang masigurong legal at balido ang bawat panukala." data-speech-title="Minutes at mga Resolusyon ng SK">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="In addition, the records module keeps minutes of meetings and resolutions in one place. Officials can refer to attendance, discussions, and decisions when preparing reports or following up on agreed actions." data-speech-title="Meeting Minutes and Resolutions">
                         <div>
                             <!-- Top UI Asset Container: Resolution Document Mockup -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1539,7 +1543,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Card 4: Civic Feedback & Tickets -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Ito ang helpdesk ticketing system kung saan maaaring magpadala ang mga kabataan ng kanilang mga hinaing, tanong, o mungkahi upang maaksyunan agad ng kanilang mga opisyal." data-speech-title="Direktang Ugnayan at Helpdesk Tickets">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="However, governance is also about listening. The helpdesk lets young people send questions, concerns, and suggestions. Each ticket provides a record that officials can use to follow up on the request." data-speech-title="Youth Helpdesk">
                         <div>
                             <!-- Top UI Asset Container: Citizen Helpdesk Ticket Mockup -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl relative flex items-center justify-center p-3 overflow-hidden">
@@ -1606,7 +1610,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 7: TECHNICAL ARCHITECTURE & STACK    -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-7" data-title="Technical Architecture" data-notes="Demonstrate engineering maturity. Highlight PHP 8.2 with PDO prepared statements, MySQL ACID compliance, Tailwind CSS 3.x with zero exterior borders, responsive design down to 360px phones, and role-based access security.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-7" data-title="Technical Architecture" data-notes="Behind the platform, PHP processes requests and MySQL stores related records. On the screen, Tailwind CSS helps the pages adapt to different devices. The shared theme switch keeps light and dark mode consistent. User roles help separate the responsibilities of administrators and SK chairpersons. You do not need to remember every technical term. The main point is that these parts work together to organize information and control access. Finally, let us look at the overall value and the next steps.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -1623,7 +1627,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 w-full">
                     
                     <!-- Stack 1: Backend Runtime (Browser / Window Mockup style with Green accents) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Sa backend, gumagana ang TALA gamit ang PHP 8.2 na may PDO prepared statements. Ito ay magaan at walang mabibigat na third-party frameworks kaya napakabilis mag-load ng bawat pahina." data-speech-title="Backend Runtime: PHP 8.2 at PDO">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Now, let us briefly look at how the system is built. PHP handles the work on the server, while PDO prepared statements help the application work with database queries. In simple terms, this is the part that processes requests and saves records." data-speech-title="Server-Side Processing: PHP and PDO">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1662,7 +1666,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stack 2: Data Layer (Interactive Pills style with Green accents) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Ang database layer ay tumatakbo sa MySQL 8 gamit ang InnoDB engine na may ACID compliance upang masiguro na laging protektado at buo ang bawat transaksyong pinansyal ng 46 na barangay." data-speech-title="Relational Data Layer: MySQL 8">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Next, MySQL stores the information behind the platform. It connects related records, such as a barangay, its budget, and its transactions. Database transactions help keep related changes together." data-speech-title="Data Storage: MySQL">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex flex-col items-center justify-center gap-2 p-3 overflow-hidden">
@@ -1699,7 +1703,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stack 3: Presentation & UI (Bold Typography with Green Glow) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Ang user interface ay binuo gamit ang Tailwind CSS 3 at Phosphor icons. Umaangkop ito sa anumang laki ng screen — mula sa 4K projector hanggang sa smartphone ng opisyal — at may instant dark and light mode." data-speech-title="UI Architecture: Tailwind CSS 3">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="On the screen, Tailwind CSS helps keep the design consistent across different devices. The layout adapts to desktop and mobile screens, and the shared theme control changes the page between light and dark mode." data-speech-title="Responsive Interface and Themes">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1733,7 +1737,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </div>
 
                     <!-- Stack 4: Security Standards (Network Nodes with Center Key/Shield) -->
-                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Para sa seguridad, mahigpit na ipinapatupad ng TALA ang role-based access control, proteksyon laban sa CSRF, file upload quarantine, at buong audit log sa bawat galaw ng admin." data-speech-title="Mga Pamantayan sa Seguridad">
+                    <div class="saas-card p-4 sm:p-5 flex flex-col justify-between group" data-speech="Finally, access controls help separate what different users can do. For example, an administrator and an SK chairperson have different responsibilities. These controls help keep account actions within the appropriate role." data-speech-title="User Roles and Access">
                         <div>
                             <!-- Top UI Asset Container -->
                             <div class="card-asset-grid h-32 sm:h-36 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-3 overflow-hidden">
@@ -1802,7 +1806,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
         <!-- ========================================== -->
         <!-- SLIDE 8: OUTRO - IMPACT, ROADMAP & LAUNCH  -->
         <!-- ========================================== -->
-        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-8" data-title="Impact, Roadmap & Outro" data-notes="Conclude with high energy. Summarize the quantifiable impact: 100% barangay coverage, 85% reduction in reporting latency, total paperless transparency. Present the future roadmap (PWA, SMS alerts, GIS mapping). Invite the panel to the live interactive demonstration and open the floor for Q&A.">
+        <section class="slide-view flex flex-col justify-center items-center w-full h-full" id="slide-8" data-title="Impact, Roadmap & Outro" data-notes="To conclude, TALA brings youth records, financial documents, and public information into one platform. Its value is easier organization, clearer reporting, and better access to available information. Looking ahead, the roadmap includes a mobile web app, project mapping, and SMS notifications. These are planned improvements. Next, I will open the live system and show how the current modules work. Thank you, and I welcome your questions.">
             
             <div class="w-full max-w-7xl mx-auto flex flex-col justify-center my-auto">
                 <!-- Centered Header & Subtitle (Zero Top Pill) -->
@@ -1815,139 +1819,108 @@ if ($total_budget <= 0) $total_budget = 46000000;
                     </p>
                 </div>
 
-                <!-- Top Grid: Proven Impact & Roadmap with Top UI Assets -->
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-3 w-full">
-                    
-                    <!-- Left: Quantified Impact Metrics (7 cols) -->
-                    <div class="lg:col-span-7 saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="Bilang buod ng ating tagumpay: Naabot ng TALA ang 100% digital coverage sa lahat ng 46 na barangay ng Tumauini, pinabilis ng 85% ang voucher liquidation, at nagbigay ng 24/7 pampublikong visibility sa higit 46 milyong pisong pondo." data-speech-title="Naihatid na Makabuluhang Epekto">
+                <!-- Four equal section cards: impact and three roadmap priorities -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 w-full">
+                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="To bring everything together, TALA connects youth records, financial documents, and public information in one platform. This makes daily work easier to organize and gives the community a clearer view of youth governance." data-speech-title="Connected Youth Governance">
                         <div>
-                            <!-- Top UI Asset: Municipal Telemetry in Design Green -->
-                            <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
-                                <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm border border-[#15803d]/30 dark:border-[#16a34a]/30 p-2 transform group-hover:scale-105 transition-transform duration-300">
-                                    <div class="flex items-center justify-between pb-1 mb-1 border-b border-slate-100 dark:border-zinc-800">
-                                        <div class="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-zinc-200">
-                                            <i class="ph-bold ph-chart-line-up text-[#15803d]"></i>
-                                            <span>Municipal Impact Telemetry</span>
-                                        </div>
-                                        <div class="flex items-center gap-1 text-[9px] font-mono font-bold text-[#15803d]">
-                                            <span class="w-1.5 h-1.5 rounded-full bg-[#15803d] animate-ping"></span>
-                                            <span>ACTIVE</span>
-                                        </div>
+                            <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
+                                <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-3 transform group-hover:scale-105 transition-transform duration-300">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <i class="ph-bold ph-chart-line-up text-xl text-[#15803d] dark:text-[#16a34a]"></i>
+                                        <span class="px-2 py-1 rounded-lg bg-[#15803d]/10 text-[#15803d] dark:text-[#16a34a] text-[10px] font-mono font-bold">IMPACT</span>
                                     </div>
-                                    <div class="flex items-center justify-between text-[10px] text-slate-700 dark:text-zinc-300 font-semibold px-1">
-                                        <span class="flex items-center gap-1 text-[#15803d]"><i class="ph-bold ph-check-circle"></i> 46/46 Unified</span>
-                                        <span class="flex items-center gap-1 text-[#15803d]"><i class="ph-bold ph-lightning"></i> 85% Speedup</span>
-                                    </div>
+                                    <p class="text-xs font-extrabold text-slate-900 dark:text-white">Connected governance.</p>
+                                    <p class="text-[10px] text-slate-500 dark:text-zinc-400 mt-0.5">Transparent public service.</p>
                                 </div>
                             </div>
-
-                            <div class="flex items-center gap-2 text-[#15803d] dark:text-[#16a34a] font-bold text-xs uppercase tracking-wider mb-2">
+                            <div class="flex items-center gap-2 text-[#15803d] dark:text-[#16a34a] font-bold text-[10px] uppercase tracking-wider mb-2">
                                 <i class="ph-bold ph-chart-line-up text-sm"></i>
-                                <span>Measurable Impact Delivered</span>
+                                <span>YOUTH GOVERNANCE</span>
                             </div>
-
-                            <div class="grid grid-cols-2 gap-2 mb-2">
-                                <div class="p-2 sm:p-2.5 rounded-xl bg-[#15803d]/5 border border-[#15803d]/10">
-                                    <span class="text-xl sm:text-2xl font-black text-[#15803d] dark:text-[#16a34a] block">100%</span>
-                                    <span class="text-[11px] font-bold text-slate-800 dark:text-zinc-200">Barangay Coverage</span>
-                                    <p class="text-[10px] text-slate-500 dark:text-zinc-400">All 46 barangays unified.</p>
-                                </div>
-
-                                <div class="p-2 sm:p-2.5 rounded-xl bg-[#15803d]/5 border border-[#15803d]/10">
-                                    <span class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white block">85%</span>
-                                    <span class="text-[11px] font-bold text-slate-800 dark:text-zinc-200">Reporting Speedup</span>
-                                    <p class="text-[10px] text-slate-500 dark:text-zinc-400">Voucher liquidations in minutes.</p>
-                                </div>
-
-                                <div class="p-2 sm:p-2.5 rounded-xl bg-[#15803d]/5 border border-[#15803d]/10">
-                                    <span class="text-xl sm:text-2xl font-black text-amber-500 block">₱46M+</span>
-                                    <span class="text-[11px] font-bold text-slate-800 dark:text-zinc-200">Youth Fund Monitored</span>
-                                    <p class="text-[10px] text-slate-500 dark:text-zinc-400">Real-time municipal audit.</p>
-                                </div>
-
-                                <div class="p-2 sm:p-2.5 rounded-xl bg-[#15803d]/5 border border-[#15803d]/10">
-                                    <span class="text-xl sm:text-2xl font-black text-blue-600 dark:text-blue-400 block">24/7</span>
-                                    <span class="text-[11px] font-bold text-slate-800 dark:text-zinc-200">Civic Transparency</span>
-                                    <p class="text-[10px] text-slate-500 dark:text-zinc-400">Open public inspection.</p>
-                                </div>
-                            </div>
+                            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white leading-snug mb-2">Measurable Impact</h3>
+                            <p class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">TALA unifies Tumauini's barangays through digital reporting, transparent fund monitoring, and open public information, helping councils deliver faster, more accountable services for the youth.</p>
                         </div>
-
-                        <div class="p-2 rounded-xl bg-slate-100 dark:bg-zinc-800/80 text-[11px] font-medium text-slate-600 dark:text-zinc-300">
-                            <strong>Official Recognition:</strong> Benchmark digital transformation model for Sangguniang Kabataan Federations.
+                        <div class="mt-3 text-[10px] font-medium text-slate-600 dark:text-zinc-300">
+                            <span class="font-mono font-bold text-[#15803d] dark:text-[#16a34a]">COMMUNITY IMPACT</span> &middot; Better service for every youth
                         </div>
                     </div>
 
-                    <!-- Right: Future Roadmap (5 cols) -->
-                    <div class="lg:col-span-5 saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="Sa hinaharap, kabilang sa ating plano ang offline Progressive Web App para sa malalayong barangay, interactive GIS mapping ng mga proyekto, at automated SMS alerts para sa mga pagpupulong." data-speech-title="Roadmap para sa Hinaharap">
+                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="Looking ahead, the roadmap includes a Progressive Web App. The aim is to improve mobile access and explore ways to prepare selected records when an internet connection is unavailable. This is a planned improvement." data-speech-title="Planned Mobile App">
                         <div>
-                            <!-- Top UI Asset: Roadmap Timeline Pipeline Mockup -->
-                            <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl border border-slate-200/70 dark:border-zinc-800/80 relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
-                                <div class="w-full max-w-[260px] flex items-center justify-between px-2 relative z-10 transform group-hover:scale-105 transition-transform duration-300">
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-lg bg-[#15803d]/15 text-[#15803d] dark:text-[#16a34a] flex items-center justify-center text-xs font-bold font-mono">Q1</span>
-                                        <span class="text-[8px] font-bold text-slate-600 dark:text-zinc-400 mt-1">PWA</span>
+                            <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
+                                <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-3 transform group-hover:scale-105 transition-transform duration-300">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <i class="ph-bold ph-device-mobile text-xl text-[#15803d] dark:text-[#16a34a]"></i>
+                                        <span class="px-2 py-1 rounded-lg bg-[#15803d]/10 text-[#15803d] dark:text-[#16a34a] text-[10px] font-mono font-bold">Q1</span>
                                     </div>
-                                    <div class="flex-1 h-0.5 bg-[#15803d]/30 mx-1.5"></div>
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-lg bg-[#15803d]/15 text-[#15803d] dark:text-[#16a34a] flex items-center justify-center text-xs font-bold font-mono">Q2</span>
-                                        <span class="text-[8px] font-bold text-slate-600 dark:text-zinc-400 mt-1">GIS MAP</span>
-                                    </div>
-                                    <div class="flex-1 h-0.5 bg-[#15803d]/30 mx-1.5"></div>
-                                    <div class="flex flex-col items-center">
-                                        <span class="w-7 h-7 rounded-lg bg-[#15803d]/15 text-[#15803d] dark:text-[#16a34a] flex items-center justify-center text-xs font-bold font-mono">Q3</span>
-                                        <span class="text-[8px] font-bold text-slate-600 dark:text-zinc-400 mt-1">SMS</span>
-                                    </div>
+                                    <p class="text-xs font-extrabold text-slate-900 dark:text-white">Draft anywhere.</p>
+                                    <p class="text-[10px] text-slate-500 dark:text-zinc-400 mt-0.5">Sync when connected.</p>
                                 </div>
                             </div>
-
-                            <div class="flex items-center gap-2 text-amber-500 font-bold text-xs uppercase tracking-wider mb-2">
-                                <i class="ph-bold ph-rocket-launch text-sm"></i>
-                                <span>Future Innovation Roadmap</span>
+                            <div class="flex items-center gap-2 text-[#15803d] dark:text-[#16a34a] font-bold text-[10px] uppercase tracking-wider mb-2">
+                                <i class="ph-bold ph-device-mobile text-sm"></i>
+                                <span>OFFLINE WORKSPACE</span>
                             </div>
-
-                            <div class="space-y-1.5">
-                                <div class="flex items-start gap-2 p-1.5 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-100 dark:border-zinc-800">
-                                    <div class="w-5 h-5 rounded-md bg-amber-500/10 text-amber-500 flex items-center justify-center font-bold text-[9px] flex-shrink-0 mt-0.5">
-                                        Q1
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xs font-bold text-slate-900 dark:text-white">Mobile Progressive Web App (PWA)</h4>
-                                        <p class="text-[10px] text-slate-500 dark:text-zinc-400">Offline-first voucher drafting for remote barangays.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-2 p-1.5 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-100 dark:border-zinc-800">
-                                    <div class="w-5 h-5 rounded-md bg-[#15803d]/10 text-[#15803d] dark:text-[#16a34a] flex items-center justify-center font-bold text-[9px] flex-shrink-0 mt-0.5">
-                                        Q2
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xs font-bold text-slate-900 dark:text-white">GIS-Based Project Mapping</h4>
-                                        <p class="text-[10px] text-slate-500 dark:text-zinc-400">Interactive map pin-pointing funded youth projects.</p>
-                                    </div>
-                                </div>
-
-                                <div class="flex items-start gap-2 p-1.5 rounded-xl bg-slate-50 dark:bg-zinc-900/60 border border-slate-100 dark:border-zinc-800">
-                                    <div class="w-5 h-5 rounded-md bg-blue-500/10 text-blue-600 flex items-center justify-center font-bold text-[9px] flex-shrink-0 mt-0.5">
-                                        Q3
-                                    </div>
-                                    <div>
-                                        <h4 class="text-xs font-bold text-slate-900 dark:text-white">SMS Broadcast Gateway</h4>
-                                        <p class="text-[10px] text-slate-500 dark:text-zinc-400">SMS alerts for assemblies, grants & emergencies.</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white leading-snug mb-2">Mobile Progressive Web App</h3>
+                            <p class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">Offline-first voucher drafting for remote barangays, bringing essential youth services closer to every community.</p>
                         </div>
+                        <div class="mt-3 text-[10px] font-medium text-slate-600 dark:text-zinc-300">
+                            <span class="font-mono font-bold text-[#15803d] dark:text-[#16a34a]">Q1 ROADMAP</span> &middot; Access beyond connectivity
+                        </div>
+                    </div>
 
-                        <div class="pt-2 border-t border-slate-100 dark:border-zinc-800 text-[10px] font-mono text-slate-400 dark:text-zinc-500">
-                            Vision: Sustained innovation for the youth of Tumauini.
+                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="Another planned improvement is project mapping. A map would help users see where youth projects are located across Tumauini and connect those locations with the available project records." data-speech-title="Planned Project Mapping">
+                        <div>
+                            <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
+                                <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-3 transform group-hover:scale-105 transition-transform duration-300">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <i class="ph-bold ph-map-pin text-xl text-[#15803d] dark:text-[#16a34a]"></i>
+                                        <span class="px-2 py-1 rounded-lg bg-[#15803d]/10 text-[#15803d] dark:text-[#16a34a] text-[10px] font-mono font-bold">Q2</span>
+                                    </div>
+                                    <p class="text-xs font-extrabold text-slate-900 dark:text-white">See every project.</p>
+                                    <p class="text-[10px] text-slate-500 dark:text-zinc-400 mt-0.5">Locate funded initiatives.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 text-[#15803d] dark:text-[#16a34a] font-bold text-[10px] uppercase tracking-wider mb-2">
+                                <i class="ph-bold ph-map-pin text-sm"></i>
+                                <span>PROJECT VISIBILITY</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white leading-snug mb-2">GIS-Based Project Mapping</h3>
+                            <p class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">An interactive map pin-pointing funded youth projects across Tumauini for easier monitoring and public inspection.</p>
+                        </div>
+                        <div class="mt-3 text-[10px] font-medium text-slate-600 dark:text-zinc-300">
+                            <span class="font-mono font-bold text-[#15803d] dark:text-[#16a34a]">Q2 ROADMAP</span> &middot; Accountability on the map
+                        </div>
+                    </div>
+
+                    <div class="saas-card p-3.5 sm:p-4 rounded-2xl flex flex-col justify-between group" data-speech="In addition, the roadmap includes SMS notifications. These would help share meeting reminders, opportunities, and urgent announcements with people who may not be online regularly." data-speech-title="Planned SMS Notifications">
+                        <div>
+                            <div class="card-asset-grid h-24 sm:h-28 w-full rounded-2xl relative flex items-center justify-center p-2.5 overflow-hidden mb-3">
+                                <div class="w-full max-w-[260px] bg-white dark:bg-zinc-900 rounded-xl shadow-sm p-3 transform group-hover:scale-105 transition-transform duration-300">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <i class="ph-bold ph-chat-circle-dots text-xl text-[#15803d] dark:text-[#16a34a]"></i>
+                                        <span class="px-2 py-1 rounded-lg bg-[#15803d]/10 text-[#15803d] dark:text-[#16a34a] text-[10px] font-mono font-bold">Q3</span>
+                                    </div>
+                                    <p class="text-xs font-extrabold text-slate-900 dark:text-white">Keep youth informed.</p>
+                                    <p class="text-[10px] text-slate-500 dark:text-zinc-400 mt-0.5">Reach communities directly.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 text-[#15803d] dark:text-[#16a34a] font-bold text-[10px] uppercase tracking-wider mb-2">
+                                <i class="ph-bold ph-chat-circle-dots text-sm"></i>
+                                <span>COMMUNITY ALERTS</span>
+                            </div>
+                            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 dark:text-white leading-snug mb-2">SMS Broadcast Gateway</h3>
+                            <p class="text-[11px] sm:text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">SMS alerts for assemblies, grants, and emergencies, helping youth receive timely updates wherever they are.</p>
+                        </div>
+                        <div class="mt-3 text-[10px] font-medium text-slate-600 dark:text-zinc-300">
+                            <span class="font-mono font-bold text-[#15803d] dark:text-[#16a34a]">Q3 ROADMAP</span> &middot; Timely information for every youth
                         </div>
                     </div>
 
                 </div>
 
                 <!-- Bottom Live Launchpad & Closing Banner -->
-                <div class="saas-card rounded-2xl p-3 sm:p-4 flex flex-col md:flex-row items-center justify-between gap-3 mt-2 w-full group" data-speech="Bukas at live na gumagana ang ating web platform ngayon. Inaanyayahan po namin ang ating panel na subukan ang live portal habang bukas po kami sa inyong mga katanungan. Maraming salamat po!" data-speech-title="Live Demonstration Launchpad">
+                <div class="saas-card rounded-2xl p-3 sm:p-4 flex flex-col md:flex-row items-center justify-between gap-3 mt-2 w-full group" data-speech="That concludes the overview. Next, I will demonstrate the live system so you can see how the modules work together. Thank you for listening. I am ready to answer your questions." data-speech-title="Live Demonstration and Questions">
                     <div class="flex items-center gap-3">
                         <img src="mascot.png" alt="TALA Mascot" class="w-10 h-10 object-contain hidden sm:block">
                         <div>
@@ -1985,7 +1958,7 @@ if ($total_budget <= 0) $total_budget = 46000000;
 
 
     <!-- ============================================================== -->
-    <!-- PRESENTER HOVER TELEPROMPTER HUD (Malaking Script sa Tagalog) -->
+    <!-- PRESENTER HOVER TELEPROMPTER HUD (Plain English Speaking Script) -->
     <!-- ============================================================== -->
     <div id="presenterHoverCue" class="fixed bottom-20 left-1/2 -translate-x-1/2 z-40 max-w-5xl w-[calc(100%-2rem)] p-4 sm:p-5 rounded-3xl bg-white/98 dark:bg-zinc-900/98 border-2 border-[#15803d] shadow-2xl backdrop-blur-xl transition-all duration-300 pointer-events-auto flex items-start justify-between gap-4">
         <div class="flex items-start gap-3.5 flex-1 min-w-0">
@@ -1996,25 +1969,25 @@ if ($total_budget <= 0) $total_budget = 46000000;
                 <div class="flex items-center gap-2 mb-1 flex-wrap">
                     <span class="text-[11px] font-mono font-black uppercase text-[#15803d] dark:text-[#16a34a] tracking-wider flex items-center gap-1.5 bg-green-500/10 px-2.5 py-0.5 rounded-full">
                         <span class="w-2 h-2 rounded-full bg-[#15803d] animate-ping"></span>
-                        Basahin nang Malakas sa Panel:
+                        Read aloud to the panel:
                     </span>
-                    <span class="text-xs font-bold text-slate-500 dark:text-zinc-400 font-sans truncate" id="hudSectionLabel">Pambungad sa TALA</span>
+                    <span class="text-xs font-bold text-slate-500 dark:text-zinc-400 font-sans truncate" id="hudSectionLabel">Introduction to TALA</span>
                 </div>
                 <p id="hudSpeechText" class="text-sm sm:text-base md:text-lg font-bold text-slate-900 dark:text-white leading-relaxed">
-                    Magandang araw po sa ating kagalang-galang na panel at mga panauhin. Ikinagagalak ko pong iprisinta ang Tumauini Active Youth Ledger Analytics o TALA...
+                    Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system.
                 </p>
             </div>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0 pt-1">
-            <a href="presenter_view.php" target="_blank" class="px-3 py-1.5 rounded-xl bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold transition-all tap-effect flex items-center gap-1.5 shadow-sm" title="Buksan ang Hiwalay na Screen para sa Presenter at Script">
+            <a href="presentation_audience.php" target="_blank" class="px-3 py-1.5 rounded-xl bg-[#15803d] hover:bg-[#166534] text-white text-xs font-bold transition-all tap-effect flex items-center gap-1.5 shadow-sm" title="Open the separate presentation screen">
                 <i class="ph-bold ph-monitor-play text-sm"></i>
                 <span class="hidden sm:inline">Presenter Screen</span>
             </a>
-            <button type="button" onclick="toggleHudPin()" id="hudPinBtn" class="px-2.5 py-1.5 rounded-xl bg-green-500/10 text-[#15803d] dark:text-[#16a34a] text-xs font-bold transition-colors flex items-center gap-1" title="Panatilihing nakapirmi sa screen">
+            <button type="button" onclick="toggleHudPin()" id="hudPinBtn" class="px-2.5 py-1.5 rounded-xl bg-green-500/10 text-[#15803d] dark:text-[#16a34a] text-xs font-bold transition-colors flex items-center gap-1" title="Keep the script pinned on screen">
                 <i class="ph-bold ph-push-pin text-sm"></i>
                 <span class="hidden sm:inline">Pinned</span>
             </button>
-            <button type="button" onclick="toggleHudVisibility()" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-400 hover:text-slate-600 flex items-center justify-center text-sm" title="Itago (Shortcut: S)">
+            <button type="button" onclick="toggleHudVisibility()" class="w-8 h-8 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-slate-400 hover:text-slate-600 flex items-center justify-center text-sm" title="Hide script (Shortcut: S)">
                 <i class="ph-bold ph-x"></i>
             </button>
         </div>
@@ -2034,13 +2007,13 @@ if ($total_budget <= 0) $total_budget = 46000000;
             </button>
 
             <!-- Dual-Screen Presenter Launcher -->
-            <a href="presenter_view.php" target="_blank" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-[#15803d]/10 hover:bg-[#15803d]/20 text-[#15803d] dark:text-[#16a34a] text-xs font-bold transition-all tap-effect" title="Buksan ang Screen ng Presenter na may Malaking Script">
+            <a href="presentation_audience.php" target="_blank" class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-[#15803d]/10 hover:bg-[#15803d]/20 text-[#15803d] dark:text-[#16a34a] text-xs font-bold transition-all tap-effect" title="Open the separate presentation screen">
                 <i class="ph-bold ph-broadcast text-sm"></i>
                 <span class="hidden md:inline">Presenter View</span>
             </a>
 
             <!-- Presenter Speech HUD Toggle Button -->
-            <button type="button" onclick="toggleHudVisibility()" id="dockSpeechBtn" class="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-green-500/10 text-[#15803d] dark:text-[#16a34a] text-xs font-bold transition-all tap-effect" title="I-toggle ang Script Prompter sa Screen (Shortcut: S)">
+            <button type="button" onclick="toggleHudVisibility()" id="dockSpeechBtn" class="flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-green-500/10 text-[#15803d] dark:text-[#16a34a] text-xs font-bold transition-all tap-effect" title="Toggle the speaking script (Shortcut: S)">
                 <i class="ph-bold ph-microphone"></i>
                 <span class="hidden sm:inline">Script</span>
             </button>
@@ -2305,41 +2278,41 @@ if ($total_budget <= 0) $total_budget = 46000000;
         let hudVisible = true;
         let speechResetTimer = null;
 
-        // Default speaking scripts for each slide in Tagalog
+        // Plain English scripts with transitions for each slide.
         const defaultSlideSpeeches = {
-            1: {
-                title: "Pambungad: Ang TALA Web Platform",
-                text: "Magandang araw po sa ating kagalang-galang na panel at mga panauhin. Ikinagagalak ko pong iprisinta ang Tumauini Active Youth Ledger Analytics o TALA — ang opisyal na digital governance web platform na nilikha upang maghatid ng buong transparency, real-time tracking ng pondo, at mabilis na serbisyo para sa kabataan ng Tumauini."
+            "1": {
+                        "title": "Introduction to TALA",
+                        "text": "Good day to our panel and guests. Today, I will present TALA, which stands for Tumauini Active Youth Ledger Analytics. It brings youth records, budgets, reports, and community services into one web platform. Let us begin with the purpose behind the system. Next, I will explain the responsibilities that guided its design."
             },
-            2: {
-                title: "Mga Batas ng Republika at Legal Mandates",
-                text: "Ang TALA ay mahigpit na nakasalig sa apat na pangunahing batas ng pamahalaan: ang RA 10742 para sa statutory youth development fund, ang RA 11768 para sa mandatory digital full disclosure at financial autonomy, ang RA 7160 Local Government Code, at ang RA 6713 Code of Conduct para sa bukas na pamamahala."
+            "2": {
+                        "title": "The Purpose Behind the Platform",
+                        "text": "First, let us look at the responsibilities behind youth governance. This slide names four laws that provide context for SK planning, local government, and ethical public service. The main idea is simple: officials need clear plans, organized records, and information that people can review. TALA helps support that work. However, these responsibilities can be difficult to manage through paper records alone."
             },
-            3: {
-                title: "Bakit Binuo ang TALA: Problema at Solusyon",
-                text: "Sa slide na ito, ipinapakita natin ang malaking kaibahan ng lumang mano-manong sistema kumpara sa modernong solusyon ng TALA. Dito ninyo makikita kung paano pinalitan ng digital ledgers at automated disclosures ang dating mabagal at magulong papeles."
+            "3": {
+                        "title": "From Paper Records to Connected Tools",
+                        "text": "Next, let us compare the usual paper-based process with the TALA approach. Paper files can be hard to locate, and repeated data entry can slow down reporting. TALA brings related records into connected modules, making information easier to organize and retrieve. To show how this works, I will walk through the process from registration to review."
             },
-            4: {
-                title: "Ang Daloy ng Pamamahala: 5 Yugto",
-                text: "Ito ang kumpletong daloy ng pamamahala ng TALA mula sa pagpaparehistro ng kabataan, pagpaplano ng badyet, pag-audit ng voucher, hanggang sa pampublikong paglalathala at pagsusuri ng munisipyo sa lahat ng 46 na barangay."
+            "4": {
+                        "title": "The Five-Stage Workflow",
+                        "text": "The workflow has five stages. First, youth registration creates the records used to identify participants. Next, officials prepare their program and budget plans. After that, they record vouchers and attach supporting documents. Once reports are approved, they can be published for public viewing. Finally, the municipal team reviews submissions and follows up on incomplete records. With that flow in mind, let us look at the financial tools."
             },
-            5: {
-                title: "Mga Pangunahing Module ng Pananalapi",
-                text: "Narito ang tatlong pangunahing haligi ng TALA: ang DILG Full Disclosure Portal, ang Real-Time Budget Registry para sa 46.8 milyong pisong pondo ng kabataan, at ang COA-compliant Check Voucher and Liquidation engine."
+            "5": {
+                        "title": "Financial Records and Public Disclosure",
+                        "text": "Now, we move to three financial tools. The Full Disclosure Portal shares published reports with the public. The budget console helps officials compare planned amounts with recorded spending. The voucher module keeps transactions and supporting documents together. In simple terms, these tools help answer three questions: what was planned, what was spent, and where are the supporting records? Next, we will look beyond finances."
             },
-            6: {
-                title: "Governance Badges, MYDC at Opisyal na Rekord",
-                text: "Sa slide na ito, makikita ang ating Barangay Governance Badges na naghihikayat ng maagap na pag-uulat, ang MYDC council portal, ang opisyal na Minutes and Resolutions, at ang ating direktang youth helpdesk."
+            "6": {
+                        "title": "Governance and Community Participation",
+                        "text": "In addition to financial records, TALA helps organize governance activities. Barangay badges show reporting progress. MYDC and YORP records help organize youth groups and representatives. Meeting minutes and resolutions preserve decisions. However, good governance also needs feedback, so the helpdesk provides a way for young people to raise concerns. Next, I will briefly explain the technology behind these tools."
             },
-            7: {
-                title: "Arkitektura ng Sistema at Seguridad",
-                text: "Ang teknikal na pundasyon ng TALA ay sadyang idinisenyo para sa bilis at proteksyon gamit ang pure PHP 8.2, MySQL 8.4, at Tailwind CSS. Walang mabigat na external frameworks, kaya wala pang 100 milliseconds ang bilis ng pag-load ng bawat pahina."
+            "7": {
+                        "title": "How the System Works",
+                        "text": "Behind the platform, PHP processes requests and MySQL stores related records. On the screen, Tailwind CSS helps the pages adapt to different devices. The shared theme switch keeps light and dark mode consistent. User roles help separate the responsibilities of administrators and SK chairpersons. You do not need to remember every technical term. The main point is that these parts work together to organize information and control access. Finally, let us look at the overall value and the next steps."
             },
-            8: {
-                title: "Naihatid na Epekto at Kinabukasan",
-                text: "Bilang pagtatapos, napatunayan ng TALA ang 100% digital coverage sa buong Tumauini, pinabilis ng 85% ang pagproseso ng mga ulat, at nagbukas ng modernong pamamahala para sa kabataan. Maaari niyo na pong subukan ang ating live system."
+            "8": {
+                        "title": "Overall Value and Next Steps",
+                        "text": "To conclude, TALA brings youth records, financial documents, and public information into one platform. Its value is easier organization, clearer reporting, and better access to available information. Looking ahead, the roadmap includes a mobile web app, project mapping, and SMS notifications. These are planned improvements. Next, I will open the live system and show how the current modules work. Thank you, and I welcome your questions."
             }
-        };
+};
 
         function setPresenterSpeech(speech, label) {
             if (speechResetTimer) {

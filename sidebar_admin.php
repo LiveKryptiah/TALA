@@ -2,6 +2,19 @@
 // Ensure session variables are accessible
 $current_page = basename($_SERVER['PHP_SELF']);
 $admin_name = $_SESSION['admin_username'] ?? 'Administrator';
+$admin_photo = $_SESSION['admin_profile_picture'] ?? '';
+if (!empty($_SESSION['admin_id']) && isset($pdo)) {
+    try {
+        $admin_profile_stmt = $pdo->prepare("SELECT profile_picture FROM admins WHERE id = ? AND role = 'admin'");
+        $admin_profile_stmt->execute([(int)$_SESSION['admin_id']]);
+        $admin_profile = $admin_profile_stmt->fetch(PDO::FETCH_ASSOC);
+        if ($admin_profile) {
+            $admin_photo = $admin_profile['profile_picture'] ?? '';
+            $_SESSION['admin_profile_picture'] = $admin_photo;
+        }
+    } catch (PDOException $exception) {}
+}
+if (!is_string($admin_photo) || strpos($admin_photo, 'uploads/admin_profiles/') !== 0 || strpos($admin_photo, '..') !== false) $admin_photo = '';
 
 // Fetch pending tickets count for the badge (Optional, fail gracefully if table doesn't exist)
 $pending_tickets = 0;
@@ -255,7 +268,11 @@ try {
             <i id="mobileThemeIcon" class="ph-bold ph-moon text-lg"></i>
         </button>
         <div class="w-9 h-9 rounded-xl bg-green-100 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 flex items-center justify-center font-black text-sm shadow-sm">
-            <?= strtoupper(substr($admin_name, 0, 1)) ?>
+            <?php if ($admin_photo): ?>
+                <img src="<?= htmlspecialchars($admin_photo, ENT_QUOTES, 'UTF-8') ?>" alt="MYDO profile" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:inherit;">
+            <?php else: ?>
+                <?= htmlspecialchars(strtoupper(substr($admin_name, 0, 1)), ENT_QUOTES, 'UTF-8') ?>
+            <?php endif; ?>
         </div>
     </div>
 </header>
@@ -392,11 +409,11 @@ try {
         <a href="department_monitor.php" class="tala-nav-btn <?= $current_page == 'department_monitor.php' ? 'active' : '' ?>">
             <i class="<?= $current_page == 'department_monitor.php' ? 'ph-fill' : 'ph-bold' ?> ph-eye"></i> Inter-Agency Monitor
         </a>
-        <a href="presentation.php" target="_blank" class="tala-nav-btn <?= $current_page == 'presentation.php' ? 'active' : '' ?>">
-            <i class="<?= $current_page == 'presentation.php' ? 'ph-fill' : 'ph-bold' ?> ph-presentation"></i> System Presentation
-        </a>
 
         <p class="sidebar-heading">Administrative</p>
+        <a href="admin_sk_accounts.php" class="tala-nav-btn <?= $current_page == 'admin_sk_accounts.php' ? 'active' : '' ?>">
+            <i class="<?= $current_page == 'admin_sk_accounts.php' ? 'ph-fill' : 'ph-bold' ?> ph-user-plus"></i> SK Accounts
+        </a>
         <a href="admin_mom.php" class="tala-nav-btn <?= $current_page == 'admin_mom.php' ? 'active' : '' ?>">
             <i class="<?= $current_page == 'admin_mom.php' ? 'ph-fill' : 'ph-bold' ?> ph-folders"></i> MOM Oversight
         </a>
@@ -480,7 +497,11 @@ try {
     <div class="p-3 border-t border-slate-100 dark:border-zinc-800/80 transition-colors" style="display: block !important;">
         <div class="tala-profile-card" style="margin: 0 !important;">
             <div class="w-8 h-8 rounded-lg flex items-center justify-center font-extrabold flex-shrink-0" style="background-color: rgba(255, 255, 255, 0.2) !important; color: #ffffff !important; font-size: 13px !important;">
-                <?= strtoupper(substr($admin_name, 0, 1)) ?>
+                <?php if ($admin_photo): ?>
+                    <img src="<?= htmlspecialchars($admin_photo, ENT_QUOTES, 'UTF-8') ?>" alt="MYDO profile" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:inherit;">
+                <?php else: ?>
+                    <?= htmlspecialchars(strtoupper(substr($admin_name, 0, 1)), ENT_QUOTES, 'UTF-8') ?>
+                <?php endif; ?>
             </div>
             <div class="flex-1 min-w-0 overflow-hidden">
                 <p class="text-xs font-extrabold truncate" style="margin: 0 !important; color: #ffffff !important; line-height: 1.2;">

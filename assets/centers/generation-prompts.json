@@ -1,0 +1,65 @@
+[
+  {
+    "name": "health",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. Youth health outreach inside a simple barangay health center. A young Filipina nurse gently checks a seated young man's blood pressure with a normal manual cuff; another young volunteer organizes plain supplies in the background. Calm interaction, waist-up, believable medical equipment, daylight from an open window.",
+    "mode": "built-in image_gen",
+    "image": "health.webp",
+    "original": "originals/health.png"
+  },
+  {
+    "name": "education",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. Three young Filipino college-age learners collaborate at a worn wooden table in a modest barangay learning space, open notebooks and a single ordinary laptop, one quietly explaining a page while others take notes. Candid concentration, ceiling fan and simple shelves, no visible screen text.",
+    "mode": "built-in image_gen",
+    "image": "education.webp",
+    "original": "originals/education.png"
+  },
+  {
+    "name": "economy",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. Two young Filipino entrepreneurs at a small local food-and-produce stall, one naturally arranging vegetables and another writing orders in a notebook beside an ordinary reusable tote bag. Neighborhood market in Isabela, real lived-in surfaces, cheerful but not posing, morning shade.",
+    "mode": "built-in image_gen",
+    "image": "economy.webp",
+    "original": "originals/economy.png"
+  },
+  {
+    "name": "inclusion",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. A friendly small group of Filipino youth, including a young wheelchair user and varied gender presentation, participate equally in a hands-on community planning activity around an accessible low table in a covered barangay hall. Ordinary casual clothing, genuine engaged expressions, no symbolic rainbow graphics, no text.",
+    "mode": "built-in image_gen",
+    "image": "inclusion.webp",
+    "original": "originals/inclusion.png"
+  },
+  {
+    "name": "peace",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. Five Filipino young adult community volunteers sit in a loose circle with a local youth facilitator in an airy covered barangay pavilion, thoughtfully listening and resolving a community concern, relaxed everyday clothing, no weapons, no tactical gear, no posed handshake, candid side view.",
+    "mode": "built-in image_gen",
+    "image": "peace.webp",
+    "original": "originals/peace.png"
+  },
+  {
+    "name": "governance",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. A youth consultation in a modest municipal meeting room in Isabela. Several young Filipino council volunteers study printed papers and discuss a plan around a simple table; one speaker gestures naturally while others listen. Practical office setting, no politician likeness, no legible documents or signage.",
+    "mode": "built-in image_gen",
+    "image": "governance.webp",
+    "original": "originals/governance.png"
+  },
+  {
+    "name": "citizenship",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. Young Filipino volunteers working together to improve a barangay public space, carrying a basket of supplies and repainting a low community bench, greenery and ordinary houses nearby, candid mid-action, believable paintbrushes and work gloves, late-afternoon natural light.",
+    "mode": "built-in image_gen",
+    "image": "citizenship.webp",
+    "original": "originals/citizenship.png"
+  },
+  {
+    "name": "environment",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. Small group of Filipino youth volunteers planting native tree seedlings at the edge of a rural riverside community in Isabela. One kneels to settle soil around a seedling, another carries a small watering can, real mud and simple clothing, soft overcast daylight, no staged tree-hugging, no text.",
+    "mode": "built-in image_gen",
+    "image": "environment.webp",
+    "original": "originals/environment.png"
+  },
+  {
+    "name": "mobility",
+    "prompt": "Use case: photorealistic-natural. Create one standalone photograph for a Philippine municipal youth website, a fictional candid community scene, landscape 4:3 composition suitable for center cropping. Filipino young adults aged 18–30 in an ordinary small-town Isabela, Philippines setting. Natural available daylight, normal skin texture, slight natural imperfections, believable hands and anatomy, unposed documentary framing, realistic modest surroundings, restrained colors, subtle camera grain. Looks like a skilled local community photographer's candid photograph; no glossy advertising, beauty retouching, cinematic orange/teal, excessive bokeh, CGI, illustration, staged stock-photo smiles, overly perfect symmetry, watermarks, lettering, logos, or readable text. A small group of Filipino young adults meeting international youth exchange participants in a simple university common area. They naturally converse around a shared table with backpacks, a closed rolling suitcase and notebooks, varied international backgrounds, ordinary candid interaction, no flags, no readable passports or travel paperwork.",
+    "mode": "built-in image_gen",
+    "image": "mobility.webp",
+    "original": "originals/mobility.png"
+  }
+]

@@ -1,0 +1,7 @@
+# Keep generated media intact on Windows checkouts.
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary

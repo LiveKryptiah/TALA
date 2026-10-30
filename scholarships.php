@@ -48,6 +48,8 @@ try {
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scholarships | TALA Tumauini 2026</title>
@@ -180,8 +182,11 @@ try {
             background-color: transparent !important;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
+<body data-public-page="scholarships.php" class="tala-public bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
 
     <?php include 'navigation.php'; ?>
     
@@ -199,7 +204,7 @@ try {
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <?php if (count($scholarships) > 0): ?>
                     <?php foreach ($scholarships as $index => $schol): ?>
-                        <div class="bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden flex flex-col hover:-translate-y-1 transition-all duration-300 scroll-animate" style="animation-delay: <?= $index * 100 ?>ms;">
+                        <div class="bg-white dark:bg-zinc-900 rounded-[2rem] overflow-hidden flex flex-col hover:-translate-y-1 transition-all duration-300 scroll-animate tala-public-card" style="animation-delay: <?= $index * 100 ?>ms;">
                             <div class="p-8 flex flex-col flex-1 transition-colors">
                                 
                                 <div class="w-14 h-14 flex items-center justify-start text-4xl mb-6">
@@ -225,7 +230,7 @@ try {
                         </div>
                     <?php endforeach; ?>
                 <?php else: ?>
-                    <div class="col-span-full bg-white dark:bg-zinc-900 p-16 rounded-[2rem] text-center scroll-animate transition-colors">
+                    <div class="col-span-full bg-white dark:bg-zinc-900 p-16 rounded-[2rem] text-center scroll-animate transition-colors tala-public-card">
                         <div class="w-20 h-20 flex items-center justify-center mx-auto mb-4 text-5xl transition-colors">
                             <i class="ph-fill ph-graduation-cap icon-gradient"></i>
                         </div>
@@ -238,21 +243,7 @@ try {
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 py-10 px-6 lg:px-8 mt-auto transition-colors duration-300">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <img src="TALA-LOGO.ico" class="w-8 h-8 object-contain" alt="TALA Logo" onerror="this.src='https://via.placeholder.com/32?text=TALA'">
-                <p class="text-xs font-semibold text-slate-500 dark:text-zinc-500 transition-colors">
-                    &copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office. All rights reserved.
-                </p>
-            </div>
-            <div class="flex items-center gap-6 text-xs font-semibold text-slate-500 dark:text-zinc-500">
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Contact Support</a>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
     <!-- Script for Mobile Menu and Dark Mode Sync -->
     <script>

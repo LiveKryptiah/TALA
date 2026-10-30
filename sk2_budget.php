@@ -75,6 +75,8 @@ $burn_rate = $total_allocation > 0 ? round(($total_expense / $total_allocation) 
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SK OS 2.0 | Financial Analytics</title>
@@ -109,6 +111,8 @@ $burn_rate = $total_allocation > 0 ? round(($total_expense / $total_allocation) 
         .dark .custom-scrollbar::-webkit-scrollbar-thumb { background: #3f3f46; }
         .dark ::-webkit-calendar-picker-indicator { filter: invert(1); }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-zinc-950 dark:text-zinc-100 flex h-screen overflow-hidden selection:bg-blue-500 selection:text-white transition-colors duration-300">
 

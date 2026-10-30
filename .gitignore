@@ -15,3 +15,9 @@ Desktop.ini
 # Temporary files
 *.tmp
 *.log
+
+# Local verification artifacts and account exports
+/tmp/
+__pycache__/
+*.pyc
+/output/sk-chairperson-accounts.csv

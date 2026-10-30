@@ -17,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Community Voice | TALA Tumauini 2026</title>
@@ -82,8 +84,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background: #15803d;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
+<body data-public-page="suggestions.php" class="tala-public bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased min-h-screen flex flex-col justify-between selection:bg-brand-900 selection:text-white transition-colors duration-300">
 
  <?php include 'navigation.php'; ?>
 
@@ -108,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </a>
             </div>
         <?php else: ?>
-            <div class="bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-[2rem] transition-colors">
+            <div class="bg-white dark:bg-zinc-900 p-8 md:p-10 rounded-[2rem] transition-colors tala-public-card">
                 <form method="POST" class="space-y-6">
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -150,21 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-zinc-950 border-t border-slate-200 dark:border-zinc-800 py-10 px-6 lg:px-8 mt-auto transition-colors duration-300">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div class="flex items-center gap-3">
-                <img src="TALA-LOGO.ico" class="w-8 h-8 object-contain" alt="TALA Logo" onerror="this.src='https://via.placeholder.com/32?text=TALA'">
-                <p class="text-xs font-semibold text-slate-500 dark:text-zinc-500 transition-colors">
-                    &copy; <?= date('Y') ?> Tumauini Municipal Youth Development Office. All rights reserved.
-                </p>
-            </div>
-            <div class="flex items-center gap-6 text-xs font-semibold text-slate-500 dark:text-zinc-500">
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-brand-800 dark:hover:text-brand-400 transition-colors">Contact Support</a>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
     <!-- Script for Mobile Menu & Dark Mode Sync -->
     <script>

@@ -70,6 +70,8 @@ function getBadgeTier($xp) {
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Public Directory | TALA OS</title>
@@ -150,8 +152,11 @@ function getBadgeTier($xp) {
             background-color: transparent !important;
         }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
-<body class="bg-slate-50 dark:bg-[#010803] text-slate-800 dark:text-brand-100 antialiased selection:bg-[#1da85b] selection:text-white transition-colors duration-300 flex flex-col min-h-screen">
+<body data-public-page="public_officials.php" class="tala-public bg-slate-50 dark:bg-[#010803] text-slate-800 dark:text-brand-100 antialiased selection:bg-[#1da85b] selection:text-white transition-colors duration-300 flex flex-col min-h-screen">
 
     <!-- PUBLIC NAVIGATION -->
     <div class="sticky top-0 z-50 bg-white/90 dark:bg-[#010803]/90 backdrop-blur-md border-b border-slate-200 dark:border-[#021207]">
@@ -185,12 +190,12 @@ function getBadgeTier($xp) {
                         
                         <div class="relative z-10">
                             <?php if ($lydo['profile_picture']): ?>
-                                <img src="<?= htmlspecialchars($lydo['profile_picture']) ?>" class="w-32 h-32 object-cover rounded-[1.5rem] mx-auto mb-6 border-4 border-white dark:border-slate-900 transition-colors">
+                                <img src="<?= htmlspecialchars($lydo['profile_picture']) ?>" alt="<?= htmlspecialchars($lydo['full_name'] ?? 'Municipal official') ?>" class="w-40 h-56 object-cover object-top rounded-[1.5rem] mx-auto mb-6 border-4 border-white dark:border-slate-900 transition-colors">
                             <?php else: ?>
                                 <div class="w-32 h-32 bg-slate-100 dark:bg-[#052e16] text-slate-400 dark:text-brand-500 rounded-[1.5rem] flex items-center justify-center text-6xl mx-auto mb-6 border-4 border-white dark:border-slate-900 transition-colors"><i class="ph-fill ph-user"></i></div>
                             <?php endif; ?>
                             
-                            <h3 class="text-xl font-black text-slate-900 dark:text-white leading-tight mb-1 transition-colors"><?= htmlspecialchars($lydo['full_name']) ?></h3>
+                            <h3 class="text-xl font-black text-slate-900 dark:text-white leading-tight mb-1 transition-colors"><?= htmlspecialchars(trim((string)($lydo['full_name'] ?? '')) ?: ($lydo['role'] === 'mayor' ? 'Municipal Mayor' : 'Municipal Youth Development Officer')) ?></h3>
                             <p class="text-[11px] font-extrabold text-brand-600 dark:text-brand-400 uppercase tracking-widest bg-brand-50 dark:bg-[#021207] inline-block px-3 py-1 rounded-md border border-brand-100 dark:border-brand-900/50 mt-2 transition-colors">
                                 <?= $lydo['role'] === 'mayor' ? 'Municipal Mayor' : 'LYDO / MYDC' ?>
                             </p>
@@ -258,24 +263,7 @@ function getBadgeTier($xp) {
     </main>
 
     <!-- MAIN FOOTER -->
-    <footer class="bg-white dark:bg-[#010803] border-t border-slate-200 dark:border-[#021207] py-12 transition-colors duration-300 mt-auto">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <div class="flex items-center gap-3">
-                    <img src="TALA-LOGO.ico" alt="TALA Logo" class="w-10 h-10 object-contain grayscale opacity-60 dark:opacity-40">
-                    <div>
-                        <h2 class="text-xl font-extrabold text-slate-800 dark:text-white tracking-tight">TALA</h2>
-                        <p class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">MDMIS System</p>
-                    </div>
-                </div>
-                <div class="flex flex-wrap justify-center gap-6 text-sm font-bold text-slate-500 dark:text-brand-300">
-                    <a href="login.php" class="hover:text-brand-700 dark:hover:text-brand-400 transition-colors">Admin Portal</a>
-                    <a href="public_registration.php" class="hover:text-brand-700 dark:hover:text-brand-400 transition-colors">Youth Registration</a>
-                    <a href="public_events.php" class="hover:text-brand-700 dark:hover:text-brand-400 transition-colors">Events</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include 'public_footer.php'; ?>
 
 </body>
 </html>

@@ -1,0 +1,554 @@
+[
+  {
+    "full_name": "Rovic G. Amistad",
+    "barangay": "Annafunan",
+    "barangay_label": "Annafunan",
+    "username": "SKRovic",
+    "image": 1,
+    "portrait_center": [
+      113,
+      448
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-annafunan.png"
+  },
+  {
+    "full_name": "Moises V. Macoco",
+    "barangay": "Arcon",
+    "barangay_label": "Arcon",
+    "username": "sk.arcon",
+    "image": 1,
+    "portrait_center": [
+      112,
+      560
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-arcon.png"
+  },
+  {
+    "full_name": "Archie M. Gabuyo Jr.",
+    "barangay": "Carpentero",
+    "barangay_label": "Carpentero",
+    "username": "sk.carpentero",
+    "image": 1,
+    "portrait_center": [
+      109,
+      682
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-carpentero.png"
+  },
+  {
+    "full_name": "Jhon Mark A. Abella",
+    "barangay": "Compania",
+    "barangay_label": "Compania",
+    "username": "sk.compania",
+    "image": 1,
+    "portrait_center": [
+      116,
+      804
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-compania.png"
+  },
+  {
+    "full_name": "Jesus Angelo Ugaddan",
+    "barangay": "Barangay District 1 (Poblacion)",
+    "barangay_label": "Barangay District 1 (Poblacion)",
+    "username": "SKGelo",
+    "image": 1,
+    "portrait_center": [
+      777,
+      448
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-district1.png"
+  },
+  {
+    "full_name": "Vince Peter Asingayan",
+    "barangay": "Barangay District 2 (Poblacion)",
+    "barangay_label": "Barangay District 2 (Poblacion)",
+    "username": "SKVince",
+    "image": 1,
+    "portrait_center": [
+      777,
+      560
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-district2.png"
+  },
+  {
+    "full_name": "Koline M. Bacani",
+    "barangay": "Barangay District 3 (Poblacion)",
+    "barangay_label": "Barangay District 3 (Poblacion)",
+    "username": "sk.district3",
+    "image": 1,
+    "portrait_center": [
+      773,
+      682
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-district3.png"
+  },
+  {
+    "full_name": "Troy Vincent Jimenez",
+    "barangay": "Barangay District 4 (Poblacion)",
+    "barangay_label": "Barangay District 4 (Poblacion)",
+    "username": "sk.district4",
+    "image": 1,
+    "portrait_center": [
+      777,
+      804
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-district4.png"
+  },
+  {
+    "full_name": "Kathleen Claire A. Ellorin",
+    "barangay": "Santa Visitacion (Maggayu)",
+    "barangay_label": "Santa Visitacion (Maggayu)",
+    "username": "SKKathleen",
+    "image": 1,
+    "portrait_center": [
+      771,
+      915
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-santavisitacion.png"
+  },
+  {
+    "full_name": "Erica Ugaddan",
+    "barangay": "Lingaling (Poblacion)",
+    "barangay_label": "Lingaling (Poblacion)",
+    "username": "sk.lingaling",
+    "image": 1,
+    "portrait_center": [
+      1433,
+      442
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-lingaling.png"
+  },
+  {
+    "full_name": "Joemarie A. Bacani",
+    "barangay": "Maligaya (Poblacion)",
+    "barangay_label": "Maligaya (Poblacion)",
+    "username": "sk.maligaya",
+    "image": 1,
+    "portrait_center": [
+      1432,
+      553
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-maligaya.png"
+  },
+  {
+    "full_name": "Ven-Eiriel G. Turingan",
+    "barangay": "San Mateo",
+    "barangay_label": "San Mateo",
+    "username": "SKVen",
+    "image": 1,
+    "portrait_center": [
+      1429,
+      678
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-sanmateo.png"
+  },
+  {
+    "full_name": "Cyrus P. Jacinto",
+    "barangay": "San Pedro",
+    "barangay_label": "San Pedro",
+    "username": "sk.sanpedro",
+    "image": 1,
+    "portrait_center": [
+      1429,
+      796
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-sanpedro.png"
+  },
+  {
+    "full_name": "Mark Baron G. Rosales",
+    "barangay": "Fugu Abajo",
+    "barangay_label": "Fugu Abajo",
+    "username": "sk.fuguabajo",
+    "image": 2,
+    "portrait_center": [
+      105,
+      449
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-fuguabajo.png"
+  },
+  {
+    "full_name": "Kevin A. Ong",
+    "barangay": "Fugu Sur",
+    "barangay_label": "Fugu Sur",
+    "username": "sk.fugusur",
+    "image": 2,
+    "portrait_center": [
+      103,
+      561
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-fugusur.png"
+  },
+  {
+    "full_name": "Kleinne Royette U. Baquiran",
+    "barangay": "Fugu Norte",
+    "barangay_label": "Fugu Norte",
+    "username": "sk.fugunorte",
+    "image": 2,
+    "portrait_center": [
+      102,
+      683
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-fugunorte.png"
+  },
+  {
+    "full_name": "Joey Bhoy P. Gazzingan",
+    "barangay": "Fermeldy (Hacienda San Francisco)",
+    "barangay_label": "Fermeldy (Hacienda San Francisco)",
+    "username": "sk.fermeldy",
+    "image": 2,
+    "portrait_center": [
+      102,
+      803
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-fermeldy.png"
+  },
+  {
+    "full_name": "Missy Mae Lugo",
+    "barangay": "Lanna",
+    "barangay_label": "Lanna",
+    "username": "sk.lanna",
+    "image": 2,
+    "portrait_center": [
+      769,
+      449
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-lanna.png"
+  },
+  {
+    "full_name": "Kevin Concha",
+    "barangay": "Malamag East",
+    "barangay_label": "Malamag East",
+    "username": "sk.malamageast",
+    "image": 2,
+    "portrait_center": [
+      769,
+      561
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-malamageast.png"
+  },
+  {
+    "full_name": "Justito Vicente A. Jimenez III",
+    "barangay": "Malamag West",
+    "barangay_label": "Malamag West",
+    "username": "SKJustito",
+    "image": 2,
+    "portrait_center": [
+      767,
+      683
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-malamagwest.png"
+  },
+  {
+    "full_name": "Jerome Q. Manuel",
+    "barangay": "Moldero",
+    "barangay_label": "Moldero",
+    "username": "sk.moldero",
+    "image": 2,
+    "portrait_center": [
+      772,
+      803
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-moldero.png"
+  },
+  {
+    "full_name": "Chyla Malazzab",
+    "barangay": "Tunggui",
+    "barangay_label": "Tunggui",
+    "username": "sk.tunggui",
+    "image": 2,
+    "portrait_center": [
+      451,
+      896
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-tunggui.png"
+  },
+  {
+    "full_name": "Aljerue Daguio",
+    "barangay": "Santa",
+    "barangay_label": "Santa",
+    "username": "sk.santa",
+    "image": 2,
+    "portrait_center": [
+      1425,
+      442
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-santa.png"
+  },
+  {
+    "full_name": "John Vincent Guilio",
+    "barangay": "Santa Catalina",
+    "barangay_label": "Santa Catalina",
+    "username": "sk.santacatalina",
+    "image": 2,
+    "portrait_center": [
+      1421,
+      553
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-santacatalina.png"
+  },
+  {
+    "full_name": "Romina G. Guiyab",
+    "barangay": "San Vicente",
+    "barangay_label": "San Vicente",
+    "username": "SKRomina",
+    "image": 2,
+    "portrait_center": [
+      1420,
+      678
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-sanvicente.png"
+  },
+  {
+    "full_name": "Beyance Mari T. Baquiran",
+    "barangay": "Sinippil",
+    "barangay_label": "Sinippil",
+    "username": "sk.sinippil",
+    "image": 2,
+    "portrait_center": [
+      1418,
+      795
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-sinippil.png"
+  },
+  {
+    "full_name": "Cris Ann Laman",
+    "barangay": "Ugad",
+    "barangay_label": "Ugad",
+    "username": "sk.ugad",
+    "image": 2,
+    "portrait_center": [
+      1105,
+      891
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-ugad.png"
+  },
+  {
+    "full_name": "Shella Mae B. Lopez",
+    "barangay": "Paragu",
+    "barangay_label": "Paragu",
+    "username": "sk.paragu",
+    "image": 3,
+    "portrait_center": [
+      106,
+      449
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-paragu.png"
+  },
+  {
+    "full_name": "Ryan Vince V. Catembung",
+    "barangay": "Pilitan",
+    "barangay_label": "Pilitan",
+    "username": "sk.pilitan",
+    "image": 3,
+    "portrait_center": [
+      102,
+      562
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-pilitan.png"
+  },
+  {
+    "full_name": "John Pablo M. Tagufa",
+    "barangay": "Balug",
+    "barangay_label": "Balug",
+    "username": "SKJohn",
+    "image": 3,
+    "portrait_center": [
+      101,
+      682
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-balug.png"
+  },
+  {
+    "full_name": "Warren B. Layno",
+    "barangay": "Bayabo East",
+    "barangay_label": "Bayabo East",
+    "username": "SKWarren",
+    "image": 3,
+    "portrait_center": [
+      102,
+      803
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-bayaboeast.png"
+  },
+  {
+    "full_name": "Mark Angelo Pacuniana",
+    "barangay": "Minanga",
+    "barangay_label": "Minanga",
+    "username": "sk.minanga",
+    "image": 3,
+    "portrait_center": [
+      768,
+      449
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-minanga.png"
+  },
+  {
+    "full_name": "Ederlyn J. Bautista",
+    "barangay": "Liwanag",
+    "barangay_label": "Liwanag",
+    "username": "sk.liwanag",
+    "image": 3,
+    "portrait_center": [
+      769,
+      560
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-liwanag.png"
+  },
+  {
+    "full_name": "Ricardo F. Sanchez III",
+    "barangay": "Lapogan",
+    "barangay_label": "Lapogan",
+    "username": "sk.lapogan",
+    "image": 3,
+    "portrait_center": [
+      768,
+      683
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-lapogan.png"
+  },
+  {
+    "full_name": "Marc Zedrick Denna",
+    "barangay": "Lalauanan",
+    "barangay_label": "Lalauanan",
+    "username": "sk.lalauanan",
+    "image": 3,
+    "portrait_center": [
+      769,
+      804
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-lalauanan.png"
+  },
+  {
+    "full_name": "Roland Jay Ruz",
+    "barangay": "Bantug",
+    "barangay_label": "Bantug",
+    "username": "sk.bantug",
+    "image": 3,
+    "portrait_center": [
+      1426,
+      442
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-bantug.png"
+  },
+  {
+    "full_name": "Jay Ar Salvallion",
+    "barangay": "Sisim Abajo",
+    "barangay_label": "Sisim Abajo",
+    "username": "sk.sisimabajo",
+    "image": 3,
+    "portrait_center": [
+      1422,
+      554
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-sisimabajo.png"
+  },
+  {
+    "full_name": "Justine F. Mondejar",
+    "barangay": "Sisim Alto",
+    "barangay_label": "Sisim Alto",
+    "username": "sk.sisimalto",
+    "image": 3,
+    "portrait_center": [
+      1420,
+      679
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-sisimalto.png"
+  },
+  {
+    "full_name": "AJ Vanessa G. Bergonia",
+    "barangay": "Santo Niño",
+    "barangay_label": "Santo Niño",
+    "username": "sk.santonino",
+    "image": 3,
+    "portrait_center": [
+      1418,
+      797
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-santonino.png"
+  },
+  {
+    "full_name": "John Bernard De Guzman",
+    "barangay": "Antagan I",
+    "barangay_label": "Antagan I",
+    "username": "sk.antagan1",
+    "image": 4,
+    "portrait_center": [
+      393,
+      412
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-antagan1.png"
+  },
+  {
+    "full_name": "Florence Quirod",
+    "barangay": "Antagan II",
+    "barangay_label": "Antagan II",
+    "username": "sk.antagan2",
+    "image": 4,
+    "portrait_center": [
+      390,
+      535
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-antagan2.png"
+  },
+  {
+    "full_name": "Jake P. Galapon",
+    "barangay": "Camasi",
+    "barangay_label": "Camasi",
+    "username": "sk.camasi",
+    "image": 4,
+    "portrait_center": [
+      387,
+      667
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-camasi.png"
+  },
+  {
+    "full_name": "Ronmark Samoy",
+    "barangay": "Caligayan",
+    "barangay_label": "Caligayan",
+    "username": "sk.caligayan",
+    "image": 4,
+    "portrait_center": [
+      387,
+      798
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-caligayan.png"
+  },
+  {
+    "full_name": "Jhoe Anthony Padre",
+    "barangay": "Cumabao",
+    "barangay_label": "Cumabao",
+    "username": "sk.cumabao",
+    "image": 4,
+    "portrait_center": [
+      1153,
+      466
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-cumabao.png"
+  },
+  {
+    "full_name": "Angelo P. Tioan",
+    "barangay": "Banig",
+    "barangay_label": "Banig/Dy Abra",
+    "username": "sk.banig",
+    "image": 4,
+    "portrait_center": [
+      1150,
+      589
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-banig.png"
+  },
+  {
+    "full_name": "Jerwin R. Cunanan",
+    "barangay": "Namnama",
+    "barangay_label": "Namnama",
+    "username": "SKJerwin",
+    "image": 4,
+    "portrait_center": [
+      1147,
+      722
+    ],
+    "profile_picture": "uploads/sk_profiles/chairpersons-2026/sk-namnama.png"
+  }
+]

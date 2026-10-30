@@ -102,6 +102,8 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
 <!DOCTYPE html>
 <html lang="en" class="light">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YORP Registration | TALA Tumauini</title>
@@ -163,10 +165,13 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
         .fade-in { animation: fadeIn 0.4s ease forwards; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
+    <link rel="stylesheet" href="public-design.css">
 </head>
 
 <!-- Locks the page to exactly 100vh so the main window NEVER scrolls -->
-<body class="bg-slate-100 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased h-screen w-screen overflow-hidden flex flex-col selection:bg-brand-900 selection:text-white transition-colors duration-300">
+<body data-public-page="public_yorp.php" class="tala-public bg-slate-100 dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased h-screen w-screen overflow-hidden flex flex-col selection:bg-brand-900 selection:text-white transition-colors duration-300">
 
     <!-- Top Navigation (Assumes standard fixed height) -->
     <div class="shrink-0 z-50 relative">
@@ -177,16 +182,16 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
     <main class="flex-1 w-full flex items-center justify-center p-4 sm:p-8 lg:p-12 overflow-hidden relative">
 
         <!-- Centered Split-Card (WIDER MAX-WIDTH AND FIXED HEIGHT) -->
-        <div class="w-full max-w-[1150px] bg-white dark:bg-zinc-900 rounded-[2rem] border border-slate-200/80 dark:border-zinc-800 overflow-hidden flex flex-col md:flex-row h-full max-h-[750px] relative transition-colors duration-300">
+        <div class="w-full max-w-[1150px] bg-white dark:bg-zinc-900 rounded-[2rem] border border-slate-200/80 dark:border-zinc-800 overflow-hidden flex flex-col md:flex-row h-full max-h-[750px] relative transition-colors duration-300 tala-public-card">
             
             <!-- LEFT SIDE: DYNAMIC IMAGE & TEXT (Stays inherently dark/brand focused) -->
             <div class="hidden md:flex md:w-5/12 h-full relative shrink-0 bg-brand-900 overflow-hidden">
-                <img id="left-img" src="https://images.unsplash.com/photo-1529156069898-49953eb1b5ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                     class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay transition-all duration-500" alt="Youth Community">
+                <img id="left-img" src="assets/centers/inclusion.webp"
+                     class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-overlay transition-all duration-500" alt="Youth community planning" loading="lazy" decoding="async">
                 <div class="absolute inset-0 bg-gradient-to-t from-brand-900 via-brand-900/60 to-transparent"></div>
                 
                 <div id="left-content" class="absolute inset-0 p-10 lg:p-12 flex flex-col justify-end text-white fade-in">
-                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/30">
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 border border-white/30 tala-public-card">
                         <img src="TALA-LOGO.ico" class="w-8 h-8 object-contain" alt="TALA">
                     </div>
                     <h1 id="left-title" class="text-4xl lg:text-5xl font-black mb-4 leading-tight">YORP<br>Registration.</h1>
@@ -343,6 +348,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
             </div>
         </div>
     </main>
+    <?php include 'public_footer.php'; ?>
 
     <script>
         // JavaScript Wizard Logic & Dynamic Profile Transition
@@ -386,7 +392,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
             void leftContent.offsetWidth; // trigger reflow
             leftContent.classList.add('fade-in');
 
-            document.getElementById('left-img').src = "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"; // Office / Document Image
+            document.getElementById('left-img').src = "assets/centers/governance.webp"; // Office / Document Image
             document.getElementById('left-title').innerHTML = "Submit<br>Documents.";
             document.getElementById('left-desc').innerText = "Upload your official Registration Form, Directory, Members list, CBL, and Endorsement to complete your profile.";
 
@@ -424,7 +430,7 @@ $activeAlertClass = isset($alertClasses[$messageType]) ? $alertClasses[$messageT
             void leftContent.offsetWidth; // trigger reflow
             leftContent.classList.add('fade-in');
 
-            document.getElementById('left-img').src = "https://images.unsplash.com/photo-1529156069898-49953eb1b5ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"; // Youth Image
+            document.getElementById('left-img').src = "assets/centers/inclusion.webp"; // Youth Image
             document.getElementById('left-title').innerHTML = "YORP<br>Registration.";
             document.getElementById('left-desc').innerText = "Partner with the Local Youth Development Office. Mandated by DILG and the National Youth Commission.";
         }

@@ -42,6 +42,8 @@ $current_page = $_GET['page'] ?? 'pipeline';
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="tala-theme.css">
+    <script src="tala-theme.js"></script>
     <meta charset="UTF-8">
     <title>GUK Evaluator Portal | Province of Isabela</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -57,6 +59,8 @@ $current_page = $_GET['page'] ?? 'pipeline';
         .kanban-col::-webkit-scrollbar-track { background: transparent; }
         .kanban-col::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 4px; }
     </style>
+    <script defer src="form-intellisense.php"></script>
+    <script>if (window.tailwind) tailwind.config = { ...tailwind.config, darkMode: 'class' };</script>
 </head>
 <body class="text-slate-800 antialiased flex selection:bg-guk-500 selection:text-white h-screen overflow-hidden">
 
